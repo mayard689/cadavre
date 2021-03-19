@@ -9,6 +9,14 @@
 
     <p>Un cadavre Exquis avec le comité des fêtes de Villereau</p>
 
-    
+    Reprenons ou en est resté le précédant joueur ...
+
+    <ul>
+        {% for sentence in sentences %}
+            <li>{{ sentence.text }}</li>
+        {% endfor %}
+    </ul>
+
+
 </div>
 {% endblock %}

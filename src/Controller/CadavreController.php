@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\SentenceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,12 +10,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class CadavreController extends AbstractController
 {
     /**
-     * @Route("/cadavre", name="cadavre")
+     * @Route("/jeu", name="cadavre")
      */
-    public function index(): Response
+    public function index(SentenceRepository $sentenceRepository): Response
     {
         return $this->render('cadavre/index.html.twig', [
-            'controller_name' => 'CadavreController',
+            'sentences' => $sentenceRepository->findAll(),
         ]);
     }
+
+
 }
