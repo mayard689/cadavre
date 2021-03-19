@@ -17,6 +17,16 @@
         {% endfor %}
     </ul>
 
+    Et d'aprés vous, que se passe-t-il ensuite ?
+
+    {{ form_start(form) }}
+        {{ form_widget(form.text) }}
+        {{ form_errors(form.text) }}
+
+        {{ form_widget(form.chapter, { 'attr': {'class': 'd-none'} }) }}
+        {{ form_errors(form.chapter, { 'attr': {'class': 'd-none'} }) }}
+        <button class="btn btn-sm btn-primary"> Enregistrer </button>
+    {{ form_end(form) }}
 
 </div>
 {% endblock %}

@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Sentence;
 use App\Form\CustomerType;
+use App\Form\SentenceType;
 use App\Repository\SentenceRepository;
 use Doctrine\DBAL\Types\StringType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,9 +27,7 @@ class CadavreController extends AbstractController
         ->add('chapter', null, [
             'label'=>'Hep là, dans quel chapitre veux tu écrire ?',
             'required'=>true,
-            'constraints' => [
-
-            ]
+            'constraints' => []
         ])
         //build form
         ->getForm();
@@ -48,11 +48,34 @@ class CadavreController extends AbstractController
     /**
      * @Route("/jeu/chapitre/{code}", name="chapter")
      */
-    public function paragraph(String $code, SentenceRepository $sentenceRepository): Response
+    public function paragraph(String $code, Request $request, SentenceRepository $sentenceRepository): Response
     {
+        $sentence = new Sentence();
+        $sentence->setChapter($code);
+        $form = $this->createForm(SentenceType::class, $sentence);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($sentence);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('thank_you');
+        }
+
+        $formView = $form->createView();
         return $this->render('cadavre/index.html.twig', [
             'sentences' => $sentenceRepository->findBy(array("chapter" => $code)),
+            'sentence' => $sentence,
+            'form' => $formView,
         ]);
     }
 
+    /**
+     * @Route("/jeu/merci", name="thank_you")
+     */
+    public function thank(Request $request, SentenceRepository $sentenceRepository): Response
+    {
+        return $this->render('cadavre/thank.html.twig');
+    }
 }
