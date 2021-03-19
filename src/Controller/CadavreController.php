@@ -61,7 +61,7 @@ class CadavreController extends AbstractController
             $entityManager->persist($sentence);
             $entityManager->flush();
 
-            return $this->redirectToRoute('thank_you');
+            return $this->redirectToRoute('cadavre');
         }
 
         $formView = $form->createView();
@@ -78,10 +78,20 @@ class CadavreController extends AbstractController
     }
 
     /**
-     * @Route("/jeu/merci", name="thank_you")
+     * @Route("/jeu/final", name="final")
      */
-    public function thank(Request $request, SentenceRepository $sentenceRepository): Response
+    public function final(SentenceRepository $sentenceRepository): Response
     {
-        return $this->render('cadavre/thank.html.twig');
+        //manage previously entered sentences
+        $sentenceList = $sentenceRepository->findBy([], array('chapter' => 'ASC'));
+
+        $sentencesByChapter = [];
+        foreach($sentenceList as $sentence) {
+            $sentencesByChapter[$sentence->getChapter()][] = $sentence;
+        }
+
+        return $this->render('cadavre/final.html.twig', [
+            'sentencesByChapter' => $sentencesByChapter,
+        ]);
     }
 }

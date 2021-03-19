@@ -21,7 +21,7 @@ class SentenceController extends AbstractController
     public function index(SentenceRepository $sentenceRepository): Response
     {
         return $this->render('sentence/index.html.twig', [
-            'sentences' => $sentenceRepository->findAll(),
+            'sentences' => $sentenceRepository->findBy([], array('chapter' => 'ASC')),
         ]);
     }
 
