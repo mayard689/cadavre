@@ -50,6 +50,7 @@ class CadavreController extends AbstractController
      */
     public function paragraph(String $code, Request $request, SentenceRepository $sentenceRepository): Response
     {
+        // manage new sentence
         $sentence = new Sentence();
         $sentence->setChapter($code);
         $form = $this->createForm(SentenceType::class, $sentence);
@@ -64,8 +65,13 @@ class CadavreController extends AbstractController
         }
 
         $formView = $form->createView();
+
+        //manage previously entered sentences
+        $sentenceList = $sentenceRepository->findBy(array("chapter" => $code), array('id' => 'DESC'), 2);
+        $sentenceList = array_reverse($sentenceList);
+
         return $this->render('cadavre/index.html.twig', [
-            'sentences' => $sentenceRepository->findBy(array("chapter" => $code)),
+            'sentences' => $sentenceList,
             'sentence' => $sentence,
             'form' => $formView,
         ]);
