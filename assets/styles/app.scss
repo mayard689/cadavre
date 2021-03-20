@@ -65,7 +65,10 @@ section{
 h1 {
     color: $primary;
     font-family: "Alice";
-    font-size: $font-large;
+    //font-size: $font-large;
+    font-size: 5vw;
+    line-height: 80%;
+    margin-top : 5vh;
     margin-bottom: 0;
 }
 
