@@ -4,30 +4,28 @@
 
 {% block body %}
 
-<div class="example-wrapper">
-    <h1>Réglisse au Pays des Vermeils!</h1>
-    <p class="cdf">Un cadavre Exquis avec le comité des fêtes de Villereau</p>
+    <div class="container">
+        <h1>Réglisse au Pays des Vermeils!</h1>
+        <p class="h1-sub">Un cadavre Exquis avec le <span class="cdf">Comité des Fêtes de Villereau</span></p>
 
-    Bravo, Vous êtes arrivé à la fin du parcours ! Vous allez pouvoir consulter la totalité des participations.
+        Bravo, Vous êtes arrivé à la fin du parcours ! Vous allez pouvoir consulter la totalité des participations.
 
-    Attention !
+        Attention !
 
-    Rappelez vous qu'à l'heure qu'il est, le jeu est peut être encore en cours. Ne revelez pas trop d'informations aux autres joueurs. Raffraichissez cette page de temps en temps pour voir si le texte évolue.
+        Rappelez vous qu'à l'heure qu'il est, le jeu est peut être encore en cours. Ne revelez pas trop d'informations aux autres joueurs. Raffraichissez cette page de temps en temps pour voir si le texte évolue.
 
-    Voici donc où en est notre loufoque l'intrigue :
+        Voici donc où en est notre loufoque l'intrigue :
 
-    {% for sentences in sentencesByChapter %}
-        <h2>Chapitre {{ loop.index }}</h2>
+        {% for sentences in sentencesByChapter %}
+            <h2>Chapitre {{ loop.index }}</h2>
 
-        <ul>
-            {% for sentence in sentences %}
-                <li>{{ sentence.text }}</li>
-            {% endfor %}
-        </ul>
+            <ul>
+                {% for sentence in sentences %}
+                    <li>{{ sentence.text }}</li>
+                {% endfor %}
+            </ul>
 
-    {% endfor %}
+        {% endfor %}
+    </div>
 
-
-
-</div>
 {% endblock %}
