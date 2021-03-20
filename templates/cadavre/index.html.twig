@@ -10,23 +10,32 @@
         <p class="h1-sub">Un cadavre Exquis avec le <span class="cdf">Comité des Fêtes de Villereau</span></p>
 
         <section class="previous">
-            Reprenons ou en est resté le précédant joueur ...
+            <p>Reprenons ou en est resté le précédant joueur ...</p>
 
             {% for sentence in sentences %}
                 <p class="user-entry">{{ sentence.text }}</p>
+            {% else %}
+                <p>Comment dire ... hum hum... vous découvrez que vous êtes en fait le premier joueur et qu'il n'y a encore jamais eu de joueur précédent. A vous d'ouvrir le bal !</p>
             {% endfor %}
         </section>
 
         <section class="next">
-            Et d'aprés vous, que se passe-t-il ensuite ?
+            <p>Et d'aprés vous, que se passe-t-il ensuite ?</p>
 
             {{ form_start(form) }}
-            {{ form_widget(form.text) }}
-            {{ form_errors(form.text) }}
+                <div class="form-group row">
+                    {{ form_widget(form.text, { 'attr': {'class': 'text'} }) }}
+                    {{ form_errors(form.text) }}
+                </div>
 
-            {{ form_widget(form.chapter, { 'attr': {'class': 'd-none'} }) }}
-            {{ form_errors(form.chapter, { 'attr': {'class': 'd-none'} }) }}
-            <button class="btn btn-sm btn-primary"> Enregistrer </button>
+                <div class="form-group row d-none">
+                    {{ form_widget(form.chapter) }}
+                    {{ form_errors(form.chapter) }}
+                </div>
+
+                <div class="form-group row justify-content-center">
+                    <button class="btn btn-lg btn-primary"> Enregistrer </button>
+                </div>
             {{ form_end(form) }}
         </section>
 
