@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6c21d66-2cbc-418a-9931-2622d99846d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/fonts/Alice_in_Wonderland_3.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/Lato-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/Poppins-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/Shhhst!.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/_H_HelveticaNeueInterface_2.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/_vars.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadavre/chapterRequest.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/chapterRequest.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadavre/final.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/final.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadavre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +138,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/assets/fonts" />
       <recent name="$PROJECT_DIR$/templates/cadavre" />
       <recent name="$PROJECT_DIR$" />
@@ -165,7 +157,7 @@
       <updated>1616135494166</updated>
       <workItem from="1616135495375" duration="4523000" />
       <workItem from="1616142452618" duration="10078000" />
-      <workItem from="1616242244325" duration="612000" />
+      <workItem from="1616242244325" duration="1848000" />
     </task>
     <servers />
   </component>
