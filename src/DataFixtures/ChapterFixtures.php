@@ -12,30 +12,35 @@ class ChapterFixtures extends Fixture
         0 => [
             'introduction' => 'intro chapitre 1',
             'conclusion' => 'conclu chapitre 1',
+            'title' => 'titre du chapitre 1',
             'code' => 'code1'
         ],
 
         1 => [
             'introduction' => 'intro chapitre 2',
             'conclusion' => 'conclu chapitre 2',
+            'title' => 'titre du chapitre 2',
             'code' => 'code2'
         ],
 
         2 => [
             'introduction' => 'intro chapitre 3',
             'conclusion' => 'conclu chapitre 3',
+            'title' => 'titre du chapitre 3',
             'code' => 'code3'
         ],
 
         3 => [
             'introduction' => 'intro chapitre 4',
             'conclusion' => 'conclu chapitre 4',
+            'title' => 'titre du chapitre 4',
             'code' => 'code4'
         ],
 
         4 => [
             'introduction' => 'intro chapitre 5',
             'conclusion' => 'conclu chapitre 5',
+            'title' => 'titre du chapitre 5',
             'code' => 'code5'
         ],
     ];
