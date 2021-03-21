@@ -65,7 +65,6 @@ section{
 h1 {
     color: $primary;
     font-family: "Alice";
-    //font-size: $font-large;
     font-size: calc(4.5vw + 35px);
     line-height: 80%;
     margin-top : 5vh;
@@ -75,7 +74,7 @@ h1 {
 h2{
     color: $secondary;
     font-family: Alice;
-    font-size: $font-large;
+    font-size: calc(2.5vw + 23px);
 }
 
 p{
