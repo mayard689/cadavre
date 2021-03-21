@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Chapter;
 use App\Entity\Sentence;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,7 +15,13 @@ class SentenceType extends AbstractType
     {
         $builder
             ->add('text')
-            ->add('chapter')
+            ->add('chapter', EntityType::class, [
+                'class' => Chapter::class,
+                'choice_label' => 'title',
+                'multiple'=>false,
+                'expanded'=>false,
+                'label' => 'Ma contribution au chapitre',
+            ])
         ;
     }
 

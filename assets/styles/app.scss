@@ -92,11 +92,27 @@ p{
     }
 }
 
-.text {
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width : 100%;
+}
+
+.code{
+    width : 320px;
+}
+
+textarea.form-control.text {
     width : 100%;
     margin : 50px;
     height : 30vh;
 }
+
+textarea.form-control .text{
+    height : 100%;
+}
+
 /**
 @media only screen and (min-width : 768px) {
     h1 {

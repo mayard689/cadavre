@@ -50,8 +50,7 @@ class CadavreController extends AbstractController
     public function addSentence(String $code, Request $request, SentenceRepository $sentenceRepository, ChapterRepository $chapterRepository): Response
     {
         //get the corresponding chapter
-        /** @var Chapter */
-        $chapter = $chapterRepository->findOneByCode($code);
+        $chapter = $chapterRepository->findOneBy(['code' => $code]);
 
         if (!$chapter) {
             $this->addFlash('danger', 'Un nuage rouge apparait et vous comprenez que le code que vous avez trouvé n\'est pas le bon.');
