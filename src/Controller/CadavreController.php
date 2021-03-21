@@ -82,6 +82,7 @@ class CadavreController extends AbstractController
         return $this->render('cadavre/index.html.twig', [
             'sentences' => $sentenceList,
             'sentence' => $sentence,
+            'chapter' => $chapter,
             'form' => $formView,
         ]);
     }
@@ -89,7 +90,7 @@ class CadavreController extends AbstractController
     /**
      * @Route("/jeu/final", name="final")
      */
-    public function getGlobalText(SentenceRepository $sentenceRepository): Response
+    public function getGlobalText(SentenceRepository $sentenceRepository, ChapterRepository $chapterRepository): Response
     {
         //manage previously entered sentences
         $sentenceList = $sentenceRepository->findBy([], array('chapter' => 'ASC'));
@@ -99,8 +100,11 @@ class CadavreController extends AbstractController
             $sentencesByChapter[$sentence->getChapter()->getId()][] = $sentence;
         }
 
+        $chapters = $chapterRepository->findBy([], array('id' => 'ASC'));
+
         return $this->render('cadavre/final.html.twig', [
             'sentencesByChapter' => $sentencesByChapter,
+            'chapters' => $chapters,
         ]);
     }
 }
