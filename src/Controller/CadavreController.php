@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Sentence;
 use App\Form\CustomerType;
 use App\Form\SentenceType;
+use App\Repository\ChapterRepository;
 use App\Repository\SentenceRepository;
 use Doctrine\DBAL\Types\StringType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -48,8 +49,15 @@ class CadavreController extends AbstractController
     /**
      * @Route("/jeu/chapitre/{code}", name="chapter")
      */
-    public function paragraph(String $code, Request $request, SentenceRepository $sentenceRepository): Response
+    public function paragraph(String $code, Request $request, SentenceRepository $sentenceRepository, ChapterRepository $chapterRepository): Response
     {
+        //get the corresponding chapter
+        $chapter = $chapterRepository->findOneByCode($code);
+
+        if (!$chapter) {
+            return $this->redirectToRoute('cadavre');
+        }
+
         // manage new sentence
         $sentence = new Sentence();
         $sentence->setChapter($code);
