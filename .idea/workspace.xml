@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6c21d66-2cbc-418a-9931-2622d99846d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CadavreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CadavreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/SentenceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SentenceType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadavre/chapterRequest.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/chapterRequest.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadavre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/index.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="b6c21d66-2cbc-418a-9931-2622d99846d9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
