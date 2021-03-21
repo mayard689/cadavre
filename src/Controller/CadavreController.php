@@ -2,24 +2,22 @@
 
 namespace App\Controller;
 
+use App\Entity\Chapter;
 use App\Entity\Sentence;
-use App\Form\CustomerType;
 use App\Form\SentenceType;
 use App\Repository\ChapterRepository;
 use App\Repository\SentenceRepository;
-use Doctrine\DBAL\Types\StringType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\Valid;
 
 class CadavreController extends AbstractController
 {
     /**
      * @Route("/jeu", name="cadavre")
      */
-    public function index(Request $request, SentenceRepository $sentenceRepository): Response
+    public function setChapterCode(Request $request, SentenceRepository $sentenceRepository): Response
     {
         $form = $this->createFormBuilder([
             'chapter' => ""
@@ -49,9 +47,10 @@ class CadavreController extends AbstractController
     /**
      * @Route("/jeu/chapitre/{code}", name="chapter")
      */
-    public function paragraph(String $code, Request $request, SentenceRepository $sentenceRepository, ChapterRepository $chapterRepository): Response
+    public function addSentence(String $code, Request $request, SentenceRepository $sentenceRepository, ChapterRepository $chapterRepository): Response
     {
         //get the corresponding chapter
+        /** @var Chapter */
         $chapter = $chapterRepository->findOneByCode($code);
 
         if (!$chapter) {
@@ -62,6 +61,7 @@ class CadavreController extends AbstractController
         // manage new sentence
         $sentence = new Sentence();
         $sentence->setChapter($code);
+        $sentence->setChapterId($chapter);
         $form = $this->createForm(SentenceType::class, $sentence);
         $form->handleRequest($request);
 
@@ -91,7 +91,7 @@ class CadavreController extends AbstractController
     /**
      * @Route("/jeu/final", name="final")
      */
-    public function final(SentenceRepository $sentenceRepository): Response
+    public function getGlobalText(SentenceRepository $sentenceRepository): Response
     {
         //manage previously entered sentences
         $sentenceList = $sentenceRepository->findBy([], array('chapter' => 'ASC'));

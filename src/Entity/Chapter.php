@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ChapterRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Chapter
      * @ORM\Column(type="string", length=255)
      */
     private $code;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Sentence::class, mappedBy="chapterId", orphanRemoval=true)
+     */
+    private $sentences;
+
+    public function __construct()
+    {
+        $this->sentences = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,36 @@ class Chapter
     public function setCode(string $code): self
     {
         $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Sentence[]
+     */
+    public function getSentences(): Collection
+    {
+        return $this->sentences;
+    }
+
+    public function addSentence(Sentence $sentence): self
+    {
+        if (!$this->sentences->contains($sentence)) {
+            $this->sentences[] = $sentence;
+            $sentence->setChapterId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSentence(Sentence $sentence): self
+    {
+        if ($this->sentences->removeElement($sentence)) {
+            // set the owning side to null (unless already changed)
+            if ($sentence->getChapterId() === $this) {
+                $sentence->setChapterId(null);
+            }
+        }
 
         return $this;
     }

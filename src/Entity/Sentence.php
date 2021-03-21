@@ -27,6 +27,12 @@ class Sentence
      */
     private $chapter;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Chapter::class, inversedBy="sentences")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $chapterId;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +58,18 @@ class Sentence
     public function setChapter(string $chapter): self
     {
         $this->chapter = $chapter;
+
+        return $this;
+    }
+
+    public function getChapterId(): ?chapter
+    {
+        return $this->chapterId;
+    }
+
+    public function setChapterId(?chapter $chapterId): self
+    {
+        $this->chapterId = $chapterId;
 
         return $this;
     }
