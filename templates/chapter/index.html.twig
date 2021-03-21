@@ -10,6 +10,7 @@
             <thead>
             <tr>
                 <th>Numéro</th>
+                <th>Titre</th>
                 <th>Introduction</th>
                 <th>Conclusion</th>
                 <th>Code</th>
@@ -20,6 +21,7 @@
             {% for chapter in chapters %}
                 <tr>
                     <td>{{ chapter.number }}</td>
+                    <td>{{ chapter.title }}</td>
                     <td>{{ chapter.introduction }}</td>
                     <td>{{ chapter.conclusion }}</td>
                     <td>{{ chapter.code }}</td>
