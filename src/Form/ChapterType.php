@@ -12,6 +12,8 @@ class ChapterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('number', null,['label' => 'Numéro'])
+            ->add('title', null,['label' => 'Titre'])
             ->add('introduction')
             ->add('conclusion')
             ->add('code')

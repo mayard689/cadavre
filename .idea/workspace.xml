@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6c21d66-2cbc-418a-9931-2622d99846d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ChapterFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ChapterFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Chapter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChapterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChapterType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SentenceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SentenceType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadavre/final.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/final.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadavre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/chapter/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/chapter/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/chapter/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/chapter/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/chapter/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/chapter/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sentence/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sentence/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sentence/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sentence/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sentence/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sentence/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

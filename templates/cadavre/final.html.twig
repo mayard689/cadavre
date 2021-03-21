@@ -17,7 +17,7 @@
         Voici donc où en est notre loufoque intrigue :
 
         {% for sentences in sentencesByChapter %}
-            <h2>Chapitre {{ loop.index }} - {{ chapters[loop.index0].title }}</h2>
+            <h2>Chapitre {{ chapters[loop.index0].number }} - {{ chapters[loop.index0].title }}</h2>
 
             <ul>
                 {% for sentence in sentences %}

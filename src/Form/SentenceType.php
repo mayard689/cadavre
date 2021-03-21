@@ -14,7 +14,7 @@ class SentenceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('text')
+            ->add('text', null, ['label' =>'Texte'])
             ->add('chapter', EntityType::class, [
                 'class' => Chapter::class,
                 'choice_label' => 'title',

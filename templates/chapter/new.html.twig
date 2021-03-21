@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Chapter{% endblock %}
+{% block title %}Nouveau chapitre{% endblock %}
 
 {% block body %}
-    <h1>Create new Chapter</h1>
+    <section class="container">
+        <h1>Creer un nouveau chapitre</h1>
 
-    {{ include('chapter/_form.html.twig') }}
+        {{ include('chapter/_form.html.twig') }}
 
-    <a href="{{ path('chapter_index') }}">back to list</a>
+        <a href="{{ path('chapter_index') }}">Revenir à la liste des chapitres</a>
+    </section>
+
 {% endblock %}
