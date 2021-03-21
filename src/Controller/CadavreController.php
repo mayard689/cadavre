@@ -76,7 +76,7 @@ class CadavreController extends AbstractController
         $formView = $form->createView();
 
         //manage previously entered sentences
-        $sentenceList = $sentenceRepository->findBy(array("chapter" => $code), array('id' => 'DESC'), 2);
+        $sentenceList = $sentenceRepository->findBy(array("chapter" => $chapter), array('id' => 'DESC'), 2);
         $sentenceList = array_reverse($sentenceList);
 
         return $this->render('cadavre/index.html.twig', [
