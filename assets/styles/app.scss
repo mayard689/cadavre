@@ -51,10 +51,17 @@
 html{
     font-size : 62.5%;
     font-family: "Poppins";
+    //overflow-x: hidden;
 
     body {
         background-color: #EBF1FD;
         font-size : $font-small;
+
+        background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                    url("../pictures/easterForest2-min.jpg");
+        background-repeat : no-repeat;
+        background-size:cover;
+        background-position: right;
     }
 }
 
@@ -88,6 +95,7 @@ p{
         color: $secondary;
         text-shadow: #7DA0B1;
         font-style: italic;
+        font-weight: bold;
     }
 }
 
@@ -115,9 +123,6 @@ textarea.form-control .text{
 #chapter, #sentence{
     width:100%;
 }
-/**
-@media only screen and (min-width : 768px) {
-    h1 {
-        font-size: 6vw;
-    }
-}**/
+
+
+

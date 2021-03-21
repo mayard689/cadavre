@@ -5,28 +5,27 @@
 {% block body %}
 
     <div class="container">
-
         <h1>Réglisse au Pays des Vermeils!</h1>
         <p class="h1-sub">Un cadavre Exquis avec le <span class="cdf">Comité des Fêtes de Villereau</span></p>
+    </div>
 
-        <h2 class="summary">Résumé des chapitres précédents</h2>
-        <p class="introduction">{{ chapter.introduction }}</p>
+        <section class="previous container">
+            <h2 class="summary">Résumé des chapitres précédents</h2>
+            <p class="introduction">{{ chapter.introduction }}</p>
+        </section>
 
-        <h2>Chapitre {{ chapter.number }} : {{ chapter.title }}</h2>
+        <section class="next container">
 
+            <h2>Chapitre {{ chapter.number }} : {{ chapter.title }}</h2>
 
-
-        <section class="previous">
-            <p>Reprenons où en est resté le précédant joueur ...</p>
+            <p>[ Texte caché ...] </p>
 
             {% for sentence in sentences %}
                 <p class="user-entry">{{ sentence.text }}</p>
             {% else %}
                 <p>Comment dire ... hum hum... vous découvrez que vous êtes en fait le premier joueur et qu'il n'y a encore jamais eu de joueur précédent. A vous d'ouvrir le bal !</p>
             {% endfor %}
-        </section>
 
-        <section class="next">
             <p>Et d'aprés vous, que se passe-t-il ensuite ?</p>
 
             {{ form_start(form) }}
@@ -47,6 +46,8 @@
         </section>
 
 
+
     </div>
+
 
 {% endblock %}
