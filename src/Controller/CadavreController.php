@@ -24,7 +24,7 @@ class CadavreController extends AbstractController
         ])
         //add customer contact data
         ->add('chapter', null, [
-            'label'=>'Hep là, dans quel chapitre veux tu écrire ?',
+            'label'=>'Ton code (magique de préférence) :',
             'required'=>true,
             'constraints' => []
         ])
@@ -60,8 +60,7 @@ class CadavreController extends AbstractController
 
         // manage new sentence
         $sentence = new Sentence();
-        $sentence->setChapter($code);
-        $sentence->setChapterId($chapter);
+        $sentence->setChapter($chapter);
         $form = $this->createForm(SentenceType::class, $sentence);
         $form->handleRequest($request);
 
@@ -98,7 +97,7 @@ class CadavreController extends AbstractController
 
         $sentencesByChapter = [];
         foreach($sentenceList as $sentence) {
-            $sentencesByChapter[$sentence->getChapter()][] = $sentence;
+            $sentencesByChapter[$sentence->getChapter()->getId()][] = $sentence;
         }
 
         return $this->render('cadavre/final.html.twig', [

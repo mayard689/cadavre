@@ -53,6 +53,7 @@ class ChapterFixtures extends Fixture
             $chapter = new Chapter();
             $chapter->setIntroduction(self::CHAPTERS[$i]['introduction']);
             $chapter->setConclusion(self::CHAPTERS[$i]['conclusion']);
+            $chapter->setTitle(self::CHAPTERS[$i]['title']);
             $chapter->setCode(self::CHAPTERS[$i]['code']);
 
             $this->addReference('chapter_' .$i, $chapter);

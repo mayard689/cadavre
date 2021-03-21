@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ sentence.id }}</td>
                 <td>{{ sentence.text }}</td>
-                <td>{{ sentence.chapter }}</td>
+                <td>{{ sentence.chapter.id }}</td>
                 <td>
                     <a href="{{ path('sentence_show', {'id': sentence.id}) }}">show</a>
                     <a href="{{ path('sentence_edit', {'id': sentence.id}) }}">edit</a>
