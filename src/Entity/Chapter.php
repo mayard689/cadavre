@@ -35,7 +35,7 @@ class Chapter
     private $code;
 
     /**
-     * @ORM\OneToMany(targetEntity=Sentence::class, mappedBy="chapterId", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Sentence::class, mappedBy="chapter", orphanRemoval=true)
      */
     private $sentences;
 
@@ -102,7 +102,7 @@ class Chapter
     {
         if (!$this->sentences->contains($sentence)) {
             $this->sentences[] = $sentence;
-            $sentence->setChapterId($this);
+            $sentence->setChapter($this);
         }
 
         return $this;
@@ -112,8 +112,8 @@ class Chapter
     {
         if ($this->sentences->removeElement($sentence)) {
             // set the owning side to null (unless already changed)
-            if ($sentence->getChapterId() === $this) {
-                $sentence->setChapterId(null);
+            if ($sentence->getChapter() === $this) {
+                $sentence->setChapter(null);
             }
         }
 

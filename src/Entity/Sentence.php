@@ -23,15 +23,10 @@ class Sentence
     private $text;
 
     /**
-     * @ORM\Column(type="string", length=4)
-     */
-    private $chapter;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Chapter::class, inversedBy="sentences")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $chapterId;
+    private $chapter;
 
     public function getId(): ?int
     {
@@ -50,26 +45,14 @@ class Sentence
         return $this;
     }
 
-    public function getChapter(): ?string
+    public function getChapter(): ?chapter
     {
         return $this->chapter;
     }
 
-    public function setChapter(string $chapter): self
+    public function setChapter(?chapter $chapter): self
     {
         $this->chapter = $chapter;
-
-        return $this;
-    }
-
-    public function getChapterId(): ?chapter
-    {
-        return $this->chapterId;
-    }
-
-    public function setChapterId(?chapter $chapterId): self
-    {
-        $this->chapterId = $chapterId;
 
         return $this;
     }
