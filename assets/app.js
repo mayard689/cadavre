@@ -27,7 +27,7 @@ $(window).on('load resize scroll', function(){
 
     let parallaxContainer1= document.querySelector(".parallax-container1");
 
-    let backgroundShiftValue1=-0.25*pageX;
+    let backgroundShiftValue1=-0.15*pageX;
     if (backgroundShiftValue1 < maxShift) backgroundShiftValue1=maxShift;
     console.log("effective shift :"+backgroundShiftValue1);
 
