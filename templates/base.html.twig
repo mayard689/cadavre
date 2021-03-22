@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html class="xscroll-container">
+    <head >
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -11,7 +11,7 @@
         {% endblock %}
 
     </head>
-    <body>
+    <body class="parallax-container1">
         <div class="flashes">
             {% for category, messages in app.flashes %}
                 {% for message in messages %}

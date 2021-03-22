@@ -57,8 +57,7 @@ html{
         background-color: #EBF1FD;
         font-size : $font-small;
 
-        background: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)),
-                    url("../pictures/forest-3.jpg");
+        background: url("../pictures/forest-23.jpg");
         background-repeat : no-repeat;
         background-size:cover;
         background-position: right;
@@ -95,7 +94,6 @@ p{
 
     .cdf{
         color: $secondary;
-        text-shadow: #7DA0B1;
         font-style: italic;
         font-weight: bold;
     }
@@ -118,7 +116,7 @@ input.form-control, textarea.form-control{
 
 textarea.form-control.text {
     width : 100%;
-    margin-top : 50px;
+    //margin-top : 50px;
     height : 30vh;
 }
 

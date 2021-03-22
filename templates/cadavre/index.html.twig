@@ -26,9 +26,11 @@
                 <p>Comment dire ... hum hum... vous découvrez que vous êtes en fait le premier joueur et qu'il n'y a encore jamais eu de joueur précédent. A vous d'ouvrir le bal !</p>
             {% endfor %}
 
-            <p>Et d'aprés vous, que se passe-t-il ensuite ?</p>
+
 
             {{ form_start(form) }}
+                <p>A vous de raconter ci dessous ce qu'il se passe ensuite</p>
+
                 <div class="form-group w-100 h-100">
                     {{ form_widget(form.text, { 'attr': {'class': 'text'} }) }}
                     {{ form_errors(form.text) }}
