@@ -1,5 +1,11 @@
 @import "_vars";
 
+.main-content{
+  background-color: $secondary-transparent;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .content-card{
   position : relative;
 

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6c21d66-2cbc-418a-9931-2622d99846d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/pictures/cdf-mini.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/_content.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +168,7 @@
       <workItem from="1616142452618" duration="10078000" />
       <workItem from="1616242244325" duration="7930000" />
       <workItem from="1616402169527" duration="3915000" />
-      <workItem from="1616580044530" duration="12920000" />
+      <workItem from="1616580044530" duration="13271000" />
     </task>
     <servers />
   </component>
