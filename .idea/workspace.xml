@@ -2,92 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6c21d66-2cbc-418a-9931-2622d99846d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/cadavre.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contentpage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/montserrat-light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/homepage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/pictures/intro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/showcontent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/_contentCard.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/_eventCard.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/_flashes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/_navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/cadavre.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/homepage.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/showcontent.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/blason.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/logo-transp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pictures/content/2338802-60478ccd0420c791290504.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pictures/content/emptyContentPicture.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pictures/content/fixture_content-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pictures/content/fixture_content-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pictures/content/fixture_content-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pictures/content/fixture_content-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pictures/content/fixture_content-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pictures/content/fixture_content-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ContentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/ContentFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Content.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ContentType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ContentRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/_flashes.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/_footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/_navbar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cadavre-base.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/content/_contentCard.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/content/_contentCard2.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/content/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/content/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/content/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/content/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/content/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/_agenda.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/_content.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/_intro.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools/__genericButton.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools/_adminButton.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools/_adminNotifyButton.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools/_backButton.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools/_deleteButton.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools/_formAdminValidateButton.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools/_formAnonymValidateButton.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools/_h1.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools/_seeButton.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cadavre-exquis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cadavre-exquis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/pictures/cdf-mini.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pictures/easterForest.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pictures/cadavre/easterForest.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pictures/easterForest2-min.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pictures/cadavre/easterForest2-min.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pictures/easterForest2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pictures/cadavre/easterForest2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pictures/forest-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pictures/cadavre/forest-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pictures/forest-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pictures/cadavre/forest-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pictures/forest-23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pictures/cadavre/forest-23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/pictures/forest-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/pictures/cadavre/forest-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/_vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/_vars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadavre/chapterRequest.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/chapterRequest.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadavre/final.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/final.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadavre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadavre/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chapter/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chapter/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chapter/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chapter/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chapter/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sentence/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sentence/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sentence/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sentence/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentence/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/_footer.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +141,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/styles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/pictures" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -232,11 +149,11 @@
       <recent name="$PROJECT_DIR$/assets/pictures/cadavre" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/assets/pictures" />
       <recent name="$PROJECT_DIR$/assets/styles" />
+      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/public/pictures" />
       <recent name="$PROJECT_DIR$/templates/tools" />
-      <recent name="$PROJECT_DIR$/templates/sentence/tools" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -253,7 +170,7 @@
       <workItem from="1616142452618" duration="10078000" />
       <workItem from="1616242244325" duration="7930000" />
       <workItem from="1616402169527" duration="3915000" />
-      <workItem from="1616580044530" duration="11368000" />
+      <workItem from="1616580044530" duration="12920000" />
     </task>
     <servers />
   </component>

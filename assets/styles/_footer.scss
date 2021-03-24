@@ -1,6 +1,8 @@
 @import "_vars";
 
 .footer {
+  $height : 14vw;
+
   padding: $spacing-w-small;
 
   height: $footer-height;
@@ -9,6 +11,21 @@
   color: $thirdary;
 
   border-radius: 0;
+
+  margin-top: $height + 1vw;
+  position:relative;
+
+  &:before{
+
+    position:absolute;
+    top: -$height;
+
+    content:" ";
+    width:100%;
+    height: $height;
+    background: bottom/contain no-repeat url("../pictures/cdf-mini.svg");
+  }
+
 }
 
 .footer li{
