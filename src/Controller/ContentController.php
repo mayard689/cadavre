@@ -26,17 +26,11 @@ class ContentController extends AbstractController
      * @Route("/", name="content_index", methods={"GET"})
      */
     public function index(
-        ContentRepository $contentRepository,
-        NewspaperRepository $newspaperRepository,
-        Newspaper2Repository $newspaper2Repository
+        ContentRepository $contentRepository
     ): Response {
-        $newspapers = $newspaperRepository->findBy(array(), array('date' => 'DESC'));
-        $newspapers2 = $newspaper2Repository->findBy(array(), array('date' => 'DESC'));
 
         return $this->render('content/index.html.twig', [
             'contents' => $contentRepository->findBy([], array('date' => 'DESC')),
-            'newspapers' => $newspapers,
-            'newspapers2' => $newspapers2,
         ]);
     }
 
