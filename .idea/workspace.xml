@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6c21d66-2cbc-418a-9931-2622d99846d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/home/_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/_content.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/_contentCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/_contentCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/_vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/_vars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/content/_contentCard2.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/content/_contentCard2.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +171,8 @@
       <workItem from="1616142452618" duration="10078000" />
       <workItem from="1616242244325" duration="7930000" />
       <workItem from="1616402169527" duration="3915000" />
-      <workItem from="1616580044530" duration="13271000" />
+      <workItem from="1616580044530" duration="16440000" />
+      <workItem from="1616625054595" duration="1166000" />
     </task>
     <servers />
   </component>
@@ -184,10 +188,11 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2613" y="264" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1616325078425" />
-    <state x="616" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1616142580633">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state x="2536" y="386" key="com.intellij.ide.util.TipDialog" timestamp="1616625054209">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="616" y="380" key="com.intellij.ide.util.TipDialog/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1616142580633" />
+    <state x="2536" y="386" key="com.intellij.ide.util.TipDialog/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1616625054209" />
     <state x="2605" y="419" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1616135829636">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

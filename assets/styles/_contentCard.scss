@@ -1,11 +1,68 @@
 @import "_vars";
 
+.card{
+  background-color: transparent;
+  border: none;
+
+  .card-body {
+    min-height: 1px;
+    padding: 0;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 40px;
+  }
+}
+
+.card-img {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  height:150px;
+  object-fit: cover;
+}
+
+.card-img-category {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 1.25rem;
+  border-radius: calc(0.25rem - 1px);
+}
+
+.card-title {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.cat {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.fa-users {
+  margin-left: 1rem;
+}
+
+.card-footer {
+  font-size: 0.8rem;
+}
+///////////////////////////
+
+
 .main-content{
   background-color: $secondary-transparent;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
+.button-panel{
+  margin: $spacing-h-small;
+  padding-left : $spacing-h-small;
+  position : absolute;
+  bottom:0;
+}
+
+///////////////////
 .content-card{
   position : relative;
 
@@ -73,7 +130,7 @@
     }
   }
 
-  .button-panel{
+  .xbutton-panel{
     margin: $spacing-h-small;
     padding-left : $spacing-h-small;
     position : absolute;
