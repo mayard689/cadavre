@@ -1,0 +1,49 @@
+@import "_vars";
+
+.container {
+  padding:0;
+}
+
+.navbar-toggler{
+  color : $light;
+}
+
+.navbar{
+  background : $secondary-transparent;
+  color : $light;
+  border-radius : 0;
+}
+
+
+#navbarNav{
+  justify-content: center;
+
+  .dropdown-menu{
+    background-color : $secondary-transparent;
+
+    a{
+      color : $light;
+      font-size : $font-size;
+
+      &:hover{
+        color : $secondary;
+      }
+    }
+  }
+}
+
+.nav-item{
+  display: inline-block;
+  list-style: none;
+
+  &:hover{
+    transform: scale(1.05);
+  }
+
+  .nav-link{
+    color: $light;
+    font-size : $navbarLinkFontSize;
+  }
+}
+
+

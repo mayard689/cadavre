@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ content.title }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+    {{ encore_entry_script_tags('showcontent') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('showcontent') }}
+{% endblock %}
+
+{% block body %}
+    <section class="container">
+
+        {%  include 'tools/_h1.html.twig' with {'titleStart' : content.title, 'titleEnd' : ''} %}
+
+        <div class="main-picture-wrapper container">
+            <img class="main-picture" src="/pictures/content/{{ content.picture ?? 'emptyContentPicture.jpg' }}" alt="{{ content.title }}">
+        </div>
+
+        <p class="text">
+            {{ content.text }}
+        </p>
+
+        <p class="detail">Publié le {{ content.date ? content.date|date('d-m-Y') : '' }} dans la catégorie {{ content.category ? content.category.name : 'Aucune catégorie n\'est définie' }}</p>
+        {% if content.writer is not empty %}
+            <p class="detail">par {{content.writer}}</p>
+        {% endif %}
+
+        {% include 'tools/_backButton.html.twig' with {
+            'text': 'Revenir à la liste des articles',
+            'path': path('content_index_category', {'id':content.category.id})
+        } %}
+
+        {% include 'tools/_adminButton.html.twig' with {
+            'path': path('content_edit', {'id': content.id})
+        } %}
+
+        {% include'tools/_deleteButton.html.twig' with {
+            'path': path('content_delete', {'id': content.id}),
+            'tokenIndex' : content.id
+        } %}
+    </section>
+
+    <section class="container">
+        {%  include 'tools/_h1.html.twig' with {'titleStart' : 'QUELQUES ARTICLES', 'titleEnd' : 'AU HASARD'} %}
+
+        <div class="card-deck">
+            {% for content in contents %}
+                {% include('content/_contentCard2.html.twig') %}
+            {% endfor %}
+        </div>
+
+        {% include 'tools/_backButton.html.twig' with {
+            'text': 'Revenir à la liste des articles',
+            'path': path('content_index')
+        } %}
+    </section>
+{% endblock %}

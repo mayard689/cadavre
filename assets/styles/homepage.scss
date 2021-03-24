@@ -1,0 +1,111 @@
+@import "_vars";
+@import "_eventCard";
+@import "_contentCard";
+
+section:first-of-type{
+    margin-top:0;
+    margin-left:0;
+}
+
+.dark{
+  background-color : $secondary-transparent;
+  box-sizing: border-box;
+}
+
+.introduction{
+  align-items: end;
+  justify-content:center;
+  display: flex;
+  position:relative;
+
+  .button-panel{
+  }
+
+  width:100vw;
+  height:60vh;
+  object-fit : cover;
+
+  background-attachment: fixed;
+
+  background-color: #FFFFFFCC;
+  background: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.3)
+              ),
+              center/cover no-repeat url("../pictures/intro.jpg");
+
+  .text-wrapper{
+    position:absolute;
+    width : 100%;
+    text-align: center;
+    top:30%;
+    font-family: BodoniBold;
+    font-size : $titleFontSize;
+    color:$light;
+  }
+}
+
+.btn{
+  margin : 10px;
+}
+
+.container .row {
+  justify-content: center;
+}
+
+.widget{
+  padding : 15px;
+}
+
+.widget-picture-wrapper{
+  background-color:$secondary-transparent;
+  min-width : 100%;
+  max-width : 100%;
+  height : 0;
+  padding : 0 0 100% 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.widget-picture{
+  object-fit: cover;
+  width : 100%;
+  height : 100%;
+  position : absolute;
+  background : transparent;//$secondary;
+  color : $light;
+
+  &:hover{
+    transform : scale(1.05);
+  }
+
+  padding : 2em;
+  padding-top : 1em;
+}
+
+.weather{
+  height : 95%;
+}
+
+.ccf {
+  width: 100%;
+  height : auto;
+  color : white;
+}
+
+.svg-label{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  left: 0;
+  right: 0;
+  font-weight: bold;
+  color : $light;
+}
+
+#newsletterModal {
+  label {
+    margin-left : 15px;
+    margin-right : 15px;
+  }
+}

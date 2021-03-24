@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Céer un article{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+    {{ encore_entry_script_tags('formContent') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('formContent') }}
+{% endblock %}
+
+{% block body %}
+    <section class="container">
+        {%  include 'tools/_h1.html.twig' with {'titleStart' : 'CREER UN', 'titleEnd' : 'ARTICLE'} %}
+
+        {{ include('content/_form.html.twig') }}
+
+    </section>
+{% endblock %}

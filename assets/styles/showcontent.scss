@@ -1,0 +1,11 @@
+@import "_vars";
+@import "_contentCard";
+
+.main-picture-wrapper{
+  rwidth: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: $spacing-h-large;
+  margin-bottom: $spacing-h-large;
+
+}

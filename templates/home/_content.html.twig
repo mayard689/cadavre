@@ -1,0 +1,23 @@
+<section class="container-fluid">
+    <div class="container">
+
+        {%  include 'tools/_h1.html.twig' with {'titleStart' : 'A la', 'titleEnd' : 'une'} %}
+
+        <div class="row">
+            <div class="row col-6">
+                {%  include 'content/_contentCard2.html.twig' with {
+                    'content' : mainContent,
+                    'width' : 'col-12'
+                } %}
+            </div>
+
+            <div class="row col-6">
+                {% for content in contents %}
+                    {% include 'content/_contentCard2.html.twig' %}
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+</section>

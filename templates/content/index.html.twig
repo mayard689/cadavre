@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+    {{ encore_entry_script_tags('contentpage') }}
+    {{ encore_entry_script_tags('reportpage') }}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('contentpage') }}
+    {{ encore_entry_link_tags('reportpage') }}
+{% endblock %}
+
+{% block body %}
+
+
+
+    <section class="container">
+
+        {%  include 'tools/_h1.html.twig' with {'titleStart' : 'TOUS VOS', 'titleEnd' : 'ARTICLES'} %}
+
+        {% include 'tools/_backButton.html.twig' with {
+            'text': 'Revenir à la page d\'accueil',
+            'path': path('home')
+        } %}
+
+        {% include 'tools/_adminButton.html.twig' with {
+            'text': 'Créer un nouvel article',
+            'path': path('content_new')
+        } %}
+
+        <div class="card-deck">
+            {% for content in contents %}
+                    {{ include('content/_contentCard.html.twig') }}
+            {% else %}
+                    Aucun article d'information n'est enregistré à l'heure actuelle.
+            {% endfor %}
+        </div>
+
+        {% include 'tools/_backButton.html.twig' with {
+            'text': 'Revenir à la page d\'accueil',
+            'path': path('home')
+        } %}
+
+        {% include 'tools/_adminButton.html.twig' with {
+            'text': 'Créer un nouvel article',
+            'path': path('content_new')
+        } %}
+    </section>
+
+{% endblock %}

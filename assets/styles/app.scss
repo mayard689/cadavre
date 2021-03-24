@@ -1,10 +1,8 @@
-@import "_vars.scss";
-@import "~bootstrap/scss/bootstrap.scss";
-
-@font-face {
-    font-family: 'Alice';
-    src: url('../fonts/Playlist Script.otf') format('opentype');
-}
+@import "_vars";
+@import "_navbar";
+@import "_footer";
+@import "_flashes";
+@import "~bootstrap/scss/bootstrap";
 
 @font-face {
     font-family: 'Lato';
@@ -16,117 +14,244 @@
     src: url(../fonts/Poppins-Regular.ttf) format('truetype');
 }
 
-:root {
-    --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --teal: #009688;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --light: $light;
-    --dark:$dark;
-    --primary : $primary;
+@font-face {
+    font-family: 'BodoniBold';
+    src: url(../fonts/bodoni-bold.ttf) format('truetype');
+}
 
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
+@font-face {
+    font-family: 'sourceProSsSerif';
+    src: url(../fonts/source-sans-pro.ttf) format('truetype');
+}
 
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+@font-face {
+    font-family: 'SourceSerifPro';
+    src: url(../fonts/SourceSerifPro-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/montserrat-light.ttf) format('truetype');
+}
+
+* {
+    margin : 0;
+    padding : 0;
+    border-radius : 3px;
 }
 
 html{
     font-size : 62.5%;
-    font-family: "Poppins";
-    //overflow-x: hidden;
+    min-height : 100%;
+}
 
-    body {
-        background-color: #EBF1FD;
-        font-size : $font-small;
+body {
+    background : $background;
+    font-family: 'Source Sans';
+    font-size : $font-size;
+    font-color : $dark;
+}
 
-        background: url("../pictures/forest-23.jpg");
-        background-repeat : no-repeat;
-        background-size:cover;
-        background-position: right;
+.sticky-block{
+    position:sticky;
+    top:0;
+    z-index : 1000;
+}
 
-        min-height : 100vh;
+.navbar-title{
+    padding-left: 0.5rem;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: $titleFontSize;
+    font-weight : bold;
+
+    color: $secondary-transparent;
+
+    line-height: 100%;
+
+    .site-title{
+        margin :0;
+        padding :0;
+        font-family: 'SourceSerifPro';
+    }
+
+    .site-subtitle{
+        margin :0;
+        padding :0;
+        font-size : $font-size-big;
     }
 }
 
-section{
-    margin-top : 7vh;
+.bi{
+    margin-top: -3px;
+}
+
+section, section.container {
+    margin-top : $spacing-h-small;
+    margin-bottom : $spacing-h-small;
+
+    padding-top : $spacing-h-normal;
+    padding-bottom : $spacing-h-small;
+}
+
+a:hover{
+    color : $thirdary;
 }
 
 h1 {
+    max-width : 100%;
+    min-width : 100%;
+
+    $thisFontSize : $font-size-verybig;
+
     color: $primary;
-    font-family: "Alice";
-    font-size: calc(4.5vw + 35px);
-    line-height: 100%;//80% is police is Alice in Wonderland
-    margin-top : 5vh;
-    margin-bottom: 0;
-}
 
-h2{
-    color: $secondary;
-    font-family: Alice;
-    font-size: calc(2.5vw + 23px);
-}
+    margin-top: 0;
+    margin-bottom: $spacing-h-small;
+    font-size: $thisFontSize;
+    position: relative;
 
-p{
-    font-family: "Poppins";
-    font-size : $font-normal;
-}
+    font-family: 'Montserrat', sans-serif;
 
-.h1-sub{
+    .titleStyle{
 
-    .cdf{
-        color: $secondary;
-        font-style: italic;
-        font-weight: bold;
+        font-family: 'BodoniBold', sans-serif;
+        padding-left:0;
+
+        font-size : $thisFontSize;
+        font-weight : 900;
+
+        color: $primary;
     }
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width : 100%;
+.dark h1{
+    .titleStyle{
+        color : $primary-transparent;
+    }
 }
 
-input.form-control, textarea.form-control{
-    font-size : $font-small;
+h2{
+    margin : 0;
+    font-size : $font-size-big;
+    font-family: 'Poppins';
 }
 
-.code{
-    width : 320px;
+hr{
+    margin-top:0;
 }
 
-textarea.form-control.text {
-    width : 100%;
-    //margin-top : 50px;
-    height : 30vh;
+li{
+    margin-left : $spacing-w-small;
 }
 
-textarea.form-control .text{
-    height : 100%;
+.light {
+    color:$light;
 }
 
-#chapter, #sentence{
-    width:100%;
+.detail{
+    color: grey;
+    font-style: italic;
+    font-size: $font-size;
+}
+
+.button-panel{
+    display:flex;
+    justify-content: space-around;
+    justify-self: flex-end;
+}
+
+.btn{
+    font-size: $font-size;
+    font-family: 'Lato';
+}
+
+.padding{
+    padding : 15px;
 }
 
 
 
+.row {
+    justify-content: center;
+}
+
+.corn1 {
+    padding : 10px;
+    animation: 3s ease-in-out infinite wind1;
+    animation-direction: alternate;
+}
+
+.corn2 {
+    position : relative;
+    right : 75px;
+    bottom : 10px;
+    transform: rotate(25deg);
+
+    animation: 2.5s ease-in-out infinite wind2;
+    animation-direction: alternate;
+}
+
+.corn3 {
+    padding : 10px;
+    animation: 3.5s ease-in-out infinite wind3;
+    animation-direction: alternate;
+}
+
+.logo {
+    padding : 10px;
+    height : 100px;
+    max-height : 25vh;
+}
+
+.corn1, .corn2, .corn3 {
+    height : 100px;
+    max-height : 15vh;
+}
+
+.custom-switch .custom-control-label::before {
+    top: 0.7rem;
+}
+.custom-switch .custom-control-label::after {
+    top: calc( 2px + 0.7rem );
+}
+
+.form-control{
+    font-size: $font-size;
+}
+
+@keyframes wind3 {
+    0% {
+        transform: skew(-5deg) translateX(5px);
+    }
+
+    100% {
+        transform: skew(0deg);
+    }
+}
+
+@keyframes wind2 {
+    0% {
+        transform: rotate(25deg) skew(+2deg) translateX(-2px);
+    }
+
+    100% {
+        transform: rotate(25deg) skew(0deg);
+    }
+}
+
+@keyframes wind1 {
+    0% {
+        transform: skew(-4deg) translateX(4px);
+    }
+
+    100% {
+        transform: skew(0deg);
+    }
+}
+
+.month-group{
+    font-size: 50px;
+    margin-top : $spacing-h-small;
+    margin-bottom : 0;
+}

@@ -1,0 +1,46 @@
+@import "_vars";
+
+.content{
+  margin-top : $spacing-h-large;
+  margin-bottom : $spacing-h-large;
+
+  z-index : -1;
+}
+
+.card-deck{
+
+}
+
+.card-deck .content-card {
+  min-width : 90%;
+  margin-bottom : $spacing-h-large;
+  margin-top : $spacing-h-large;
+
+  background : transparent;
+
+  border : none;
+
+  flex-direction: row;
+  &:nth-of-type(2n){
+    flex-direction: row-reverse;
+  }
+
+  justify-self: center;
+
+  .btn{
+    width: max-content;
+  }
+
+  .content-card-body{
+    padding-left: 3rem;
+    padding-right : 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .card-img-top{
+    width : 40%;
+  }
+}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier l'article{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+    {{ encore_entry_script_tags('formContent') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('formContent') }}
+{% endblock %}
+
+{% block body %}
+    <section class="container">
+        {%  include 'tools/_h1.html.twig' with {'titleStart' : 'MODIFIER', 'titleEnd' : 'L\'ARTICLE'} %}
+
+        {{ include('content/_form.html.twig', {'button_label': 'Update'}) }}
+
+        {% include'tools/_deleteButton.html.twig' with {
+            'path': path('content_delete', {'id': content.id}),
+            'tokenIndex' : content.id
+        } %}
+
+    </section>
+{% endblock %}

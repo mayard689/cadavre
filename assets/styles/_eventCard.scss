@@ -1,0 +1,84 @@
+.event-card {
+
+  box-shadow: $shadow;
+
+  min-height : 300px;
+  max-height : 300px;
+
+  margin : $spacing-h-small;
+
+  .date{
+    position : absolute;
+    min-width : 30%;
+    height : 100%;
+
+    display : flex;
+    flex-direction : column;
+
+    font-weight : bold;
+
+    color : $thirdary;
+    background-color:$secondary-transparent;;
+    border-radius : 0;
+
+    z-index :1;
+
+    .day{
+      font-size : $font-size-big;
+      text-align: center;
+      margin : 0;
+      margin-top:50%;
+    }
+
+    .hour{
+      font-size : $font-size;
+      text-align: center;
+      margin : 0;
+    }
+  }
+
+  position : relative;
+
+  .img-wrapper {
+    height : 300px;
+    overflow: hidden;
+
+    .event-img{
+      object-fit: cover;
+      height : 100%;
+      width:100%;
+      transition: transform 1.0s;
+
+      &:hover{
+        transform: scale(1.1);
+        z-index:0;
+      }
+
+    }
+
+  }
+
+  .card-body{
+    position : absolute;
+    bottom : 5%;
+    left : +15%;
+
+    z-index :2;
+
+    box-shadow: $shadow;
+    background-color : $light;
+    border : thin solid black;
+    border-radius : 3px;
+
+    width : 80%;
+
+    padding : 5px;
+  }
+}
+
+.event-restricted {
+  .date{
+    background-color : $warning;
+    color:$secondary-transparent;
+  }
+}

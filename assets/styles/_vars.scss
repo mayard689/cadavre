@@ -1,11 +1,52 @@
+$titleFontSize : calc(2rem + 2vw); //11rem;
+$navbarLinkFontSize : 20px;
+
+$footer-height : auto;
 
 
-$primary : #f5356b;
-$secondary : #03889c;
-//$secondary : #3276fa;
-$thirdary : #DDF64D;
-$fourthary : #9BC01C;
 
-$font-small: 1.6rem;
-$font-normal: 2.0rem;
-$font-large : 10.0rem;
+
+//$primary: #cc0f0f;//#D72D85;
+$primary: #b9262d;
+$primary-transparent : #b92c41EE;
+$secondary: #642247;//404e69;//#009688;
+$secondary-transparent: #642247ee;
+$thirdary : #f0ce2f;//#ffc107
+$thirdary-transparent : #f0ce2fDD;//#19b099DD;
+
+$dark: #303030;
+$light: #F8F8F8;
+$background: $light ;
+
+$various1 : rgba(255,105,54,.9);
+$various2 : rgba(144,210,87,.9);
+$various3 : #1aafa8;
+$various4 : #0080a3;
+
+$medium : #A0A0A0;
+
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+
+$shadow: #aaa;
+
+$shadow: 5px 5px 5px #aaa8;
+
+$font-size-small : 1.4rem;
+$font-size: 1.6rem;
+$font-size-big : 2.2rem;
+$font-size-verybig : 3.2rem;
+
+$spacing-h-small : 2.5vh;
+$spacing-h-normal : 5vh;
+$spacing-h-large : 10vh;
+
+$spacing-w-small : 2.5vw;
+$spacing-w-normal : 5vw;
+$spacing-w-large : 10vw;
+
+
+
+
