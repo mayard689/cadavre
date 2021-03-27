@@ -59,6 +59,22 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             village pour faire croire à la mégère qu\'e\'fin elle trouve un amoureux',
             'chapter' => 'chapter_3',
         ],
+        10 => [
+            'text' => '',
+            'chapter' => 'chapter_4',
+        ],
+        11 => [
+            'text' => '',
+            'chapter' => 'chapter_5',
+        ],
+        10 => [
+            'text' => '',
+            'chapter' => 'chapter_6',
+        ],
+        11 => [
+            'text' => '',
+            'chapter' => 'chapter_7',
+        ],
 
     ];
 
