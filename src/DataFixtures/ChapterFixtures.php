@@ -66,7 +66,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 5',
             'title' => 'La Carotarêve',
-            'code' => 'code5',
+            'code' => 'code6',
             'number' => 5
         ],
         6 => [
@@ -75,7 +75,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 5',
             'title' => 'Contre la montre magique',
-            'code' => 'code5',
+            'code' => 'code7',
             'number' => 5
         ],
         7 => [
@@ -84,7 +84,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 5',
             'title' => 'Et ensuite',
-            'code' => 'code5',
+            'code' => 'code8',
             'number' => 5
         ],
     ];
