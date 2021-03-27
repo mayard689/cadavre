@@ -21,7 +21,7 @@
             <p>[ Texte caché ...] </p>
 
             {% for sentence in sentences %}
-                <p class="user-entry">{{ sentence.text }}</p>
+                <p class="user-entry">Un précédent joueur a écrit : <quote>{{ sentence.text }}</quote></p>
             {% else %}
                 <p>Comment dire ... hum hum... vous découvrez que vous êtes en fait le premier joueur et qu'il n'y a encore jamais eu de joueur précédent. A vous d'ouvrir le bal !</p>
             {% endfor %}
