@@ -67,7 +67,7 @@ class ChapterFixtures extends Fixture
             'conclusion' => 'conclu chapitre 5',
             'title' => 'La Carotarêve',
             'code' => 'code6',
-            'number' => 5
+            'number' => 6
         ],
         6 => [
             'introduction' => 'Lewis a croqué un champignon en chocolat. Erreur, tous les champignons de la clairière se mettent à gonfler, ils deviennent énormes.
@@ -76,7 +76,7 @@ class ChapterFixtures extends Fixture
             'conclusion' => 'conclu chapitre 5',
             'title' => 'Contre la montre magique',
             'code' => 'code7',
-            'number' => 5
+            'number' => 7
         ],
         7 => [
             'introduction' => 'Lewis et Rebecca sont enfin revenus à l\'école. Ils ont caché la Carotarêve dans le potager. 
@@ -85,7 +85,7 @@ class ChapterFixtures extends Fixture
             'conclusion' => 'conclu chapitre 5',
             'title' => 'Et ensuite',
             'code' => 'code8',
-            'number' => 5
+            'number' => 8
         ],
     ];
 
