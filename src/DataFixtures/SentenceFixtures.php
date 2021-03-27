@@ -67,11 +67,11 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             'text' => '',
             'chapter' => 'chapter_5',
         ],
-        10 => [
+        12 => [
             'text' => '',
             'chapter' => 'chapter_6',
         ],
-        11 => [
+        13 => [
             'text' => '',
             'chapter' => 'chapter_7',
         ],

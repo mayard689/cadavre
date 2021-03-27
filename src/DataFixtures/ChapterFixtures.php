@@ -64,7 +64,7 @@ class ChapterFixtures extends Fixture
             'introduction' => 'Lewis, Rebecca et le Lapin sont enfin parvenus à la clairière magique et ont découvert la Carotarêve.
             Mais c\'est quoi au juste une Carotarêve ? A quoi ressemble t\'elle ? A quoi sert elle ?
             ',
-            'conclusion' => 'conclu chapitre 5',
+            'conclusion' => 'conclu chapitre 6',
             'title' => 'La Carotarêve',
             'code' => 'code6',
             'number' => 6
@@ -73,7 +73,7 @@ class ChapterFixtures extends Fixture
             'introduction' => 'Lewis a croqué un champignon en chocolat. Erreur, tous les champignons de la clairière se mettent à gonfler, ils deviennent énormes.
             Le Lapin leur explique qu\'ils vont exploser, vite, il faut partir avant que tout se termine ne fondue au chocolat ! Le Lapin dévoile sa mystérieuse montre à gousset.
             ',
-            'conclusion' => 'conclu chapitre 5',
+            'conclusion' => 'conclu chapitre 7',
             'title' => 'Contre la montre magique',
             'code' => 'code7',
             'number' => 7
@@ -82,7 +82,7 @@ class ChapterFixtures extends Fixture
             'introduction' => 'Lewis et Rebecca sont enfin revenus à l\'école. Ils ont caché la Carotarêve dans le potager. 
             Que vont ils en faire ? Restera-t-elle un secret ou d\'autres enfants vont ils la découvir ?
             ',
-            'conclusion' => 'conclu chapitre 5',
+            'conclusion' => 'conclu chapitre 8',
             'title' => 'Et ensuite',
             'code' => 'code8',
             'number' => 8
