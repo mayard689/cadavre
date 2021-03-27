@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6c21d66-2cbc-418a-9931-2622d99846d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/_contentCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/_contentCard.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ContentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/content/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/content/index.html.twig" afterDir="false" />
     </list>
@@ -170,7 +172,7 @@
       <workItem from="1616242244325" duration="7930000" />
       <workItem from="1616402169527" duration="3915000" />
       <workItem from="1616580044530" duration="16440000" />
-      <workItem from="1616625054595" duration="1435000" />
+      <workItem from="1616625054595" duration="2130000" />
     </task>
     <servers />
   </component>
