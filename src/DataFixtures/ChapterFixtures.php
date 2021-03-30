@@ -10,8 +10,8 @@ class ChapterFixtures extends Fixture
 {
     const CHAPTERS = [
         0 => [
-            'introduction' => 'Lewis est un petit garçon qui s\'est réveillé apres avoir rêve d\'un étrange Lapin parlant, 
-            de champignons en chocolat, d\'une cascade. Ce qui a le plus marqué Lewis, c\'est la carotarêve mais il n\'arrive pas à s\'en rappeler.
+            'introduction' => 'Lewis est un petit garçon qui s\'est réveillé apres avoir rêvé d\'un étrange Lapin parlant, 
+            de champignons en chocolat, d\'une cascade... Ce qui a le plus marqué Lewis, c\'est la Carotarêve mais il n\'arrive pas à s\'en rappeler.
             Alors qu\'il y pense en prenant son petit déjeuner, tout lui donne une impression de déja vu.
             ',
             'conclusion' => 'conclu chapitre 1',
