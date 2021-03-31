@@ -47,7 +47,7 @@ html{
 
 body {
     background : $background;
-    font-family: 'Source Sans';
+    font-family: 'Poppins';
     font-size : $font-size;
     font-color : $dark;
 }
@@ -106,7 +106,7 @@ h1 {
 
     color: $primary;
 
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: $spacing-h-small;
     font-size: $thisFontSize;
     position: relative;

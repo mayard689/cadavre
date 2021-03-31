@@ -4,14 +4,14 @@
         {%  include 'tools/_h1.html.twig' with {'titleStart' : 'A la', 'titleEnd' : 'une'} %}
 
         <div class="row">
-            <div class="row col-6 ">
+            <div class="row col-12 col-md-6 ">
                 {%  include 'content/_contentCard2.html.twig' with {
                     'content' : mainContent,
                     'width' : 'col-12 main-content'
                 } %}
             </div>
 
-            <div class="row col-6">
+            <div class="row col-12 col-md-6 ">
                 {% for content in contents %}
                     {% include 'content/_contentCard2.html.twig' %}
                 {% endfor %}
