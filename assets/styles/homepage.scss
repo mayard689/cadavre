@@ -19,6 +19,7 @@ section:first-of-type{
   position:relative;
 
   .button-panel{
+    display:none;
   }
 
   width:100vw;
@@ -35,7 +36,7 @@ section:first-of-type{
               center/cover no-repeat url("../pictures/intro.jpg");
 
   .text-wrapper{
-    position:absolute;
+    //position:absolute;
     width : 100%;
     text-align: center;
     top:30%;

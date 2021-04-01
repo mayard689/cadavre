@@ -49,6 +49,10 @@ class CadavreController extends AbstractController
      */
     public function addSentence(String $code, Request $request, SentenceRepository $sentenceRepository, ChapterRepository $chapterRepository): Response
     {
+        if($code == "notReady") {
+            return $this->render('cadavre/notReady.html.twig');
+        }
+
         //get the corresponding chapter
         $chapter = $chapterRepository->findOneBy(['code' => $code]);
 
