@@ -95,10 +95,15 @@ body {
     margin:auto;
     font-size : $font-size-big;
     font-family: 'Poppins';
-    text-transform: capitalize;
+
     background-color: $primary-transparent;
-    width: max-content;
+    max-width: 100%;
+    white-space: pre-wrap;
     border-radius : 0px;
+}
+
+.maj{
+    text-transform: uppercase;
 }
 
 section, section.container {
