@@ -12,113 +12,64 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
     const SENTENCES = [
         0 => [
             'text' => 'Une forme floue flotte et se déforme. Allongée ou arrondie, orange ou bleue, elle ondule dans un brouillard. 
-            Un rayon de Soleil... un oiseau qui chante..., le réveil qui sonne...qui sonne ! L\'école !. C\'est aprés un réveil tourmenté que Lewis prenait son petit déjeuner.',
+            Un rayon de Soleil... un oiseau qui chante..., le réveil qui sonne...qui sonne ! L\'école !. Un bond hors du lit, un saut dans des vêtements. 
+            C\'est aprés un réveil tourmenté qu\'Alice prenait son petit déjeuner en repensant à son rêve.',
             'chapter' => 'chapter_0',
         ],
 
         1 => [
-            'text' => 'A l\'école, toujours troublé par la Carotarêve, Lewis décide d\'en parler à son amie Rebecca. C\'est alors que sous une feuille surgit...un lapin...un minuscule lapin...rose...tout rose.',
+            'text' => 'A l\'école, toujours troublé par la Carotarêve, Alice croise son amie Rebecca devant l\oeuf géant 
+            préparé par le comité des fêtes. Alorts qu\'il lui parle de son rêve bizarre, le lapin planté devant l\'oeuf s\'anime et se met à parler.
+            Un lapin...un minuscule lapin...blanc...tout blanc...qui parle. C\'est peu commun',
             'chapter' => 'chapter_1',
-        ],
-        2 => [
-            'text' => 'Les couleurs de tout ce qui l\'entourait devenaient psychedeliques.',
-            'chapter' => 'chapter_2',
         ],
 
         3 => [
-            'text' => 'Revenant à la réalité, Lewis dit au Lapin : "Je veux savoir ce qu\'est la Carotarêve.". 
+            'text' => 'Revenant à la réalité, Alice dit au Lapin : "Je veux savoir ce qu\'est la Carotarêve.". 
             Ce à quoi la lapin répondit "Tu veux savoir ce qu\'est la Carotarêve, je ne peux te le dire. Mais je peux te 
             montrer le chemin vers la forêt multicolore". C\'est alors que les nuages se mirents à onduler, parfois orange 
-            ou bleu, parfois allongés ou arrondis. Quand Lewis et Rebecca comprirent ce qui leur arrivait, ils étaient dans une forêt peu banale.',
+            ou bleu, parfois allongés ou arrondis. Le lapin ajoutait d\'une voix déformée en regardant sa montre à gousset 
+            "Le moment venu, faites attention à ne pas être en retard". 
+            Quand Lewis et Rebecca comprirent ce qui leur arrivait, ils étaient dans une forêt peu banale... comment dire ? Multicolore.',
             'chapter' => 'chapter_3',
         ],
         4 => [
-            'text' => 'Rebecca marcha sur un oeuf ! Loin de sa casser, il se mit à rouler et Rebacca de glisser. Apres plusieurs tours sur elle même, elle fini sa cascade dans la rivière. Lewis sauta pour aller l\'aider.',
+            'text' => 'Rebecca marcha sur un oeuf ! Une oeuf aussi dur devait être fait de béton ! sans se casser, il se 
+            mit à rouler et Rebacca de glisser. Apres plusieurs tours sur elle même, elle fini sa cascade dans la rivière. Alice sauta pour aller l\'aider.
+            Poissons volants, bulles géantes, algues écarlates et pêcheurs fous, cette rivière fourmillait d\'étrangetés.',
             'chapter' => 'chapter_4',
         ],
         5 => [
-            'text' => 'Mais l\'horreur guettait.... Une grosse dame en cycliste vint à passer par là l\'œil mesquin]',
+            'text' => 'Sortis de la rivière on ne sait trop comment, nos amis fure séché en un rien de temps par des abeilles-seches-cheveux venu leur prêter main forte. 
+            Reprenant leur calme peu à peu, Alice, rebecca et le lapin blanc remarquèrent les 3 portes devant eux avec ce petit panneaux 
+            "Préférez vous avoir le choix ou l\'embarras ? Peu importe si vous ne trouvez pas la Carotarêve, c\'est elle qui vous cherchera.".
+            Rebecca s\'écria alors : "je sais quelle porte utiliser !"',
             'chapter' => 'chapter_5',
         ],
         6 => [
-            'text' => 'puis dans un nuage violet elle disparut. Pop !',
+            'text' => 'Reprenant leur chemin, les 3 explorateurs avancent dans la forêt. Le chemin est sinueux et chaque 
+            virage leur fait découvrir, entre feuilles et branches, des créatures peu communes : un champs de cartes de treffle, 
+            des abeilles en as de pique, ou des singes qui se tiennent à carreau". Mais finalement, alors que la foret semblait interminable, tout disparut soudainement.
+            Le lapin blanc aussi un sourcil et leur dit "nous y voilà. Nous sommes dans la clairière magique". Un peu plus 
+            loin se trouvait un nid et dans le nid, aucun doute, la Carotarêve était là. Bizarre, obscure et sombre.',
             'chapter' => 'chapter_6',
         ],
         7 => [
-            'text' => 'Cette mégère en sandale se mit à crier si fort que les oreilles de Lewis en tomberent',
+            'text' => 'Satisfaite de sa découverte tant convoitée mais quand même bien fatiguée, Alice ramassa un champignon 
+            métallique par terre. Elle l\'éplucha puis croqua dedans, profitant de cet exquise saveur chocolatée. 
+            Au moment même ou on entendit le croquement chocolaté, le sol se mit à trembler. Les champignons de la 
+            clairière se mirent à gonfler lentement. La montre du lapin de mit à sonner dans un "dring" qui rappelait le 
+            réveil d\'Alice. "Vite, je vous avais prévenu, il est l\'heure de ne pas être en retard. Partons avant que tous 
+            ça ne se termine en fondue au chocolat". Alice attrape la Carotarêve et se met à courir.',
             'chapter' => 'chapter_7',
         ],
         8 => [
-            'text' => 'Lewis pense...',
-            'chapter' => 'chapter_0',
+            'text' => 'C\'est alors que les nuages se mirents à onduler, parfois oranges 
+            ou bleus, parfois allongés ou arrondis. Une voix déformée leur dit, "Faites attention à ne pas être en retard". 
+            Alice et Rebecca étaient revenues à l\'école. Ne sachant que faire de la Carotarêve, elle décidèrent de la cacher parmi les plantations. 
+            Lucy et Honorine passèrent par là sans remarquer la Carotarêve.',
+            'chapter' => 'chapter_8',
         ],
-
-        9 => [
-            'text' => 'C\'est ici que commençait le premier chapitre, entre le vert des feuilles de charmes et le chocolaté 
-            des troncs de chênes. Cette balade en forêt aurait dû être normale, mais en y prêtant attention, on devinait ça 
-            et là des boules multicolores. Encore et encore, plus on y regardait plus on en voyait...partout.',
-            'chapter' => 'chapter_0',
-        ],
-
-        10 => [
-            'text' => 'C\'est alors que sous une feuille surgit Lewis...un lapin...un minuscule lapin...rose...tout rose. 
-            Lewis croqua dans un champignon puis se mit à grandir.',
-            'chapter' => 'chapter_0',
-        ],
-        11 => [
-            'text' => 'Les couleurs de tout ce qui l\'entourait devenaient psychedeliques.',
-            'chapter' => 'chapter_0',
-        ],
-
-        12 => [
-            'text' => 'Puis, tiraillé entre l\'audace et la curiosité, je décidais d\'attraper un champignon multicolore 
-            et de l\'éplucher. C\'est bien ce que je pensais, sous ses couleurs métalliques le champignon était fait de chocolat. 
-            Le plus onctueux chocolat que j\'ai jamais mangé.',
-            'chapter' => 'chapter_0',
-        ],
-        13 => [
-            'text' => 'Après une bouchée, je senti un picotement dans les pieds. Puis le picotement gagna les jambes le 
-            ventre et la tête. C\'est alors que dans un soudain nuage violet je rétrécit, brusquement, en faisant un petit \'pop\'.',
-            'chapter' => 'chapter_0',
-        ],
-        14 => [
-            'text' => 'Mais l\'horreur guettait.... Une grosse dame en cycliste vint à passer par là l\'œil mesquin]',
-            'chapter' => 'chapter_1',
-        ],
-        15 => [
-            'text' => 'puis dans un nuage violet elle disparut. Pop !',
-            'chapter' => 'chapter_1',
-        ],
-        16 => [
-            'text' => 'Cette mégère en sandale se mit à crier si fort que les oreilles de Lewis en tomberent',
-            'chapter' => 'chapter_2',
-        ],
-        17 => [
-            'text' => 'T\'inquiètes, j\'ai du scotch, je vais te rabouter. En revanche je comment faire rapetisser ce rouleaux ?',
-            'chapter' => 'chapter_2',
-        ],
-        18 => [
-            'text' => 'Un gros chat de Cheshire vit la scène... Bien malin il se décida à se transformer en idiot du 
-            village pour faire croire à la mégère qu\'e\'fin elle trouve un amoureux',
-            'chapter' => 'chapter_3',
-        ],
-        19 => [
-            'text' => '',
-            'chapter' => 'chapter_4',
-        ],
-        20 => [
-            'text' => '',
-            'chapter' => 'chapter_5',
-        ],
-        21 => [
-            'text' => '',
-            'chapter' => 'chapter_6',
-        ],
-        22 => [
-            'text' => '',
-            'chapter' => 'chapter_7',
-        ],
-
     ];
 
 

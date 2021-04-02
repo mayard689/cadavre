@@ -10,9 +10,9 @@ class ChapterFixtures extends Fixture
 {
     const CHAPTERS = [
         0 => [
-            'introduction' => 'Lewis est un petit garçon qui s\'est réveillé apres avoir rêvé d\'un étrange Lapin parlant, 
-            de champignons en chocolat, d\'une cascade... Ce qui a le plus marqué Lewis, c\'est la Carotarêve mais il n\'arrive pas à s\'en rappeler.
-            Alors qu\'il y pense en prenant son petit déjeuner, tout lui donne une impression de déja vu.
+            'introduction' => 'Alice est une petite fille qui s\'est réveillée apres avoir rêvé d\'un étrange Lapin parlant, 
+            de champignons en chocolat, d\'une cascade... Ce qui a le plus marqué Alice, c\'est la Carotarêve mais elle n\'arrive pas à s\'en rappeler.
+            Alors qu\'elle y pense en prenant son petit déjeuner, tout lui donne une impression de déja vu.
             ',
             'conclusion' => 'conclu chapitre 1',
             'title' => 'Une impression de déjà vu',
@@ -21,8 +21,8 @@ class ChapterFixtures extends Fixture
         ],
 
         1 => [
-            'introduction' => 'A l\école, Lewis a parlé de la Carotarêve à son amie Rebecca. Un Lapin parlant est apparut 
-            dans un arbre, il a l\'air d\'en savoir beaucoup au sujet de la Carotarêve et parle d\'une clairière magique. Mais que sait il ?
+            'introduction' => 'A l\école, Alice a parlé de la Carotarêve à son amie Rebecca. Un Lapin parlant est apparut 
+            devant une oeuf geant bleu avec un noeud rose, il a l\'air d\'en savoir beaucoup au sujet de la Carotarêve et parle d\'une clairière magique. Mais que sait il ?
             ',
             'conclusion' => 'conclu chapitre 2',
             'title' => 'Le Lapin parlant de l\'école',
@@ -32,7 +32,7 @@ class ChapterFixtures extends Fixture
 
         2 => [
             'introduction' => 'Aprés que le Lapin ait révélé que la Carotarêve se trouvait dans la forêt multicolore, 
-            les nuages sont devenus eux aussi multicolores. Lewis, Rebecca et le Lapin ont alors été transportés dans une 
+            les nuages sont devenus eux aussi multicolores. Alice, Rebecca et le Lapin ont alors été transportés dans une 
             forêt...décidémment pas comme les autres.
             ',
             'conclusion' => 'conclu chapitre 3',
@@ -42,7 +42,7 @@ class ChapterFixtures extends Fixture
         ],
 
         3 => [
-            'introduction' => 'Rebecca est tombée dans une rivière, Lewis et le lapin ont sautés pour essayer de l\'aider. 
+            'introduction' => 'Rebecca est tombée dans une rivière, Alice et le lapin ont sautés pour essayer de l\'aider. 
             Mais pourquoi y a t\'il autant de courant ? Est ce à cause d\'une cascade ? Vite ! Mais cette rivière cache bien des secrets.
             ',
             'conclusion' => 'conclu chapitre 4',
@@ -61,7 +61,7 @@ class ChapterFixtures extends Fixture
             'number' => 5
         ],
         5 => [
-            'introduction' => 'Lewis, Rebecca et le Lapin sont enfin parvenus à la clairière magique et ont découvert la Carotarêve.
+            'introduction' => 'Alice, Rebecca et le Lapin sont enfin parvenus à la clairière magique et ont découvert la Carotarêve.
             Mais c\'est quoi au juste une Carotarêve ? A quoi ressemble t\'elle ? A quoi sert elle ?
             ',
             'conclusion' => 'conclu chapitre 6',
@@ -70,8 +70,8 @@ class ChapterFixtures extends Fixture
             'number' => 6
         ],
         6 => [
-            'introduction' => 'Lewis a croqué un champignon en chocolat. Erreur, tous les champignons de la clairière se mettent à gonfler, ils deviennent énormes.
-            Le Lapin leur explique qu\'ils vont exploser, vite, il faut partir avant que tout se termine ne fondue au chocolat ! Le Lapin dévoile sa mystérieuse montre à gousset.
+            'introduction' => 'Alice a croqué un champignon en chocolat. Erreur, tous les champignons de la clairière se mettent à gonfler, ils deviennent énormes.
+            Le Lapin leur explique qu\'ils vont exploser, vite, il faut partir avant que tout se termine ne fondue au chocolat ! Le Lapin montre sa mystérieuse montre à gousset.
             ',
             'conclusion' => 'conclu chapitre 7',
             'title' => 'Contre la montre magique',
@@ -79,7 +79,7 @@ class ChapterFixtures extends Fixture
             'number' => 7
         ],
         7 => [
-            'introduction' => 'Lewis et Rebecca sont enfin revenus à l\'école. Ils ont caché la Carotarêve dans le potager. 
+            'introduction' => 'Alice et Rebecca sont enfin revenus à l\'école. Ils ont caché la Carotarêve dans le potager. 
             Que vont ils en faire ? Restera-t-elle un secret ou d\'autres enfants vont ils la découvir ?
             ',
             'conclusion' => 'conclu chapitre 8',
