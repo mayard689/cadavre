@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions légales{% endblock %}
+
+{% set email='cdf.villereau@gmail.com' %}
+{% set representant='Virginie Boutillier' %}
+{% set name='Comité des Fêtes de Villereau' %}
+
+{% block body %}
+    <section class="container">
+        <h1>Mentions légales</h1>
+
+        <h2>Identification</h2>
+        <p>Le site {{ name }}, est édité par le {{ name }}, 11 rue Meslée, 45170 VILLEREAU.</p>
+
+        <p>Le {{ name }} est représenté par {{representant}}, en sa qualité de présidente.</p>
+
+        <p>Adresse mail : {{email}}</p>
+
+        <p>Le site {{ name }}, est hébergé par OVH , dont le siège social est situé 2, rue Kellermann, 59100 Roubaix</p>
+
+        <ul>Tout utilisateur de Villereau.fr détient des droits d'accès, de modification et de suppression des données personnelles le concernant qu’il peut faire exercer :
+            <li>par email en s’adressant à {{email}}</li>
+            <li>par courrier en s’adressant à {{ name }}, 11 rue Meslée, 45170 VILLEREAU</li>
+        </ul>
+
+        <p>Reportez vous à la section « politique de confidentialité » pour plus d’information sur la manière dont nous gérons les données échangées sur ce site.</p>
+
+        <h2>Conditions d'utilisations</h2>
+
+        En utilisant le site {{ name }}, vous vous engagez à ne pas utiliser le site pour enfreindre la loi. En particulier et de manière non exhaustives :
+        - Vous vous engagez à ne pas utiliser le site {{ name }} pour générer des courriels indésirables ou pour réaliser des attaques électroniques.
+        - Vous vous engagez à ne pas publier de textes discriminatoires, à caractères sexuels, d'appels à la violence
+
+        Vous pourrez être tenu pour responsable des infractions que vous pourriez commettre sur le site.
+
+    </section>
+{% endblock %}
