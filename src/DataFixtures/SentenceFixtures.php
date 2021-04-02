@@ -24,7 +24,7 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             'chapter' => 'chapter_1',
         ],
 
-        3 => [
+        2 => [
             'text' => 'Revenant à la réalité, Alice dit au Lapin : "Je veux savoir ce qu\'est la Carotarêve.". 
             Ce à quoi la lapin répondit "Tu veux savoir ce qu\'est la Carotarêve, je ne peux te le dire. Mais je peux te 
             montrer le chemin vers la forêt multicolore". C\'est alors que les nuages se mirents à onduler, parfois orange 
@@ -33,20 +33,20 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             Quand Lewis et Rebecca comprirent ce qui leur arrivait, ils étaient dans une forêt peu banale... comment dire ? Multicolore.',
             'chapter' => 'chapter_3',
         ],
-        4 => [
+        3 => [
             'text' => 'Rebecca marcha sur un oeuf ! Une oeuf aussi dur devait être fait de béton ! sans se casser, il se 
             mit à rouler et Rebacca de glisser. Apres plusieurs tours sur elle même, elle fini sa cascade dans la rivière. Alice sauta pour aller l\'aider.
             Poissons volants, bulles géantes, algues écarlates et pêcheurs fous, cette rivière fourmillait d\'étrangetés.',
             'chapter' => 'chapter_4',
         ],
-        5 => [
+        4 => [
             'text' => 'Sortis de la rivière on ne sait trop comment, nos amis fure séché en un rien de temps par des abeilles-seches-cheveux venu leur prêter main forte. 
             Reprenant leur calme peu à peu, Alice, rebecca et le lapin blanc remarquèrent les 3 portes devant eux avec ce petit panneaux 
             "Préférez vous avoir le choix ou l\'embarras ? Peu importe si vous ne trouvez pas la Carotarêve, c\'est elle qui vous cherchera.".
             Rebecca s\'écria alors : "je sais quelle porte utiliser !"',
             'chapter' => 'chapter_5',
         ],
-        6 => [
+        5 => [
             'text' => 'Reprenant leur chemin, les 3 explorateurs avancent dans la forêt. Le chemin est sinueux et chaque 
             virage leur fait découvrir, entre feuilles et branches, des créatures peu communes : un champs de cartes de treffle, 
             des abeilles en as de pique, ou des singes qui se tiennent à carreau". Mais finalement, alors que la foret semblait interminable, tout disparut soudainement.
@@ -54,7 +54,7 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             loin se trouvait un nid et dans le nid, aucun doute, la Carotarêve était là. Bizarre, obscure et sombre.',
             'chapter' => 'chapter_6',
         ],
-        7 => [
+        6 => [
             'text' => 'Satisfaite de sa découverte tant convoitée mais quand même bien fatiguée, Alice ramassa un champignon 
             métallique par terre. Elle l\'éplucha puis croqua dedans, profitant de cet exquise saveur chocolatée. 
             Au moment même ou on entendit le croquement chocolaté, le sol se mit à trembler. Les champignons de la 
@@ -63,7 +63,7 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             ça ne se termine en fondue au chocolat". Alice attrape la Carotarêve et se met à courir.',
             'chapter' => 'chapter_7',
         ],
-        8 => [
+        7 => [
             'text' => 'C\'est alors que les nuages se mirents à onduler, parfois oranges 
             ou bleus, parfois allongés ou arrondis. Une voix déformée leur dit, "Faites attention à ne pas être en retard". 
             Alice et Rebecca étaient revenues à l\'école. Ne sachant que faire de la Carotarêve, elle décidèrent de la cacher parmi les plantations. 

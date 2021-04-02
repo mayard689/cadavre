@@ -19,7 +19,6 @@ class ChapterFixtures extends Fixture
             'code' => 'code1',
             'number' => 1
         ],
-
         1 => [
             'introduction' => 'A l\école, Alice a parlé de la Carotarêve à son amie Rebecca. Un Lapin parlant est apparut 
             devant une oeuf geant bleu avec un noeud rose, il a l\'air d\'en savoir beaucoup au sujet de la Carotarêve et parle d\'une clairière magique. Mais que sait il ?
@@ -29,7 +28,6 @@ class ChapterFixtures extends Fixture
             'code' => 'code2',
             'number' => 2
         ],
-
         2 => [
             'introduction' => 'Aprés que le Lapin ait révélé que la Carotarêve se trouvait dans la forêt multicolore, 
             les nuages sont devenus eux aussi multicolores. Alice, Rebecca et le Lapin ont alors été transportés dans une 
