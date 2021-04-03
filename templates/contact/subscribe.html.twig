@@ -8,48 +8,54 @@
 {% endblock %}
 
 {% block body %}
+    <div class="container">
+        
+        <h1>Adhésions</h1>
 
-    <section class="container">
-        <h2>Pourquoi adhérer ?</h2>
-        <p>Des projets ? Des idées ! Ou simplement l'envie de participer à la vie communale ... Rejoignez nous ;-)</p>
+        <section>
 
-        <p>Tout le monde est bienvenu au Comité des Fêtes de Villereau et l'adhésion est gratuite. Les mineurs peuvent également adhérer à partir de 15 avec une autorisation écrite de leurs parents</p>
+            <h2>Pourquoi adhérer ?</h2>
 
-        <ul>En adhérant vous avez les avantages suivants :
-            <li>Vous êtes conviés à l'assemblée générale et aux réunions pour définir le programme de l'année.</li>
-            <li>Vous êtes tenu au courant de l'avancmeent et du programme détaillé des différents évenements</li>
-            <li>Vous êtes conviés aux apéritifs de remerciements pour les personnes qui aident à réaliser les manifestations</li>
-            <li>Vous pouvez candidater pour intégrer le bureau et peut être emmener le CdF encore plus loin !</li>
-        </ul>
+            <p>Des projets ? Des idées ! Ou simplement l'envie de participer à la vie communale ... Rejoignez nous ;-)</p>
 
-        <p>L'objet du comité des fêtes, déclaré en préfecture, est de rassembler les habitants de Villereau à travers la réalisation de manifestations évenementielles.
-        Les temps forts de l'année sont la fête estivale et la fête de fin d'année. Pour se financer, le comité des fêtes de Villereau réalise des évenements de moindre importance parmi lesquel on trouve : vente ephémères, vente d'objets divers (madeleines, thé, objets cousus...), organisations de repas à thêmes, concours...</p>
+            <p>Tout le monde est bienvenu au Comité des Fêtes de Villereau et l'adhésion est gratuite. Les mineurs peuvent également adhérer à partir de 15 avec une autorisation écrite de leurs parents</p>
 
-        <p>Des lors que votre idée entre dans cette description, le comité des fêtes mettra ses moyens à disposition pour la réaliser.</p>
-    </section>
+            <ul>En adhérant vous avez les avantages suivants :
+                <li>Vous êtes conviés à l'assemblée générale et aux réunions pour définir le programme de l'année.</li>
+                <li>Vous êtes tenu au courant de l'avancmeent et du programme détaillé des différents évenements</li>
+                <li>Vous êtes conviés aux apéritifs de remerciements pour les personnes qui aident à réaliser les manifestations</li>
+                <li>Vous pouvez candidater pour intégrer le bureau et peut être emmener le CdF encore plus loin !</li>
+            </ul>
 
-    <section class="container">
-        <h2>Toujours partant !</h2>
-        <p>Pour adhérer il vous suffit de remplir le formulaire ci dessous. Si vous avec des questions, vous pouvez nous contacter en appuyant ici : <a class="btn- btn-sm btn-primary" href="{{ path('contact') }}">Contactez-nous</a></p>
-        <div class="form-container">
-            {{ form_start(form) }}
-                {{ form_row(form.name) }}
-                {{ form_row(form.email) }}
-                {{ form_row(form.phone) }}
-                {{ form_row(form.street) }}
-                {{ form_row(form.zipcode) }}
-                {{ form_row(form.city) }}
+            <p>L'objet du comité des fêtes, déclaré en préfecture, est de rassembler les habitants de Villereau à travers la réalisation de manifestations évenementielles.
+            Les temps forts de l'année sont la fête estivale et la fête de fin d'année. Pour se financer, le comité des fêtes de Villereau réalise des évenements de moindre importance parmi lesquel on trouve : vente ephémères, vente d'objets divers (madeleines, thé, objets cousus...), organisations de repas à thêmes, concours...</p>
 
-                <p class="mt-5">Si vous avez une suggestion, appuyez ici ;-) </p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseMessage" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Hey ! J'ai déjà une suggestion !
-                </a>
-                <div class="collapse mt-5" id="collapseMessage">{{ form_row(form.message) }}</div>
+            <p>Des lors que votre idée entre dans cette description, le comité des fêtes mettra ses moyens à disposition pour la réaliser.</p>
+        </section>
 
-                <br/>
-                <button class="btn btn-primary mt-5">{{ button_label|default('Envoyer') }}</button>
-            {{ form_end(form) }}
+        <section>
+            <h2>Toujours partant !</h2>
+            <p>Pour adhérer il vous suffit de remplir le formulaire ci dessous. Si vous avec des questions, vous pouvez nous contacter en appuyant ici : <a class="btn- btn-sm btn-primary" href="{{ path('contact') }}">Contactez-nous</a></p>
+            <div class="form-container">
+                {{ form_start(form) }}
+                    {{ form_row(form.name) }}
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.phone) }}
+                    {{ form_row(form.street) }}
+                    {{ form_row(form.zipcode) }}
+                    {{ form_row(form.city) }}
 
-        </div>
-    </section>
+                    <p class="mt-5">Si vous avez une suggestion, appuyez ici ;-) </p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseMessage" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Hey ! J'ai déjà une suggestion !
+                    </a>
+                    <div class="collapse mt-5" id="collapseMessage">{{ form_row(form.message) }}</div>
+
+                    <br/>
+                    <button class="btn btn-primary mt-5">{{ button_label|default('Envoyer') }}</button>
+                {{ form_end(form) }}
+
+            </div>
+        </section>
+    </div>
 {% endblock %}
