@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block page %}
+
+    <div class="text-center error-content">
+
+        <div class="error">
+            <h1 class="h1">{{company_name}}</h1>
+            {% block errorText %}{% endblock %}
+            <a class="btn btn-primary" href="{{ path('home') }}">Revenir à l'accueil</a>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}

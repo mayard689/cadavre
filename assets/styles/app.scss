@@ -106,6 +106,13 @@ body {
     text-transform: uppercase;
 }
 
+.error-content{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 section, section.container {
     margin-top : $spacing-h-small;
     margin-bottom : $spacing-h-small;

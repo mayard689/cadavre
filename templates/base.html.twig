@@ -21,29 +21,30 @@
 
     </head>
     <body>
+        {% block page %}
+            <div class="container-fluid d-flex flex-row navbar-title">
+                <img class="logo d-none d-sm-inline" src="/logo-transp.png" alt="Logo du comité des fêtes de villereau">
+                <div>
+                    <p class="site-title"> COMITE DES FETES DE VILLEREAU</p>
+                    <p class="site-subtitle">Evenementiel sur Villereau depuis 1989 ;-)</p>
+                </div>
 
-        <div class="container-fluid d-flex flex-row navbar-title">
-            <img class="logo d-none d-sm-inline" src="/logo-transp.png" alt="Logo du comité des fêtes de villereau">
-            <div>
-                <p class="site-title"> COMITE DES FETES DE VILLEREAU</p>
-                <p class="site-subtitle">Evenementiel sur Villereau depuis 1989 ;-)</p>
             </div>
 
-        </div>
 
 
+            <div class="sticky-block">
+                {% include '_navbar.html.twig' %}
+                {% include '_flashes.html.twig' %}
+            </div>
 
-        <div class="sticky-block">
-            {% include '_navbar.html.twig' %}
-            {% include '_flashes.html.twig' %}
-        </div>
+            {% block body %}{% endblock %}
 
-        {% block body %}{% endblock %}
+            {% include '_footer.html.twig' %}
 
-        {% include '_footer.html.twig' %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            {% block javascripts %}
+                {{ encore_entry_script_tags('app') }}
+            {% endblock %}
         {% endblock %}
     </body>
 </html>
