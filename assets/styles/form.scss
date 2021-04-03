@@ -1,7 +1,10 @@
 @import "_vars";
 
 .form-container{
-  padding : $spacing-w-small;
+  padding-top : $spacing-w-small;
+  padding-bottom : $spacing-w-small;
+  max-width: 500px;
+  margin: auto;
 }
 
 textarea.form-control{

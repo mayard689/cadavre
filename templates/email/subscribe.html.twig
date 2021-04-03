@@ -1,0 +1,18 @@
+{% extends 'email.html.twig' %}
+
+{% block object %}
+    La dmeande d'ashésion suivante vient de vous être envoyée :
+{% endblock %}
+
+{% block main %}
+
+    <li>nom : {{ name }}</li>
+
+    <li>email : {{ emailAddress }}</li>
+    <li>téléphone : {{ phone }}</li>
+    <li>adresse :
+        <br/>{{ street }}
+        <br/>{{  zipcode }} {{ city }}</li>
+
+    <li>suggestion : {{ message }}</li>
+{% endblock %}
