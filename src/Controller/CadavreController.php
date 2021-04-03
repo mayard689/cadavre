@@ -66,7 +66,7 @@ class CadavreController extends AbstractController
 
         if (!$chapter) {
             $this->addFlash('danger', 'Un nuage rouge apparait et vous comprenez que le code que vous avez trouvé n\'est pas le bon.');
-            return $this->redirectToRoute('cadavre');
+            return $this->redirectToRoute('home');
         }
 
         // manage new sentence
@@ -82,7 +82,7 @@ class CadavreController extends AbstractController
 
             $this->addFlash('success', 'Une poule verte traverse le chemin et vous fait savoir que votre merveilleuse idée est entrée dans le grand mécanisme. Cot\' Cot\' Cot\' ');
 
-            return $this->redirectToRoute('cadavre');
+            return $this->redirectToRoute('home');
         }
 
         $formView = $form->createView();

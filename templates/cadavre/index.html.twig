@@ -3,17 +3,18 @@
 {% block title %}La mystérieuse Carotarêve{% endblock %}
 
 {% block body %}
-
     <div class="container">
         <h1>Chapitre {{ chapter.number }} : {{ chapter.title }}</h1>
-    </div>
 
-        <section class="previous container">
+        <a class="btn btn-lg btn-primary mt-5" href=""{{ path('home') }}> Revenir à l'accueil </a>
+
+
+        <section class="previous">
             <h2 class="summary">Résumé de ce qu'il s'est passé avant</h2>
             <p class="introduction">{{ chapter.introduction }}</p>
         </section>
 
-        <section class="next container">
+        <section class="next">
 
             <h2>Poursuivez cet extrait du texte</h2>
 
@@ -24,8 +25,6 @@
             {% else %}
                 <p>Comment dire ... hum hum... vous découvrez que vous êtes en fait le premier joueur et qu'il n'y a encore jamais eu de joueur précédent. A vous d'ouvrir le bal !</p>
             {% endfor %}
-
-
 
             {{ form_start(form) }}
                 <p class="mt-5">Racontez ce qu'il se passe ensuite dans le cadre ci dessous :</p>
@@ -44,11 +43,7 @@
                     <button class="btn btn-lg btn-primary"> Enregistrer </button>
                 </div>
             {{ form_end(form) }}
+
         </section>
-
-
-
     </div>
-
-
 {% endblock %}
