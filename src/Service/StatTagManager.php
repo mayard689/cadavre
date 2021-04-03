@@ -8,9 +8,8 @@ use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Symfony\Component\Validator\Constraints\Date;
 
-class statTagManger
+class StatTagManager
 {
     private $params;
     private $statTagRepository;
@@ -27,6 +26,7 @@ class statTagManger
         $this->statTagRepository = $statTagRepository;
         $this->session = $session;
         $this->entityManager = $entityManager;
+        $session->start();
     }
 
     public function addTag(String $name)

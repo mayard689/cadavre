@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\SubscribeType;
+use App\Service\StatTagManager;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,8 +16,14 @@ class SubscribeController extends AbstractController
     /**
      * @Route("/nous-rejoindre", name="subscribe")
      */
-    public function index(Request $request, MailerInterface $mailer): Response
-    {
+    public function index(
+        Request $request,
+        MailerInterface $mailer,
+        StatTagManager $tagManager
+    ): Response {
+        //record a tag while loading this page
+        $tagManager->addTag("subscribePageLoading");
+
         $form = $this->createForm(SubscribeType::class);
 
         $form->handleRequest($request);

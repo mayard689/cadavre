@@ -7,6 +7,7 @@ use App\Entity\Sentence;
 use App\Form\SentenceType;
 use App\Repository\ChapterRepository;
 use App\Repository\SentenceRepository;
+use App\Service\StatTagManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,8 +48,15 @@ class CadavreController extends AbstractController
     /**
      * @Route("/jeu/chapitre/{code}", name="chapter")
      */
-    public function addSentence(String $code, Request $request, SentenceRepository $sentenceRepository, ChapterRepository $chapterRepository): Response
-    {
+    public function addSentence(
+        String $code, Request $request,
+        SentenceRepository $sentenceRepository,
+        ChapterRepository $chapterRepository,
+        StatTagManager $tagManager
+    ): Response {
+        //record a tag while loading this page
+        $tagManager->addTag("cadavrePageLoading-".$code);
+
         if($code == "notReady") {
             return $this->render('cadavre/notReady.html.twig');
         }
@@ -94,8 +102,14 @@ class CadavreController extends AbstractController
     /**
      * @Route("/jeu/final", name="final")
      */
-    public function getGlobalText(SentenceRepository $sentenceRepository, ChapterRepository $chapterRepository): Response
-    {
+    public function getGlobalText(
+        SentenceRepository $sentenceRepository,
+        ChapterRepository $chapterRepository,
+        StatTagManager $tagManager
+    ): Response {
+        //record a tag while loading this page
+        $tagManager->addTag("finalCadavrePageLoading");
+
         //manage previously entered sentences
         $sentenceList = $sentenceRepository->findBy([], array('chapter' => 'ASC'));
 

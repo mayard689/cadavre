@@ -6,7 +6,9 @@ namespace App\Controller;
 //use App\Form\NewsletterEmailType;
 //use App\Repository\EventRepository;
 //use App\Repository\NewsletterEmailRepository;
+use App\Entity\StatTag;
 use App\Repository\ContentRepository;
+use App\Service\StatTagManager;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,7 +26,8 @@ class HomeController extends AbstractController
     public function index(
         Request $request,
         //EventRepository $eventRepository,
-        ContentRepository $contentRepository
+        ContentRepository $contentRepository,
+        StatTagManager $tagManager
         //MailerInterface $mailer
     ): Response {
 /**
@@ -76,6 +79,9 @@ class HomeController extends AbstractController
         $contents= $contentRepository->findComming(5,0);
         $mainContent = $contents[0];
         unset($contents[0]);
+
+        //record a tag while loading this page
+        $tagManager->addTag("homePageLoading");
 
         return $this->render('home/index.html.twig', [
             'contents' => $contents,

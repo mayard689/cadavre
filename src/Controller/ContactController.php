@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
+use App\Service\StatTagManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,8 +21,14 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request, MailerInterface $mailer)
-    {
+    public function index(
+        Request $request,
+        StatTagManager $tagManager,
+        MailerInterface $mailer
+    ) {
+        //record a tag while loading this page
+        $tagManager->addTag("contactPageLoading");
+
         $form = $this->createForm(ContactType::class);
 
         $form->handleRequest($request);
