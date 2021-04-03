@@ -1,0 +1,42 @@
+@import "_vars";
+
+.form-container{
+  padding : $spacing-w-small;
+}
+
+textarea.form-control{
+  height : 50vh;
+}
+
+form .btn{
+  text-align: right;
+}
+
+form .input-number{
+  width : 60px;
+  font-size: $font-size;
+}
+
+.quantity-group{
+  margin-top : -0.375rem;
+
+  button{
+    border : none;
+  }
+}
+
+.sub-form{
+
+  padding-bottom : $spacing-h-small;
+}
+
+.toggler {
+  margin-left : -2.25rem;
+}
+
+.custom-switch .custom-control-label::before {
+  top: 0.7rem;
+}
+.custom-switch .custom-control-label::after {
+  top: calc( 2px + 0.7rem );
+}

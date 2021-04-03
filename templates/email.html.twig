@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        {% block stylesheets %} {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <header>
+
+            </header>
+            <div class="container" style="
+                background-color: #F0EFEA;
+                width:100%;
+                height:100%;
+                padding:100px;
+            ">
+                {% block main %}
+                    <p style="color:#EF9F9F;">
+                        {% block intro %}Bonjour,{% endblock %}
+                    </p>
+
+                    <p style="font-family: 'Julius Sans One'; font-family:'Roboto'; color:#EF9F9F;">
+                        {% block object %}{% endblock %}
+                    </p>
+
+                    <p>{% block message %}{% endblock %}</p>
+
+                    <p>{% block regards %}Cordialement{% endblock %}</p>
+
+                    <p style="color:#000000;">
+                        {% block conclusion %}{{ company_name }}{% endblock %}
+                    </p>
+                {% endblock %}
+            </div>
+
+            <footer>
+                {% block footer %}{% endblock %}
+
+                {% if secret is defined %}
+                    <p>Si vous ne souhaitez plus recevoir nos messages, vous pouvez vous désinscrire grâce au bouton ci dessous :</p>
+                    <a style="
+                    font-size: 1.0rem;
+                    color: #333333;
+                    border-radius: 5px;
+                    background-color: #EF9F9F;
+                    border-color: #EF9F9F;
+                    text-decoration: none;
+                    padding: 0.25rem 0.5rem;
+                "
+                       href="{{ app.request.schemeAndHttpHost }}{{ path('confirmStopPub', {'secret':secret}) }}">
+                        Me désinscrire
+                    </a>
+                {% endif %}
+            </footer>
+
+        {% endblock %}
+    </body>
+</html>

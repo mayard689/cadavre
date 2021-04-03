@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dites nous tout{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {{ encore_entry_link_tags('form') }}
+{% endblock %}
+
+{% block body %}
+    <section>
+        <div class="form-container container">
+
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
+            {{ form_end(form) }}
+
+        </div>
+    </section>
+{% endblock %}

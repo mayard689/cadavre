@@ -25,6 +25,7 @@ Encore
     .addEntry('homepage', './assets/homepage.js')
     .addEntry('contentpage', './assets/contentpage.js')
     .addEntry('showcontent', './assets/showcontent.js')
+    .addStyleEntry('form', './assets/styles/form.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
