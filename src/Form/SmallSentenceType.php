@@ -2,16 +2,14 @@
 
 namespace App\Form;
 
-use App\Entity\Chapter;
-use App\Entity\Sentence;
-use Doctrine\DBAL\Types\StringType;
 use Doctrine\DBAL\Types\TextType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class SmallSentenceType extends AbstractType
 {
@@ -19,7 +17,18 @@ class SmallSentenceType extends AbstractType
     {
         $builder
             ->add('text', TextareaType::class, ['label' =>'Texte'])
-            ->add('previous', HiddenType::class, ['label' =>'previousSecret'])
+            ->add('pseudo', null, [
+                'label' =>'Votre pseudonyme (facultatif)',
+                'constraints' => [
+                    new Length([
+                        'max' => 254,
+                        'maxMessage' => 'Votre pseudo doit faire moins de 254 caractères',
+                    ]),
+                ]
+            ])
+            ->add('previous', HiddenType::class, [
+                'label' =>'previousSecret',
+            ])
         ;
     }
 

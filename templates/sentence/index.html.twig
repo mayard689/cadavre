@@ -11,6 +11,7 @@
             <tr>
                 <th>Id</th>
                 <th>Texte</th>
+                <th>Pseudo</th>
                 <th>Chapitre</th>
                 <th>Id du précédent</th>
                 <th>Actions</th>
@@ -21,6 +22,7 @@
                 <tr>
                     <td>{{ sentence.id }}</td>
                     <td>{{ sentence.text }}</td>
+                    <td>{{ sentence.pseudo }}</td>
                     <td>{{ sentence.chapter.number }}</td>
                     <td>{{ sentence.previous.id??'no previous' }}</td>
                     <td>

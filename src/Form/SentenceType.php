@@ -15,6 +15,7 @@ class SentenceType extends AbstractType
     {
         $builder
             ->add('text', null, ['label' =>'Texte'])
+            ->add('pseudo', null, ['label' =>'Pseudonyme'])
             ->add('previous', EntityType::class, [
                 'class' => Sentence::class,
                 'choice_label' => 'id',

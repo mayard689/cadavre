@@ -13,12 +13,20 @@
                 <td>{{ sentence.id }}</td>
             </tr>
             <tr>
-                <th>Text</th>
+                <th>Texte</th>
                 <td>{{ sentence.text }}</td>
             </tr>
             <tr>
-                <th>Chapter</th>
+                <th>Pseudo</th>
+                <td>{{ sentence.pseudo }}</td>
+            </tr>
+            <tr>
+                <th>Chapitre</th>
                 <td>{{ sentence.chapter.id }} - {{ sentence.chapter.title }}</td>
+            </tr>
+            <tr>
+                <th>Précédent</th>
+                <td>{{ sentence.previous.id }} </td>
             </tr>
             </tbody>
         </table>

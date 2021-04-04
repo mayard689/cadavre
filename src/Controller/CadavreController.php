@@ -12,6 +12,7 @@ use App\Service\StatTagManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CadavreController extends AbstractController
@@ -53,7 +54,8 @@ class CadavreController extends AbstractController
         String $code, Request $request,
         SentenceRepository $sentenceRepository,
         ChapterRepository $chapterRepository,
-        StatTagManager $tagManager
+        StatTagManager $tagManager,
+        SessionInterface $session
     ): Response {
         //record a tag while loading this page
         $tagManager->addTag("cadavrePageLoading-".$code);
@@ -80,7 +82,16 @@ class CadavreController extends AbstractController
             $lastSentence = $sentenceList[0];
         };
 
-        $form = $this->createForm(SmallSentenceType::class, ['text' => '', 'previous' => $lastSentence->getSecret()]);
+        $pseudo = '';
+        if (!is_null($session->get('pseudo'))) {
+            $pseudo = $session->get('pseudo');
+        }
+
+        $form = $this->createForm(SmallSentenceType::class, [
+            'text' => '',
+            'previous' => $lastSentence->getSecret(),
+            'pseudo' => $pseudo
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -95,9 +106,13 @@ class CadavreController extends AbstractController
                 return $this->redirectToRoute('home');
             }
 
+            //store pseudo to session
+            $session->set('pseudo', $sentenceData['pseudo']);
+
             // manage new sentence
             $sentence = new Sentence();
             $sentence->setText($sentenceData['text']);
+            $sentence->setPseudo($sentenceData['pseudo']);
             $sentence->setPrevious($previousSentence);
             $sentence->setChapter($previousSentence->getChapter());
             //make $s a random string
