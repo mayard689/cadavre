@@ -75,7 +75,8 @@ class CadavreController extends AbstractController
         }
 
         //manage previously entered sentences
-        $sentenceList = $sentenceRepository->findBy(array("chapter" => $chapter), array('id' => 'DESC'), 2);
+        $sentenceList = $sentenceRepository->findBy(array("chapter" => $chapter), array('previous' => 'DESC', 'id' => 'ASC'), 1);
+        //var_dump($sentenceList);exit();
         //get the lastSentence if exists
         $lastSentence = null;
         if (isset($sentenceList[0])) {
