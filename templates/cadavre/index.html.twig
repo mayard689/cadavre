@@ -20,11 +20,10 @@
 
             <p>[ Texte caché ...] </p>
 
-            {% for sentence in sentences %}
-                <p class="user-entry"><quote>{{ sentence.text }}</quote></p>
-            {% else %}
-                <p>Comment dire ... hum hum... vous découvrez que vous êtes en fait le premier joueur et qu'il n'y a encore jamais eu de joueur précédent. A vous d'ouvrir le bal !</p>
-            {% endfor %}
+            {%  set noprevious = 'Comment dire ... hum hum... vous découvrez que vous êtes en fait le premier joueur et qu\'il n\'y a encore jamais eu de joueur précédent. A vous d\'ouvrir le bal !' %}
+            <p class="user-entry"><quote>{{ sentence.previous.previous.text??'' }}</quote></p>
+            <p class="user-entry"><quote>{{ sentence.previous.text??noprevious }}</quote></p>
+
 
             {{ form_start(form) }}
                 <p class="mt-5">Racontez ce qu'il se passe ensuite dans le cadre ci dessous :</p>

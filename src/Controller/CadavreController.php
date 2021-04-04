@@ -75,10 +75,9 @@ class CadavreController extends AbstractController
         $sentenceList = $sentenceRepository->findBy(array("chapter" => $chapter), array('id' => 'DESC'), 2);
         //get the lastSentence if exists
         $lastSentence = null;
-        if ($sentenceList[0]) {
+        if (isset($sentenceList[0])) {
             $lastSentence = $sentenceList[0];
         };
-        $sentenceList = array_reverse($sentenceList);
 
         // manage new sentence
         $sentence = new Sentence();
@@ -101,7 +100,6 @@ class CadavreController extends AbstractController
 
 
         return $this->render('cadavre/index.html.twig', [
-            'sentences' => $sentenceList,
             'sentence' => $sentence,
             'chapter' => $chapter,
             'form' => $formView,
