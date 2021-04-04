@@ -48,9 +48,9 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             'chapter' => 'chapter_4',
         ],
         5 => [
-            'text' => 'Reprenant leur chemin, les 3 explorateurs avancent dans la forêt. Le chemin est sinueux et chaque 
+            'text' => 'Reprenant leur chemin, les 3 explorateurs avancent dans la forêt. Le chemin est tortueux et chaque 
             virage leur fait découvrir, entre feuilles et branches, des créatures peu communes : un champ de cartes de trèfle, 
-            des abeilles en as de pique, ou des singes qui se tiennent à carreau". Mais finalement, alors que la foret semblait interminable, tout disparut soudainement.
+            des abeilles en as de pique, ou des singes qui se tiennent à carreau. Mais finalement, alors que la foret semblait interminable, tout disparut soudainement.
             Le lapin blanc haussa un sourcil et leur dit "nous y voilà. Nous sommes dans la clairière chocolatée". Il regarda sa montre puis la secoua. Un peu plus 
             loin se trouvait un nid et dans le nid, aucun doute, la Carotarêve était là. Bizarre, obscure et sombre.',
             'chapter' => 'chapter_5',
