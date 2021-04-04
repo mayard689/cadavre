@@ -16,7 +16,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 1',
             'title' => 'Une impression de déjà vu',
-            'code' => 'code1',
+            'code' => 'chapter1',
             'number' => 1
         ],
         1 => [
@@ -25,7 +25,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 2',
             'title' => 'Le Lapin parlant de l\'école',
-            'code' => 'code2',
+            'code' => 'chapter2',
             'number' => 2
         ],
         2 => [
@@ -35,7 +35,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 3',
             'title' => 'La forêt multicolore',
-            'code' => 'code3',
+            'code' => 'chapter3',
             'number' => 3
         ],
 
@@ -45,7 +45,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 4',
             'title' => 'Cascades à répétition et poissons d\'avril',
-            'code' => 'code4',
+            'code' => 'chapter4',
             'number' => 4
         ],
 
@@ -55,7 +55,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 5',
             'title' => 'L\'embarras du choix',
-            'code' => 'code5',
+            'code' => 'chapter5',
             'number' => 5
         ],
         5 => [
@@ -64,7 +64,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 6',
             'title' => 'La Carotarêve',
-            'code' => 'code6',
+            'code' => 'chapter6',
             'number' => 6
         ],
         6 => [
@@ -73,7 +73,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 7',
             'title' => 'Contre la montre magique',
-            'code' => 'code7',
+            'code' => 'chapter7',
             'number' => 7
         ],
         7 => [
@@ -82,7 +82,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 8',
             'title' => 'Et ensuite',
-            'code' => 'code8',
+            'code' => 'chapter8',
             'number' => 8
         ],
     ];
