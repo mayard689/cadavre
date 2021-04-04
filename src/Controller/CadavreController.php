@@ -9,10 +9,12 @@ use App\Form\SmallSentenceType;
 use App\Repository\ChapterRepository;
 use App\Repository\SentenceRepository;
 use App\Service\StatTagManager;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CadavreController extends AbstractController
@@ -55,7 +57,8 @@ class CadavreController extends AbstractController
         SentenceRepository $sentenceRepository,
         ChapterRepository $chapterRepository,
         StatTagManager $tagManager,
-        SessionInterface $session
+        SessionInterface $session,
+        MailerInterface $mailer
     ): Response {
         //record a tag while loading this page
         $tagManager->addTag("cadavrePageLoading-".$code);
@@ -124,13 +127,27 @@ class CadavreController extends AbstractController
             $entityManager->persist($sentence);
             $entityManager->flush();
 
+            //send email to cdf
+            $adminEmail = $this->getParameter("admin_email");
+            $email = (new TemplatedEmail())
+                ->from($this->getParameter("mailer_from"))
+                ->subject('Une nouvelle contribution dans le cadavre exquis')
+                ->to($adminEmail)
+                ->htmlTemplate('email/contact.html.twig')
+                ->context([
+                    'name' => $sentenceData['pseudo'],
+                    'from' => "cadavre exquis",
+                    'message' => $sentenceData['text'],
+                ]);
+
+            $mailer->send($email);
+
             $this->addFlash('success', 'Une poule verte traverse le chemin et vous fait savoir que votre merveilleuse idée est entrée dans le grand mécanisme. Cot\' Cot\' Cot\' ');
 
             return $this->redirectToRoute('home');
         }
 
         $formView = $form->createView();
-
 
         return $this->render('cadavre/index.html.twig', [
             'previous' => $lastSentence,
