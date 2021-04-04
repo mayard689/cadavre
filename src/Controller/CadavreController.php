@@ -86,7 +86,7 @@ class CadavreController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $sentenceData = $form->getData();
 
-            //get previous snetence fron its secret
+            //get previous sentence from its secret
             $previousSentence = $sentenceRepository->findOneBy(['secret'=>$sentenceData['previous']]);
 
             //in case previous sentence cannot be found
