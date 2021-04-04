@@ -36,7 +36,11 @@ class StatTagManager
         $tag->setDate(new DateTime());
 
         $sessionId = $this->session->getId();
-        $tag->setSessionid($sessionId);
+        $pseudo ="";
+        if (!is_null($this->session->get('pseudo'))) {
+            $pseudo = substr($this->session->get('pseudo'), 0, 200);
+        }
+        $tag->setSessionid($sessionId.' ('.$pseudo.')');
 
         $this->entityManager->persist($tag);
         $this->entityManager->flush();
