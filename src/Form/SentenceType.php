@@ -15,6 +15,13 @@ class SentenceType extends AbstractType
     {
         $builder
             ->add('text', null, ['label' =>'Texte'])
+            ->add('previous', EntityType::class, [
+                'class' => Sentence::class,
+                'choice_label' => 'id',
+                'multiple'=>false,
+                'expanded'=>false,
+                'label' =>'Numero de la phrase précédente'
+            ])
             ->add('chapter', EntityType::class, [
                 'class' => Chapter::class,
                 'choice_label' => 'title',
