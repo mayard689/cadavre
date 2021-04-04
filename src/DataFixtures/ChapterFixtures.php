@@ -109,7 +109,7 @@ class ChapterFixtures extends Fixture
             en chocolat partout dans la cour. Les maitresses arrivent. Il faut tout cacher, comment faire ?
             ',
             'conclusion' => 'conclu chapitre 11',
-            'title' => '(Enfants) Ne touche pas à ça',
+            'title' => '(Enfants) De drôles de cachettes',
             'code' => 'chapitre11',
             'number' => 11
         ],
