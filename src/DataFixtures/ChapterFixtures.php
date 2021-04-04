@@ -16,7 +16,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 1',
             'title' => 'Une impression de déjà vu',
-            'code' => 'chapter1',
+            'code' => 'chapitre1',
             'number' => 1
         ],
         1 => [
@@ -25,7 +25,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 2',
             'title' => 'Le Lapin parlant de l\'école',
-            'code' => 'chapter2',
+            'code' => 'chapitre2',
             'number' => 2
         ],
         2 => [
@@ -35,7 +35,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 3',
             'title' => 'La forêt multicolore',
-            'code' => 'chapter3',
+            'code' => 'chapitre3',
             'number' => 3
         ],
 
@@ -45,7 +45,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 4',
             'title' => 'Cascades à répétition et poissons d\'avril',
-            'code' => 'chapter4',
+            'code' => 'chapitre4',
             'number' => 4
         ],
 
@@ -55,7 +55,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 5',
             'title' => 'L\'embarras du choix',
-            'code' => 'chapter5',
+            'code' => 'chapitre5',
             'number' => 5
         ],
         5 => [
@@ -64,7 +64,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 6',
             'title' => 'La Carotarêve',
-            'code' => 'chapter6',
+            'code' => 'chapitre6',
             'number' => 6
         ],
         6 => [
@@ -73,7 +73,7 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 7',
             'title' => 'Contre la montre magique',
-            'code' => 'chapter7',
+            'code' => 'chapitre7',
             'number' => 7
         ],
         7 => [
@@ -82,8 +82,36 @@ class ChapterFixtures extends Fixture
             ',
             'conclusion' => 'conclu chapitre 8',
             'title' => 'Et ensuite',
-            'code' => 'chapter8',
+            'code' => 'chapitre8',
             'number' => 8
+        ],
+        //additionnal chapters for children
+        8 => [
+            'introduction' => 'Alice, Rebecca et le lapin blanc découvrent une mini Carotarêve dans la cour de l\'école. Mais à quoi peut bien ressembler la mini Carotarêve ?
+            ',
+            'conclusion' => 'conclu chapitre 9',
+            'title' => '(Enfants) Trois semaines plus tard...',
+            'code' => 'chapitre9',
+            'number' => 9
+        ],
+        9 => [
+            'introduction' => 'Aprés avoir touché la Carotarêve, Alice et Rebecca s\'appercoivent que des champignons en 
+            chocolat apparaissent dans la cour de l\'école. Certains enfants ne veulent pas s\'en approcher. D\autres veulent les manger. 
+            Mais des qu\'on y touche il se passe des choses bizarres. Heureusement que la lapin est là pour les aider.
+            ',
+            'conclusion' => 'conclu chapitre 10',
+            'title' => '(Enfants) Ne touche pas à ça',
+            'code' => 'chapitre10',
+            'number' => 10
+        ],
+        10 => [
+            'introduction' => 'Le lapin blanc a presque tout remit en ordre. Tout est normal sauf qu\'il y a encore des champignons 
+            en chocolat partout dans la cour. Les maitresses arrivent. Il faut tout cacher, comment faire ?
+            ',
+            'conclusion' => 'conclu chapitre 11',
+            'title' => '(Enfants) Ne touche pas à ça',
+            'code' => 'chapitre11',
+            'number' => 11
         ],
     ];
 
