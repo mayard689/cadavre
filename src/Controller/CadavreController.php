@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Chapter;
 use App\Entity\Sentence;
 use App\Form\SentenceType;
+use App\Form\SmallSentenceType;
 use App\Repository\ChapterRepository;
 use App\Repository\SentenceRepository;
 use App\Service\StatTagManager;
@@ -79,14 +80,30 @@ class CadavreController extends AbstractController
             $lastSentence = $sentenceList[0];
         };
 
-        // manage new sentence
-        $sentence = new Sentence();
-        $sentence->setChapter($chapter);
-        $sentence->setPrevious($lastSentence);
-        $form = $this->createForm(SentenceType::class, $sentence);
+        $form = $this->createForm(SmallSentenceType::class, ['text' => '', 'previous' => $lastSentence->getSecret()]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $sentenceData = $form->getData();
+
+            //get previous snetence fron its secret
+            $previousSentence = $sentenceRepository->findOneBy(['secret'=>$sentenceData['previous']]);
+
+            //in case previous sentence cannot be found
+            if (!$previousSentence) {
+                $this->addFlash('danger', 'Nous n\'arrivons pas à trouver à quelle phrase votre proposition fait suite...');
+                return $this->redirectToRoute('home');
+            }
+
+            // manage new sentence
+            $sentence = new Sentence();
+            $sentence->setText($sentenceData['text']);
+            $sentence->setPrevious($previousSentence);
+            $sentence->setChapter($previousSentence->getChapter());
+            //make $s a random string
+            for ($secret = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 10; $x = rand(0,$z), $secret .= $a{$x}, $i++);
+            $sentence->setSecret($secret);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($sentence);
             $entityManager->flush();
@@ -100,7 +117,7 @@ class CadavreController extends AbstractController
 
 
         return $this->render('cadavre/index.html.twig', [
-            'sentence' => $sentence,
+            'previous' => $lastSentence,
             'chapter' => $chapter,
             'form' => $formView,
         ]);

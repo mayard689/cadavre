@@ -40,6 +40,11 @@ class Sentence
      */
     private $followings;
 
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $secret;
+
     public function __construct()
     {
         $this->followings = new ArrayCollection();
@@ -112,6 +117,18 @@ class Sentence
                 $following->setPrevious(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSecret(): ?string
+    {
+        return $this->secret;
+    }
+
+    public function setSecret(string $secret): self
+    {
+        $this->secret = $secret;
 
         return $this;
     }

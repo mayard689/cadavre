@@ -21,8 +21,8 @@
             <p>[ Texte caché ...] </p>
 
             {%  set noprevious = 'Comment dire ... hum hum... vous découvrez que vous êtes en fait le premier joueur et qu\'il n\'y a encore jamais eu de joueur précédent. A vous d\'ouvrir le bal !' %}
-            <p class="user-entry"><quote>{{ sentence.previous.previous.text??'' }}</quote></p>
-            <p class="user-entry"><quote>{{ sentence.previous.text??noprevious }}</quote></p>
+            <p class="user-entry"><quote>{{ previous.previous.text??'' }}</quote></p>
+            <p class="user-entry"><quote>{{ previous.text??noprevious }}</quote></p>
 
 
             {{ form_start(form) }}
@@ -31,16 +31,6 @@
                 <div class="form-group w-100 h-100">
                     {{ form_widget(form.text, { 'attr': {'class': 'text'} }) }}
                     {{ form_errors(form.text) }}
-                </div>
-
-                <div class="form-group d-none">
-                    {{ form_widget(form.chapter) }}
-                    {{ form_errors(form.chapter) }}
-                </div>
-
-                <div class="form-group d-none">
-                    {{ form_widget(form.previous) }}
-                    {{ form_errors(form.previous) }}
                 </div>
 
                 <div class="form-group d-flex justify-content-center">

@@ -20,8 +20,8 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
 
         1 => [
             'text' => 'A l\'école, toujours troublé par la Carotarêve, Alice croise son amie Rebecca devant l\'oeuf géant 
-            préparé par le comité des fêtes. Alorts qu\'il lui parle de son rêve bizarre, le lapin planté devant l\'oeuf s\'anime et se met à parler.
-            Un lapin...un minuscule lapin...blanc...tout blanc...qui parle. C\'est peu commun',
+            préparé par le comité des fêtes. Alors qu\'elle lui parle de son rêve bizarre, le lapin planté devant l\'oeuf s\'anime et se met à parler.
+            Un lapin...un minuscule lapin...blanc...tout blanc...qui parle. C\'est peu commun.',
             'chapter' => 'chapter_1',
         ],
 
@@ -51,7 +51,7 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             'text' => 'Reprenant leur chemin, les 3 explorateurs avancent dans la forêt. Le chemin est sinueux et chaque 
             virage leur fait découvrir, entre feuilles et branches, des créatures peu communes : un champ de cartes de trèfle, 
             des abeilles en as de pique, ou des singes qui se tiennent à carreau". Mais finalement, alors que la foret semblait interminable, tout disparut soudainement.
-            Le lapin blanc haussa un sourcil et leur dit "nous y voilà. Nous sommes dans la clairière magique". Il regarda sa montre puis la secoua. Un peu plus 
+            Le lapin blanc haussa un sourcil et leur dit "nous y voilà. Nous sommes dans la clairière chocolatée". Il regarda sa montre puis la secoua. Un peu plus 
             loin se trouvait un nid et dans le nid, aucun doute, la Carotarêve était là. Bizarre, obscure et sombre.',
             'chapter' => 'chapter_5',
         ],
@@ -61,7 +61,8 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             Au moment même où résonna le croquement chocolaté, le sol se mit à trembler. Les champignons de la 
             clairière se mirent à gonfler lentement. La montre du lapin de mit à sonner dans un "dring" qui rappelait le 
             réveil d\'Alice. "Vite, je vous avais prévenu, il est l\'heure de ne pas être en retard. Partons avant que tous 
-            ça ne se termine en fondue au chocolat". Alice attrappa la Carotarêve et se mit à courir.',
+            ça ne se termine en fondue au chocolat". Alice attrappa la Carotarêve et se mit à courir. Le "dring" se faisait 
+            de plus en plus fort, de plus en plus sourd pour devenir le son assourdissant d\'une cloche.',
             'chapter' => 'chapter_6',
         ],
         7 => [
@@ -76,14 +77,16 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        for($i=0; $i<count(self::SENTENCES); $i++){
+        for($k=0; $k<count(self::SENTENCES); $k++){
 
             $sentence = new Sentence();
-            $sentence->setText(self::SENTENCES[$i]['text']);
-            $chapter = $this->getReference(self::SENTENCES[$i]['chapter']);
+            $sentence->setText(self::SENTENCES[$k]['text']);
+            $chapter = $this->getReference(self::SENTENCES[$k]['chapter']);
             $sentence->setChapter($chapter);
+            for ($secret = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 10; $x = rand(0,$z), $secret .= $a{$x}, $i++);
+            $sentence->setSecret($secret);
 
-            $this->addReference('sentence_' .$i, $sentence);
+            $this->addReference('sentence_' .$k, $sentence);
             $manager->persist($sentence);
         }
 

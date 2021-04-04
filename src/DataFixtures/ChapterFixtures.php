@@ -59,7 +59,7 @@ class ChapterFixtures extends Fixture
             'number' => 5
         ],
         5 => [
-            'introduction' => 'Alice, Rebecca et le Lapin sont enfin parvenus à la clairière magique et ont découvert la Carotarêve.
+            'introduction' => 'Alice, Rebecca et le Lapin sont enfin parvenus à la clairière chocolatée et ont découvert la Carotarêve.
             Mais c\'est quoi au juste une Carotarêve ? A quoi ressemble t\'elle ? A quoi sert elle ?
             ',
             'conclusion' => 'conclu chapitre 6',
