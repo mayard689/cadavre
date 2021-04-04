@@ -57,6 +57,7 @@ class CadavreController extends AbstractController
         //record a tag while loading this page
         $tagManager->addTag("cadavrePageLoading-".$code);
 
+        //in case the code is "not ready" tell that the game is not started
         if($code == "notReady") {
             return $this->render('cadavre/notReady.html.twig');
         }
@@ -64,14 +65,25 @@ class CadavreController extends AbstractController
         //get the corresponding chapter
         $chapter = $chapterRepository->findOneBy(['code' => $code]);
 
+        //in case the chapter code does not exists
         if (!$chapter) {
             $this->addFlash('danger', 'Un nuage rouge apparait et vous comprenez que le code que vous avez trouvé n\'est pas le bon.');
             return $this->redirectToRoute('home');
         }
 
+        //manage previously entered sentences
+        $sentenceList = $sentenceRepository->findBy(array("chapter" => $chapter), array('id' => 'DESC'), 2);
+        //get the lastSentence if exists
+        $lastSentence = null;
+        if ($sentenceList[0]) {
+            $lastSentence = $sentenceList[0];
+        };
+        $sentenceList = array_reverse($sentenceList);
+
         // manage new sentence
         $sentence = new Sentence();
         $sentence->setChapter($chapter);
+        $sentence->setPrevious($lastSentence);
         $form = $this->createForm(SentenceType::class, $sentence);
         $form->handleRequest($request);
 
@@ -87,9 +99,6 @@ class CadavreController extends AbstractController
 
         $formView = $form->createView();
 
-        //manage previously entered sentences
-        $sentenceList = $sentenceRepository->findBy(array("chapter" => $chapter), array('id' => 'DESC'), 2);
-        $sentenceList = array_reverse($sentenceList);
 
         return $this->render('cadavre/index.html.twig', [
             'sentences' => $sentenceList,

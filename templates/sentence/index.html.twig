@@ -12,6 +12,7 @@
                 <th>Id</th>
                 <th>Texte</th>
                 <th>Chapitre</th>
+                <th>Id du précédent</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -21,6 +22,7 @@
                     <td>{{ sentence.id }}</td>
                     <td>{{ sentence.text }}</td>
                     <td>{{ sentence.chapter.number }}</td>
+                    <td>{{ sentence.previous.id??'no previous' }}</td>
                     <td>
                         <a href="{{ path('sentence_show', {'id': sentence.id}) }}">Voir</a>
                         <a href="{{ path('sentence_edit', {'id': sentence.id}) }}">Modifier</a>
