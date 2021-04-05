@@ -168,7 +168,8 @@ class CadavreController extends AbstractController
         $tagManager->addTag("finalCadavrePageLoading");
 
         //manage previously entered sentences
-        $sentenceList = $sentenceRepository->findBy([], array('chapter' => 'ASC'));
+        $sentenceList = $sentenceRepository->findBy([], array('chapter' => 'ASC', 'previous' => 'ASC'));
+        //$sentenceList = $sentenceRepository->findBy(array("chapter" => $chapter), array('previous' => 'DESC', 'id' => 'ASC'), 1);
 
         $sentencesByChapter = [];
         foreach($sentenceList as $sentence) {
