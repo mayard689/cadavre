@@ -13,68 +13,66 @@
 {% block body %}
     {% include 'home/_intro.html.twig' %}
 
-    <section class="container">
+    <section class="container mt-1">
         <h2>Que se passe-t-il ?</h2>
-
-        <p>Au regard des préconisations gouvernementales, et pour la sécurité des plus fragiles, il nous a semblé plus judicieux de reporter notre marche de Pâques.</p>
-
-        <p>Mais tout n'est pas perdu ! Nous vous avons promis des jeux sur le parcours et l'un d'entre eux peut être joué à distance. C'est le jeu du cadavre exquis.</p>
 
         <p>Le principe du cadavre exquis est d'écrire tous ensemble une  histoire : chacun participe à l'écriture d'un texte sans en connaitre le début ni la fin puisque
         d'autres personnes sont aussi en train d'écrire cette histoire.</p>
 
         <p>Les participants écrivent à tour de rôle un morceau de texte avec pour seul coup de pouce le texte laissé par le
-        participant précédent. Une fois que tout le monde a écrit, le texte complet peut être révélé à tous...surprise !</p>
+        participant précédent.</p>
 
-        <p>Nous vous proposons de vivre ce jeu peu commun avec Villereau !</p>
+        <p>Testez ce jeu peu commun avec Villereau !</p>
     </section>
 
-    <section class="container">
+    <section class="container mt-1 pt-2">
         <h2>Comment joue-t-on ?</h2>
 
         <p>Vous trouverez ci dessous des liens vers les 11 chapitres de "La mystérieuse Carotarêve", une aventure dans un monde féérique.
         Vous pourrez participer aux chapitres que vous souhaitez.</p>
 
-        <p>Les 8 premiers chapitres sont plutôt destinés au adultes et enfant de plus de 10 ans.
-            Les 3 derniers correspondent à une autre histoire qui s'adresse aux enfants de moins de dix ans. Sur ces chapitres, le style doit rester accessible aux enfants peu experimenté en lecture.</p>
+        <p>Les 3 chapitres 'enfants' constituent une suite qui s'adresse plutôt aux enfants de moins de dix ans.</p>
 
         <li>Cliquez sur le chapitre auquel vous souhaitez participer.</li>
-        <li>Pour vous aider, nous avons indiqué dans la partie "ce qu'il s'est passé avant" quelques informations sur ce que les personnages cherchent à faire dans ce chapitre.</li>
+        <li>Lisez les quelques infos de "ce qu'il s'est passé avant" pour savoir ce que les personnages cherchent à faire.</li>
         <li>Puis vous pouvez lire le texte laissé par le joueur précédent</li>
-        <li>Enfin, à vous d'imaginer une suite, dans la continuité du joeur précédent et en apportant votre touche personnelle"</li>
-
-        <p>Le jeu sera ouvert au matin du lundi de Pâques, le 5 avril à minuit et sera cloturé 9 avril au soir. Le texte complet sera alors disponible sur cette page.</p>
-
-        <p>Il s'agit d'un jeu familial et, nous l'espérons, rigolo. Tout texte de nature discriminatoire ou pouvant choquer
-        la sensibilité des plus jeunes sera retiré. Nous comptons sur votre compréhension.</p>
+        <li>Enfin, à vous d'imaginer une suite au texte du joueur précédent, en apportant votre touche personnelle"</li>
+        <br/>
+        <p>Le texte complet sera disponible sur cette page le 9 avril.</p>
 
         <p>Si vous avez des idées, suggestions ou simplement un commentaire à nous faire : <a class="btn btn-primary" href="{{ path('contact') }}">Contactez-nous</a></p>
     </section>
 
-    <section class="container">
-        <h2>Les chapitres </h2>
+    <div class="container">
+        <div class="row">
+            <section class="mt-1 pt-2 col-12 col-md-6">
+                <h2>Les chapitres </h2>
 
-        <ul>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre1'}) }}">Une impression de déjà vu</a></li>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre2'}) }}">Le lapin parlant de l'école</a></li>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre3'}) }}">La forêt multicolore</a></li>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre4'}) }}">Cascades à répétitions et poissons d'avril</a></li>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre5'}) }}">L'embarras du choix</a></li>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre6'}) }}">La Carotarêve</a></li>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre7'}) }}">Contre la montre magique</a></li>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre8'}) }}">Et ensuite...</a></li>
-        </ul>
-    </section>
+                <ul>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre1'}) }}">Une impression de déjà vu</a></li>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre2'}) }}">Le lapin parlant de l'école</a></li>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre3'}) }}">La forêt multicolore</a></li>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre4'}) }}">Cascades à répétitions et poissons d'avril</a></li>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre5'}) }}">L'embarras du choix</a></li>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre6'}) }}">La Carotarêve</a></li>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre7'}) }}">Contre la montre magique</a></li>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre8'}) }}">Et ensuite...</a></li>
+                </ul>
+            </section>
 
-    <section class="container">
-        <h2>Les chapitres 'enfants'</h2>
+            <section class="col-12 col-md-6">
+                <h2>Les chapitres 'enfants'</h2>
 
-        <ul>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre9'}) }}">Trois semaines plus tard.</a></li>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre10'}) }}">Ne touche pas à ça !</a></li>
-            <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre11'}) }}">De drôles de cachettes.</a></li>
-        </ul>
-    </section>
+                <ul>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre9'}) }}">Trois semaines plus tard.</a></li>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre10'}) }}">Ne touche pas à ça !</a></li>
+                    <li><a class="darklink" href="{{ path('chapter', {'code' : 'chapitre11'}) }}">De drôles de cachettes.</a></li>
+                </ul>
+            </section>
+        </div>
+
+    </div>
+
 {#
     {% include 'home/_content.html.twig' %}
     {% include 'home/_agenda.html.twig' %}
