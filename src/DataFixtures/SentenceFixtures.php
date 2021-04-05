@@ -13,14 +13,14 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
         0 => [
             'text' => 'Une forme floue flottait et se déformait. Allongée ou arrondie, orange ou bleue, elle ondulait dans un brouillard. 
             Un rayon de Soleil... le chant d\'un oiseau..., le réveil qui sonnait...qui sonnait ! L\'école !. Un bond hors du lit, un saut dans des vêtements. 
-            C\'est aprés un réveil tourmenté qu\'Alice prenait son petit déjeuner en repensant à son rêve. Abeilles en As de pique, Oeuf géant violet et bleu...
+            Mais au fait, il n\'y a pas d\'école le lundi de Pâques. Aprés ce réveil tourmenté qu\'Alice prenait son petit déjeuner en repensant à son rêve. Abeilles en As de pique, Oeuf géant violet et bleu...
             Carotarêve. La Carotarêve. Le nom restait mais impossible de se souvenir de ce qu\'était... une Carotarêve',
             'chapter' => 'chapter_0',
         ],
 
         1 => [
-            'text' => 'A l\'école, toujours troublée par la Carotarêve, Alice a croisé son amie Rebecca devant l\'oeuf géant 
-            préparé par le comité des fêtes. Alors qu\'elle lui parlait de son rêve bizarre, le lapin planté devant l\'oeuf s\'est animé et se mit à parler.
+            'text' => 'Toujours troublée par la Carotarêve, Alice a donné rendez-vous à son amie Rebecca devant l\'oeuf géant 
+            préparé par le comité des fêtes, devant l\'école. Alors qu\'elle lui parlait de son rêve bizarre, le lapin planté devant l\'oeuf s\'est animé et se mit à parler.
             Un lapin...un minuscule lapin...blanc...tout blanc...qui parle. C\'etait peu commun.',
             'chapter' => 'chapter_1',
         ],
@@ -70,7 +70,7 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
             'text' => 'C\'est alors que les nuages se mirents à onduler, parfois oranges 
             ou bleus, parfois allongés ou arrondis. Une voix déformée leur dit, "Faites attention à ne pas être en retard". 
             Alice et Rebecca étaient revenues à l\'école. Ne sachant que faire de la Carotarêve, elle décidèrent de la cacher parmi les plantations. 
-            Lucie et Honorine passèrent par là sans remarquer la Carotarêve. Elles leur dirent :',
+            Les maîtresses ayant remarqué des choses étranges passèrent par là. Sans remarquer la Carotarêve, elles leur dirent :',
             'chapter' => 'chapter_7',
         ],
 
@@ -97,7 +97,7 @@ class SentenceFixtures extends Fixture implements DependentFixtureInterface
         10 => [
             'text' => 'Vite, il faut faire quelque chose ! Devant tout ce bazarre, le lapin sort sa montre magique. Il change l\'heure.
              Instantanément, tout redevient normal...Tout ? Non, tout n\est pas completement normal :  Il y a toujours plein de champignons 
-             en chocolat dans la cour. Honorine et Lucie arrivent. Rebecca dit à Alice : "Alice, où allons nous cacher tout ce chocolat ?"
+             en chocolat dans la cour. Les maîtresses arrivent. Rebecca dit à Alice : "Alice, où allons nous cacher tout ce chocolat ?"
             ',
             'chapter' => 'chapter_10',
         ],
