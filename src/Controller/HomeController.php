@@ -14,9 +14,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class HomeController extends AbstractController
 {
@@ -27,6 +29,8 @@ class HomeController extends AbstractController
         Request $request,
         //EventRepository $eventRepository,
         ContentRepository $contentRepository,
+        ?UserInterface $user,
+        SessionInterface $session,
         StatTagManager $tagManager
         //MailerInterface $mailer
     ): Response {
@@ -75,6 +79,12 @@ class HomeController extends AbstractController
             'newsletterForm' => $newsletterForm->createView(),
         ]);
  **/
+
+        //if session pseudo is null, use the username instead
+        if (!is_null($user)) {
+            $session->set('pseudo', $user->getUsername());
+        }
+
         //manage content (articles)
         $contents= $contentRepository->findComming(5,0);
         $mainContent = $contents[0];

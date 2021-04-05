@@ -8,6 +8,7 @@ use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class StatTagManager
 {
@@ -36,10 +37,11 @@ class StatTagManager
         $tag->setDate(new DateTime());
 
         $sessionId = $this->session->getId();
-        $pseudo ="";
+        $pseudo = '';
         if (!is_null($this->session->get('pseudo'))) {
             $pseudo = substr($this->session->get('pseudo'), 0, 200);
         }
+
         $tag->setSessionid($sessionId.' ('.$pseudo.')');
 
         $this->entityManager->persist($tag);
