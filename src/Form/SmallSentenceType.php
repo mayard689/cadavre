@@ -19,6 +19,7 @@ class SmallSentenceType extends AbstractType
             ->add('text', TextareaType::class, ['label' =>'Texte'])
             ->add('pseudo', null, [
                 'label' =>'Votre pseudonyme (facultatif)',
+                'required' => false,
                 'constraints' => [
                     new Length([
                         'max' => 254,
