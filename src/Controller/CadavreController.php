@@ -137,7 +137,7 @@ class CadavreController extends AbstractController
                 ->context([
                     'name' => $sentenceData['pseudo'],
                     'from' => "cadavre exquis",
-                    'message' => $sentenceData['text'],
+                    'message' => "suit ".$previousSentence->getId()." du chapitre ".$previousSentence->getChapter()->getNumber()." : ". $sentenceData['text'],
                 ]);
 
             $mailer->send($email);
