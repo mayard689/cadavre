@@ -21,7 +21,7 @@ class StatTagController extends AbstractController
     public function index(StatTagRepository $statTagRepository): Response
     {
         return $this->render('stat_tag/index.html.twig', [
-            'stat_tags' => $statTagRepository->findAll(),
+            'stat_tags' => $statTagRepository->findBy([],array('id'=>"DESC")),
         ]);
     }
 
