@@ -17,7 +17,7 @@ $(window).on('load resize scroll', function(){
         maxShift = 0;
     }
 
-    console.log(maxShift);
+    //console.log(maxShift);
 
     let pageX= $(window).scrollTop();
 
@@ -25,7 +25,7 @@ $(window).on('load resize scroll', function(){
 
     let backgroundShiftValue1=-0.15*pageX;
     if (backgroundShiftValue1 < maxShift) backgroundShiftValue1=maxShift;
-    console.log("effective shift :"+backgroundShiftValue1);
+    //console.log("effective shift :"+backgroundShiftValue1);
 
     let backgroundShift1='right '+backgroundShiftValue1+'px top 0px';
     parallaxContainer1.style.backgroundPosition=backgroundShift1;
