@@ -142,8 +142,14 @@ class CadavreController extends AbstractController
 
             $mailer->send($email);
 
-            $this->addFlash('success', 'Une poule verte traverse le chemin et vous fait savoir que votre merveilleuse idée est entrée dans le grand mécanisme. Cot\' Cot\' Cot\' ');
+            //find next chapter
+            $nextChapter = $chapter = $chapterRepository->findOneBy(['number' => $chapter->getNumber()+1]);
+            if ($nextChapter) {
+                $this->addFlash('success', 'Votre idée est validée et une poule de pâques apparait pour vous proposer de contribuer au chapitre suivant...');
+                return $this->redirectToRoute('chapter',['code' => $nextChapter->getCode()]);
+            }
 
+            $this->addFlash('success', 'Une poule verte traverse le chemin et vous fait savoir que votre merveilleuse idée est entrée dans le grand mécanisme. Cot\' Cot\' Cot\' ');
             return $this->redirectToRoute('home');
         }
 

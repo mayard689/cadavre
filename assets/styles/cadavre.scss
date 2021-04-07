@@ -8,6 +8,7 @@ $font-small: 1.6rem;
 $font-normal: 2.0rem;
 $font-large : 10.0rem;
 
+@import "_flashes";
 @import "~bootstrap/scss/bootstrap.scss";
 
 @font-face {
