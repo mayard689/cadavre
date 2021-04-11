@@ -179,7 +179,11 @@ class CadavreController extends AbstractController
 
         $sentencesByChapter = [];
         foreach($sentenceList as $sentence) {
-            $sentencesByChapter[$sentence->getChapter()->getId()][] = $sentence;
+            //keep only chapter < 8 to exclude children chapters
+            if($sentence->getChapter()->getNumber()<=8) {
+                $sentencesByChapter[$sentence->getChapter()->getId()][] = $sentence;
+            }
+
         }
 
         $chapters = $chapterRepository->findBy([], array('id' => 'ASC'));
