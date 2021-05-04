@@ -13,6 +13,14 @@
   justify-content: flex-end;
 }
 
+.video{
+  position:absolute;
+  top:0;
+  max-width : 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
 .text-wrapper{
   position:absolute;
   width : 100%;

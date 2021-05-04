@@ -299,3 +299,21 @@ li{
     margin-top : $spacing-h-small;
     margin-bottom : 0;
 }
+
+@media screen and (orientation: portrait) {
+    .horizontal{
+        display: none;
+    }
+    .vertical{
+        display:block;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .horizontal{
+        display: block;
+    }
+    .vertical{
+        display:none;
+    }
+}
