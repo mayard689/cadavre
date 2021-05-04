@@ -1,0 +1,30 @@
+<div class="blog-main-content">
+    {%  include 'tools/_h1.html.twig' with {'titleStart' : 'A la', 'titleEnd' : 'une'} %}
+    <h3 class="blog-card-title">{{content.title}}</h3>
+
+    <a href="{{ path('content_show', {'id': content.id}) }}">
+        <img class="blog-card-image" src="/pictures/content/{{ content.picture ?? 'emptyContentPicture.jpg' }}" alt="{{content.title}} illustration">
+    </a>
+
+    <div class="blog-card-body">
+        <div class="blog-card-details">{{content.category.name}} {{content.date|date("d M Y", "Europe/Paris")}}</div>
+
+        <p class="blog-card-text light">{{content.text|u.truncate(500)}}...</p>
+        {#<div class="button-panel">
+            {% include 'tools/_seeButton.html.twig' with {
+                'text': 'Voir l\'article',
+                'path': path('content_show', {'id': content.id})
+            } %}
+
+            {% include 'tools/_adminButton.html.twig' with {
+                'text': 'Modifier',
+                'path': path('content_edit', {'id': content.id})
+            } %}
+
+            {% include 'tools/_adminButton.html.twig' with {
+                'text': 'Envoyer cet article aux abonnés par email',
+                'path': path('content_notify', {'id': content.id})
+            } %}
+        </div>#}
+    </div>
+</div>

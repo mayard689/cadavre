@@ -1,140 +1,116 @@
 @import "_vars";
 
-.card{
-  background-color: transparent;
-  border: none;
+.blog-row{
+  max-height : 80vh;
+  min-height : 80vh;
+}
 
-  .card-body {
-    min-height: 1px;
-    padding: 0;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    margin-bottom: 40px;
+a {
+  height : 40%;
+  .blog-card-image{
+    width : 100%;
+    height:100%;
+
+    object-fit: cover;
   }
 }
 
-.card-img {
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  height:150px;
-  object-fit: cover;
+.blog-card-details{
+  display:flex;
+  flex: auto 0;
+  font-size: $font-size-small;
 }
 
-.card-img-category {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: 1.25rem;
-  border-radius: calc(0.25rem - 1px);
-}
-
-.card-title {
-  margin-bottom: 0.3rem;
+.blog-card-title{
+  display:flex;
+  flex: auto 0;
+  color : $secondary-transparent;
+  font-size : $font-size * 1.1;
   font-weight: bold;
 }
 
-.cat {
-  display: inline-block;
-  margin-bottom: 1rem;
-}
+.blog-card-text {
+  display:flex;
+  flex:auto 1;
 
-.fa-users {
-  margin-left: 1rem;
-}
+  overflow:hidden;
 
-.card-footer {
-  font-size: 0.8rem;
-}
-///////////////////////////
+  position :relative;
+  &:after {
+    content : " ";
 
+    z-index : 20;
+    $background : $background;
+    background : linear-gradient(
+                    rgba($background, 0),
+                    rgba($background, 0),
+                    rgba($background, 0),
+                    rgba($background, 0.6),
+                    rgba($background, 0.8),
+                    rgba($background, 1)
+    );
 
-.main-content{
-  background-color: $secondary-transparent;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.button-panel{
-
-  padding-left : $spacing-h-small;
-  position : absolute;
-  bottom:0;
-}
-
-///////////////////
-.content-card{
-  position : relative;
-
-  overflow: hidden;
-
-  margin-bottom: $spacing-h-small;
-
-  .picture-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
     width : 100%;
-    height : 300px;
-
-    .content-picture{
-      width : 100%;
-      height : 100%;
-      object-fit: cover;
-    }
-  }
-
-  .body{
-    background : $thirdary-transparent;
-
-    position : absolute;
-    bottom : 0;
-    transform : translateY(100%);
-    transition: 1000ms ease-in-out;;
-    border-radius : 0;
-
-    padding : 10px;
-
-    left: 15px;
-    right:15px;
-
-    .content-title{
-      position : absolute;
-      top : 0;
-      transform : translateY(-100%);
-
-      right: 0;
-      left: 0;
-      padding: 10px;
-
-      background : $thirdary-transparent;
-      border-radius : 0;
-    }
-
-    .content-text{
-      opacity : 0%;
-      transition: 500ms;
-      transition-delay: 250ms;
-      transform : translateY(30%);
-    }
-  }
-
-  &:hover{
-    .body {
-      transform: translateY(0);
-      transition-duration: 500ms;
-
-      .content-text {
-        opacity: 100%;
-        transform : translateY(0%);
-        transition: 1000ms;
-        transition-delay: 250ms;
-      }
-    }
-  }
-
-  .xbutton-panel{
-    margin: $spacing-h-small;
-    padding-left : $spacing-h-small;
-    position : absolute;
-    top : 10px;
-    left : 10px;
+    height : 100%;
   }
 }
+
+.blog-card{
+  //background : red;
+  display:flex;
+  flex-direction:column;
+
+  width : calc(50% - 20px);
+  height : calc(50% - 20px);
+  max-height:50%;
+
+  margin : 10px;
+
+  overflow : hidden;
+
+  .blog-card-body{
+    width : 100%;
+    height : 60%;
+    display:flex;
+    flex-direction:column;
+
+
+  }
+}
+
+
+.blog-main-content{
+  display:flex;
+  flex-direction:column;
+  width : 100%;
+  height : 100%;
+  background-color: $secondary-transparent;
+  overflow : hidden;
+
+  padding: 15px;
+
+  .blog-card-title{
+    color : $light;
+  }
+
+  .blog-card-text:after {
+    $background: #6D2F52;
+    background: linear-gradient(
+                    rgba($background, 0),
+                    rgba($background, 0),
+                    rgba($background, 0),
+                    rgba($background, 0.6),
+                    rgba($background, 0.8),
+                    rgba($background, 1)
+    );
+  }
+}
+
+
+
+
+
+
