@@ -4,10 +4,11 @@ namespace App\DataFixtures;
 
 use App\Entity\Category;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 
-class CategoryFixtures extends Fixture
+class CategoryFixtures extends Fixture implements FixtureGroupInterface
 {
     const CATEGORY_NUMBER=6;
 
@@ -47,4 +48,8 @@ class CategoryFixtures extends Fixture
         $manager->flush();
     }
 
+    public static function getGroups(): array
+    {
+        return ['ContentFixtures'];
+    }
 }

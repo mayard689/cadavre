@@ -48,10 +48,12 @@
     <section class="container">
         {%  include 'tools/_h1.html.twig' with {'titleStart' : 'QUELQUES ARTICLES', 'titleEnd' : 'AU HASARD'} %}
 
-        <div class="card-deck">
-            {% for content in contents %}
-                {% include('content/_contentCard2.html.twig') %}
-            {% endfor %}
+        <div class="row">
+            <div class="blog-row row col-6">
+                {% for content in contents %}
+                    {% include 'content/_contentCard2.html.twig' %}
+                {% endfor %}
+            </div>
         </div>
 
         {% include 'tools/_backButton.html.twig' with {

@@ -17,13 +17,15 @@ a {
 
 .blog-card-details{
   display:flex;
-  flex: auto 0;
+  height : max-content;
+  flex: 0 0 auto;
   font-size: $font-size-small;
 }
 
 .blog-card-title{
   display:flex;
-  flex: auto 0;
+  height : max-content;
+  flex: 0 0 auto;
   color : $secondary-transparent;
   font-size : $font-size * 1.1;
   font-weight: bold;
@@ -31,7 +33,7 @@ a {
 
 .blog-card-text {
   display:flex;
-  flex:auto 1;
+  flex:1 1 auto;
 
   overflow:hidden;
 
@@ -80,7 +82,6 @@ a {
 
   }
 }
-
 
 .blog-main-content{
   display:flex;
