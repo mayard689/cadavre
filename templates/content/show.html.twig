@@ -22,7 +22,9 @@
         </div>
 
         <p class="text">
-            {{ content.text }}
+            {% apply markdown_to_html %}
+                {{ content.text }}
+            {% endapply %}
         </p>
 
         <p class="detail">Publié le {{ content.date ? content.date|date('d-m-Y') : '' }} dans la catégorie {{ content.category ? content.category.name : 'Aucune catégorie n\'est définie' }}</p>
