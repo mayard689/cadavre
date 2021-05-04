@@ -2,9 +2,31 @@
 @import "_eventCard";
 @import "_contentCard";
 
+.video-fond{
+  position:relative;
+  overflow: hidden;
+
+  height : 85vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.text-wrapper{
+  position:absolute;
+  width : 100%;
+  text-align: center;
+  bottom: 10%;
+  font-family: BodoniBold;
+  font-size : $titleFontSize;
+  color:$light;
+}
+
 section:first-of-type{
     margin-top:0;
     margin-left:0;
+    padding-top: 0;
 }
 
 .dark{
@@ -17,10 +39,6 @@ section:first-of-type{
   justify-content:center;
   display: flex;
   position:relative;
-
-  .button-panel{
-    display:none;
-  }
 
   width:100vw;
   height:60vh;
@@ -35,15 +53,7 @@ section:first-of-type{
               ),
               center/cover no-repeat url("../pictures/intro.jpg");
 
-  .text-wrapper{
-    //position:absolute;
-    width : 100%;
-    text-align: center;
-    top:30%;
-    font-family: BodoniBold;
-    font-size : $titleFontSize;
-    color:$light;
-  }
+
 }
 
 .btn{
