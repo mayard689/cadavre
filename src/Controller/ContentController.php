@@ -39,17 +39,11 @@ class ContentController extends AbstractController
      */
     public function indexByCategory(
         ContentRepository $contentRepository,
-        NewspaperRepository $newspaperRepository,
-        Newspaper2Repository $newspaper2Repository,
         Category $category
     ): Response {
-        $newspapers = $newspaperRepository->findBy(array(), array('date' => 'DESC'));
-        $newspapers2 = $newspaper2Repository->findBy(array(), array('date' => 'DESC'));
 
         return $this->render('content/index.html.twig', [
             'contents' => $contentRepository->findBy(['category' => $category], array('date' => 'DESC')),
-            'newspapers' => $newspapers,
-            'newspapers2' => $newspapers2,
         ]);
     }
 
