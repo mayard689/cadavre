@@ -105,9 +105,9 @@ class ContentController extends AbstractController
             $content->setWriter($user->getPseudo());
 
             //if the publication date is past (it is already published) update it to today
-            if($content->getDate() < new DateTime()) {
-                $content->setDate(new DateTime());
-            }
+            //if($content->getDate() < new DateTime()) {
+            //    $content->setDate(new DateTime());
+            //}
 
             $this->getDoctrine()->getManager()->flush();
 
