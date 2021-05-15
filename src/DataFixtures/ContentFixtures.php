@@ -15,10 +15,11 @@ class ContentFixtures extends Fixture implements DependentFixtureInterface
     const CONTENT = [
         0 => [
             'title' => 'Marche de pa-Paques.',
-            'text' => 'Une marche de Pâques reportée n\'est certainement pas une marche de Pâques, c\'est une marche de pas...Pâques.
+            'text' => '
+Une marche de Pâques reportée n\'est certainement pas une marche de Pâques, c\'est une marche de pas...Pâques.
             
-            Venez nous retrouver sur ce parcours de 4 ou 8km pour découvrir la nature des environs de Villereau. Ce parcours mini est idéal pour une bouffée d\'oxygène avec les plus petits.
-            Sur le parcours, quelques indices sur les insectes et culture locales, c\'est une marche instructive !
+Venez nous retrouver sur ce parcours de 4 ou 8km pour découvrir la nature des environs de Villereau. Ce parcours mini est idéal pour une bouffée d\'oxygène avec les plus petits.
+Sur le parcours, quelques indices sur les insectes et culture locales, c\'est une marche instructive !
             ',
             'picture' => 'godasse.jpg',
         ],

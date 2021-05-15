@@ -59,7 +59,7 @@ class ContentController extends AbstractController
     public function new(Request $request, UserInterface $user): Response
     {
         $content = new Content();
-        $content->setWriter($user->getName());
+        $content->setWriter($user->getPseudo());
         $form = $this->createForm(ContentType::class, $content);
         $form->handleRequest($request);
 
