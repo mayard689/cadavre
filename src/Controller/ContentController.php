@@ -102,7 +102,7 @@ class ContentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $content->setWriter($user->getName());
+            $content->setWriter($user->getPseudo());
 
             //if the publication date is past (it is already published) update it to today
             if($content->getDate() < new DateTime()) {
