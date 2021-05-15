@@ -74,7 +74,7 @@ class ContentController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="content_show", methods={"GET"})
+     * @Route("/{slug}", name="content_show", methods={"GET"})
      */
     public function show(Content $content, ContentRepository $contentRepository): Response
     {

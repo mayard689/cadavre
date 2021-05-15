@@ -1,8 +1,8 @@
 <div class="blog-main-content">
     {%  include 'tools/_h1.html.twig' with {'titleStart' : 'A la', 'titleEnd' : 'une'} %}
-    <a href="{{ path('content_show', {'id': content.id}) }}"><h3 class="blog-card-title">{{content.title}}</h3></a>
+    <a href="{{ path('content_show', {'slug': content.slug}) }}"><h3 class="blog-card-title">{{content.title}}</h3></a>
 
-    <a href="{{ path('content_show', {'id': content.id}) }}">
+    <a href="{{ path('content_show', {'slug': content.slug}) }}">
         <img class="blog-card-image" src="/pictures/content/{{ content.picture ?? 'emptyContentPicture.jpg' }}" alt="{{content.title}} illustration">
     </a>
 
