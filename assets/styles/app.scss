@@ -60,6 +60,7 @@ body {
 .light {
     color : $light;
 }
+
 .sticky-block{
     position:sticky;
     top:0;
@@ -92,6 +93,14 @@ body {
 
 .bi{
     margin-top: -3px;
+}
+
+.fit-cover{
+    object-fit: cover;
+}
+
+.h-40{
+    height : 40%;
 }
 
 .annule{
