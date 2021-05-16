@@ -10,10 +10,13 @@
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Date</th>
                 <th>Sessionid</th>
-                <th>actions</th>
+                <th>Navigateur</th>
+                <th>OS</th>
+                <th>IP</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -23,6 +26,9 @@
                     <td>{{ stat_tag.name }}</td>
                     <td>{{ stat_tag.date ? stat_tag.date|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ stat_tag.sessionid }}</td>
+                    <td>{{ stat_tag.browser }}</td>
+                    <td>{{ stat_tag.opsys }}</td>
+                    <td>{{ stat_tag.ip }}</td>
                     <td class="d-flex">
                         <a  class="btn btn-primary mr-3"  href="{{ path('stat_tag_show', {'id': stat_tag.id}) }}">show</a>
                         <a  class="btn btn-primary mr-3"  href="{{ path('stat_tag_edit', {'id': stat_tag.id}) }}">edit</a>
