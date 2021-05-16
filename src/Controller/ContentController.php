@@ -10,6 +10,7 @@ use App\Repository\ContentRepository;
 use App\Repository\Newspaper2Repository;
 use App\Repository\NewspaperRepository;
 use App\Service\MailSender;
+use App\Service\StatTagManager;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +27,8 @@ class ContentController extends AbstractController
      * @Route("/", name="content_index", methods={"GET"})
      */
     public function index(
-        ContentRepository $contentRepository
+        ContentRepository $contentRepository,
+        StatTagManager $tagManager
     ): Response {
 
         return $this->render('content/index.html.twig', [

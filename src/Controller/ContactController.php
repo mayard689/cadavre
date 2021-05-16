@@ -26,8 +26,6 @@ class ContactController extends AbstractController
         StatTagManager $tagManager,
         MailerInterface $mailer
     ) {
-        //record a tag while loading this page
-        $tagManager->addTag("contactPageLoading");
 
         $form = $this->createForm(ContactType::class);
 

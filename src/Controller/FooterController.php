@@ -13,9 +13,6 @@ class FooterController extends AbstractController
      */
     public function legal(StatTagManager $tagManager)
     {
-        //record a tag while loading this page
-        $tagManager->addTag("legalPageLoading");
-
          return $this->render('footer/legal.html.twig');
     }
 
@@ -24,9 +21,6 @@ class FooterController extends AbstractController
      */
     public function data(StatTagManager $tagManager)
     {
-        //record a tag while loading this page
-        $tagManager->addTag("dataProtectionPageLoading");
-
         return $this->render('footer/dataProtection.html.twig');
     }
 }

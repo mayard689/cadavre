@@ -90,9 +90,6 @@ class HomeController extends AbstractController
         $mainContent = $contents[0];
         unset($contents[0]);
 
-        //record a tag while loading this page
-        $tagManager->addTag("homePageLoading");
-
         return $this->render('home/index.html.twig', [
             'contents' => $contents,
             'mainContent' => $mainContent,

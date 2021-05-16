@@ -60,8 +60,6 @@ class CadavreController extends AbstractController
         SessionInterface $session,
         MailerInterface $mailer
     ): Response {
-        //record a tag while loading this page
-        $tagManager->addTag("cadavrePageLoading-".$code);
 
         //in case the code is "not ready" tell that the game is not started
         if($code == "notReady") {
@@ -170,8 +168,6 @@ class CadavreController extends AbstractController
         ChapterRepository $chapterRepository,
         StatTagManager $tagManager
     ): Response {
-        //record a tag while loading this page
-        $tagManager->addTag("finalCadavrePageLoading");
 
         //manage previously entered sentences
         $sentenceList = $sentenceRepository->findBy([], array('chapter' => 'ASC', 'previous' => 'ASC'));

@@ -21,9 +21,6 @@ class SubscribeController extends AbstractController
         MailerInterface $mailer,
         StatTagManager $tagManager
     ): Response {
-        //record a tag while loading this page
-        $tagManager->addTag("subscribePageLoading");
-
         $form = $this->createForm(SubscribeType::class);
 
         $form->handleRequest($request);

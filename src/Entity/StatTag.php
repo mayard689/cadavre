@@ -32,6 +32,21 @@ class StatTag
      */
     private $sessionid;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $browser;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $opsys;
+
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $ip;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +84,42 @@ class StatTag
     public function setSessionid(string $sessionid): self
     {
         $this->sessionid = $sessionid;
+
+        return $this;
+    }
+
+    public function getBrowser(): ?string
+    {
+        return $this->browser;
+    }
+
+    public function setBrowser(?string $browser): self
+    {
+        $this->browser = $browser;
+
+        return $this;
+    }
+
+    public function getOpsys(): ?string
+    {
+        return $this->opsys;
+    }
+
+    public function setOpsys(?string $opsys): self
+    {
+        $this->opsys = $opsys;
+
+        return $this;
+    }
+
+    public function getIp(): ?string
+    {
+        return $this->ip;
+    }
+
+    public function setIp(?string $ip): self
+    {
+        $this->ip = $ip;
 
         return $this;
     }
