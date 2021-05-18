@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Content;
 use App\Repository\ContentRepository;
+use App\Service\StatTagManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +15,7 @@ class SitemapController extends AbstractController
     /**
      * @Route("/sitemap.xml", name="sitemap", defaults={"_format"="xml"})
      */
-    public function index(Request $request, ContentRepository $contentRepository): Response
+    public function index(Request $request, ContentRepository $contentRepository, StatTagManager $tagManager): Response
     {
         $hostname = $request->getSchemeAndHttpHost();
 
