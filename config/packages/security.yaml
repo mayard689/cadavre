@@ -38,7 +38,8 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: '^/$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
-        - { path: '^/login$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+        - { path: '^/log-me-in$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+        - { path: '^/sitemap.xml', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/contribution', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/chapitre', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/stat/tag', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
