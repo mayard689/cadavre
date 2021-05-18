@@ -28,16 +28,20 @@ class ContentRepository extends ServiceEntityRepository
      * @return mixed
      * @throws \Exception
      */
-    public function findComming(int $limit=999, int $offset=0)
+    public function findComming(int $limit=-1, int $offset=0)
     {
-        return $this->createQueryBuilder('c')
+        $query = $this->createQueryBuilder('c')
             ->andWhere('c.date < :now')
             ->setParameter('now', new \Datetime('now'))
             ->orderBy('c.date', 'DESC')
-            ->setFirstResult($offset)
-            ->setMaxResults($limit)
+            ->setFirstResult($offset);
+
+        if ($limit >0) {
+            $query->setMaxResults($limit);
+        }
+
+        return $query
             ->getQuery()
-            ->getResult()
-            ;
+            ->getResult();
     }
 }
