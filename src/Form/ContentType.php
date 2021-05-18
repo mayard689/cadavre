@@ -16,6 +16,7 @@ class ContentType extends AbstractType
             ->add('title')
             ->add('date')
             ->add('text')
+            ->add('metadescription')
             ->add('pictureFile', VichImageType::class, [
                 'required' => false,
                 'allow_delete' => false,

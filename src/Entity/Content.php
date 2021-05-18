@@ -83,6 +83,11 @@ class Content
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $metadescription;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -209,6 +214,18 @@ class Content
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getMetadescription(): ?string
+    {
+        return $this->metadescription;
+    }
+
+    public function setMetadescription(?string $metadescription): self
+    {
+        $this->metadescription = $metadescription;
 
         return $this;
     }

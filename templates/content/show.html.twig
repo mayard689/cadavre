@@ -7,6 +7,8 @@
     {{ encore_entry_script_tags('showcontent') }}
 {% endblock %}
 
+{% block metadescription %}{{ content.metadescription ?: 'Encore une super animation pour tous le monde avec le Comité des Fêtes de Villereau' }}{% endblock %}
+
 {% block stylesheets %}
     {{ parent()}}
     {{ encore_entry_link_tags('showcontent') }}
