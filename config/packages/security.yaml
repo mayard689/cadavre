@@ -38,19 +38,20 @@ security:
         # allow basics
         - { path: '^/$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/log-me-in$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
-        - { path: '^/sitemap.xml', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+        - { path: '^/sitemap.xml$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
 
         # reject everything that delete unless authenticated as admin
         - { path: '^/', roles: ROLE_ADMIN, methods: [DELETE] }
+        - { path: 'new$', roles: ROLE_ADMIN }
+        - { path: 'edit$', roles: ROLE_ADMIN }
 
         # allow for everybody
         - { path: '^/picture/get/', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
-
-        # reject unless admin
-        - { path: '^/picture', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
-        - { path: '^/contribution', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
-        - { path: '^/chapitre', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
-        - { path: '^/stat/tag', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
+        - { path: '^/content/', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+        - { path: '^/nous-rejoindre$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+        - { path: '^/contact$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+        - { path: '^/mentions-legales$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+        - { path: '^/protection-des-donnees$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
 
         # anything not explicitly allowed is rejected
-        - { path: '^/', roles: ROLE_ADMIN] }
+        - { path: '^/', roles: ROLE_ADMIN }
