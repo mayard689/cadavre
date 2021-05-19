@@ -35,12 +35,22 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        # allow basics
         - { path: '^/$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/log-me-in$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/sitemap.xml', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+
+        # reject everything that delete unless authenticated as admin
+        - { path: '^/', roles: ROLE_ADMIN, methods: [DELETE] }
+
+        # allow for everybody
+        - { path: '^/picture/get/', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+
+        # reject unless admin
+        - { path: '^/picture', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/contribution', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/chapitre', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/stat/tag', roles: ROLE_ADMIN, requires_channel: '%env(SECURE_SCHEME)%' }
-        - { path: '^/', roles: ROLE_ADMIN, methods: [DELETE] }
+
+        # anything not explicitly allowed is rejected
+        - { path: '^/', roles: ROLE_ADMIN] }

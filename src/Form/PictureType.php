@@ -6,6 +6,7 @@ use App\Entity\Picture;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PictureType extends AbstractType
 {
@@ -14,7 +15,14 @@ class PictureType extends AbstractType
         $builder
             ->add('name')
             ->add('alt')
-            ->add('file')
+            ->add('pictureFile', VichImageType::class, [
+                'required' => false,
+                'allow_delete' => false,
+                'download_label' => '...',
+                'download_uri' => false,
+                'image_uri' => true,
+                'asset_helper' => true,
+            ])
         ;
     }
 

@@ -6,6 +6,7 @@ use App\Entity\Picture;
 use App\Form\PictureType;
 use App\Repository\PictureRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -56,6 +57,25 @@ class PictureController extends AbstractController
         return $this->render('picture/show.html.twig', [
             'picture' => $picture,
         ]);
+    }
+
+    /**
+     * @Route("/get/{picture}", name="picture_see", methods={"GET"})
+     */
+    public function see(String $picture): Response
+    {
+        //get the report filename according to the latest file
+        $filename = $picture; //$picture->getPicture();
+
+        // to being viewed in the Browser
+        $publicDirectory = './pictures/picture/';
+
+        if (file_exists($publicDirectory.$filename)) {
+            return new BinaryFileResponse($publicDirectory.$filename);
+        }
+
+        $this->addFlash('danger', 'L\'image que vous cherchez n\'est pas présente');
+        return $this->redirectToRoute('home');
     }
 
     /**
