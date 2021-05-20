@@ -58,6 +58,11 @@ class Picture
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Content::class, inversedBy="pictures")
+     */
+    private $content;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -132,5 +137,17 @@ class Picture
     public function getPictureSize(): ?int
     {
         return $this->pictureSize;
+    }
+
+    public function getContent(): ?Content
+    {
+        return $this->content;
+    }
+
+    public function setContent(?Content $content): self
+    {
+        $this->content = $content;
+
+        return $this;
     }
 }

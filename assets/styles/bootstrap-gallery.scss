@@ -1,0 +1,52 @@
+@import "_vars";
+
+// according to tutorial  https://css-tricks.com/creating-a-modal-image-gallery-with-bootstrap-components/
+// Use Bootstrap breakpoints for consistency.
+$bootstrap-sm: 576px;
+$bootstrap-md: 768px;
+$bootstrap-lg: 992px;
+$bootstrap-xl: 1200px;
+ 
+// Crop thumbnail images.
+#gallery {
+  /**
+  this cause picture do be deformed when webpack compile in prod mode and normal when copiled in dev mode ... strange...
+  img {
+    height: 75vw;
+    object-fit: cover;
+
+    @media (min-width: $bootstrap-sm) {
+      height: 35vw;
+    }
+
+    @media (min-width: $bootstrap-lg) {
+      height: 18vw;
+    }
+  }
+  */
+}
+ 
+//Crop images in the coursel
+.carousel-item {
+  img {
+    height: 60vw;
+    object-fit: cover;
+
+    @media (min-width: $bootstrap-sm) {
+      height: 350px;
+    }
+  }
+}
+
+
+.control-buttons{
+  .carousel-control-prev, .carousel-control-next{
+    position : unset;
+    width : 50%;
+    color : $dark;
+    opacity: 0.5;
+  }
+
+  display: flex;
+  align-items: center;
+}

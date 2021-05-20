@@ -89,10 +89,16 @@ class Content
      */
     private $metadescription;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="content")
+     */
+    private $pictures;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
         $this->newspaperSubject2s = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -234,5 +240,35 @@ class Content
     public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return Collection|Picture[]
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Picture $picture): self
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setContent($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): self
+    {
+        if ($this->pictures->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getContent() === $this) {
+                $picture->setContent(null);
+            }
+        }
+
+        return $this;
     }
 }
