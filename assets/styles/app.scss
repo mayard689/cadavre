@@ -133,7 +133,7 @@ section, section.container {
     padding-bottom : $spacing-h-small;
 }
 
-a{
+a.light-link{
     color : $light;
     font-size : $font-size;
 
@@ -142,13 +142,13 @@ a{
     }
 }
 
-a.darklink{
+a{
     color : $dark;
     font-size : $font-size;
     text-decoration: underline;
 
     &:hover{
-        color : $primary;
+        color : $secondary;
     }
 }
 
