@@ -30,7 +30,6 @@ class PictureType extends AbstractType
                 'choice_label' => 'title',
                 'multiple'=>false,
                 'expanded'=>false,
-                'by_reference' => false,
                 'label' => 'A insérer dans le carousel de l\'article',
             ])
         ;
