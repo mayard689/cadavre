@@ -143,11 +143,12 @@ a.light-link{
 }
 
 a{
-    color : $dark;
+    color : $secondary;
     font-size : $font-size;
     text-decoration: underline;
 
     &:hover{
+        transform : scale(1.1);
         color : $secondary;
     }
 }
