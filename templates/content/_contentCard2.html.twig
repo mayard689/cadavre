@@ -3,7 +3,7 @@
         <img class="blog-card-image" src="/pictures/content/{{ content.picture ?? 'emptyContentPicture.jpg' }}" alt="{{content.title}} illustration">
     </a>
     <div class="blog-card-body">
-        <div class="blog-card-details">{{content.date|date("d M Y", "Europe/Paris")}}</div>
+        <div class="blog-card-details">Publié le {{content.date|date("d M Y", "Europe/Paris")}}</div>
         <a  class="blog-card-title" href="{{ path('content_show', {'slug': content.slug}) }}"><h3>{{content.title}}</h3></a>
         <p class="blog-card-text">{{content.text|u.truncate(125)}}...</p>
 

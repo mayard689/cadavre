@@ -7,7 +7,7 @@
     </a>
 
     <div class="blog-card-body">
-        <div class="blog-card-details">{{content.category.name}} {{content.date|date("d M Y", "Europe/Paris")}}</div>
+        <div class="blog-card-details">Publié le {{content.date|date("d M Y", "Europe/Paris")}} dans la catégorie {{content.category.name}}</div>
 
         <p class="blog-card-text light">{{content.text|u.truncate(500)}}...</p>
 
