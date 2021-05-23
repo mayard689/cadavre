@@ -1,9 +1,14 @@
 {# according to tutorial  https://css-tricks.com/creating-a-modal-image-gallery-with-bootstrap-components/ #}
 {# need the bootstrapGallery.scss file #}
+
+
+{% set videoTypeList = ['webm', '.mp4'] %}
+
 <div class="row" id="gallery" data-toggle="modal" data-target="#CarouselModal">
     {% for picture in pictures %}
         <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-            {%  if 'webm' in picture[-4:] %}
+            {% set type = picture[-4:] %}
+            {%  if type in videoTypeList %}
                 <video class="video w-100 mt-2 mb-2" data-target="#carouselModal" data-slide-to="{{loop.index0}} disableremoteplayback="" poster="" preload="auto" data-object-fit="" autoplay="" playsinline="" muted="" loop="" data-was-processed="true">
                     <!-- Source vidéo par défaut -->
                     <source type="video/webm" src="{{picture}}" media="(orientation: landscape)">
@@ -34,7 +39,8 @@
                             <div class="carousel-item
                                 {% if loop.index0 == 0 %} active {% endif %}
                             ">
-                                {%  if 'webm' in picture[-4:] %}
+                                {% set type = picture[-4:] %}
+                                {%  if type in videoTypeList %}
                                     <video class="video d-block w-100 h-100" disableremoteplayback="" poster="" preload="auto" data-object-fit="" autoplay="" playsinline="" muted="" loop="" data-was-processed="true">
                                         <!-- Source vidéo par défaut -->
                                         <source type="video/webm" src="{{picture}}" media="(orientation: landscape)">
