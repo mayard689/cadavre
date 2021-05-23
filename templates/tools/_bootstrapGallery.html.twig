@@ -3,16 +3,21 @@
 
 
 {% set videoTypeList = ['webm', '.mp4'] %}
+{% set audioTypeList = ['.mp3'] %}
 
 <div class="row" id="gallery" data-toggle="modal" data-target="#CarouselModal">
     {% for picture in pictures %}
         <div class="col-6 col-sm-4 col-md-3 col-lg-3">
             {% set type = picture[-4:] %}
             {%  if type in videoTypeList %}
-                <video class="video w-100 mt-2 mb-2" data-target="#carouselModal" data-slide-to="{{loop.index0}} disableremoteplayback="" poster="" preload="auto" data-object-fit="" autoplay="" playsinline="" muted="" loop="" data-was-processed="true">
+                <video class="video w-100 mt-2 mb-2" data-target="#carouselModal" data-slide-to="{{loop.index0}}" disableremoteplayback="" poster="" preload="auto" data-object-fit="" autoplay="" playsinline="" muted="" loop="" data-was-processed="true">
                     <!-- Source vidéo par défaut -->
                     <source type="video/webm" src="{{picture}}" media="(orientation: landscape)">
                 </video>
+            {% elseif type in audioTypeList %}
+                <audio class="w-100 mt-2 mb-2" data-target="#carouselModal" data-slide-to="{{loop.index0}}" controls src="{{picture}}">
+                    Your browser does not support the <code>audio</code> element.
+                </audio>
             {% else %}
                 <img class="w-100 mt-2 mb-2" src="{{picture}}" data-target="#carouselModal" data-slide-to="{{loop.index0}}">
             {% endif %}
@@ -45,6 +50,11 @@
                                         <!-- Source vidéo par défaut -->
                                         <source type="video/webm" src="{{picture}}" media="(orientation: landscape)">
                                     </video>
+                                {% elseif type in audioTypeList %}
+                                    <figcaption>Ecoutez {{ picture }}</figcaption>
+                                    <audio class="w-100 mt-2 mb-2" data-target="#carouselModal" data-slide-to="{{loop.index0}}" controls src="{{picture}}">
+                                        Your browser does not support the <code>audio</code> element.
+                                    </audio>
                                 {% else %}
                                     <img class="d-block w-100 h-100" src="{{picture}}">
                                 {% endif %}
