@@ -46,7 +46,7 @@
                             ">
                                 {% set type = picture[-4:] %}
                                 {%  if type in videoTypeList %}
-                                    <video class="video d-block w-100 h-100" disableremoteplayback="" poster="" preload="auto" data-object-fit="" autoplay="" playsinline="" muted="" loop="" data-was-processed="true">
+                                    <video controls class="video d-block w-100 h-100" disableremoteplayback="" poster="" preload="auto" data-object-fit="" autoplay="" playsinline="" muted="" loop="" data-was-processed="true">
                                         <!-- Source vidéo par défaut -->
                                         <source type="video/webm" src="{{picture}}" media="(orientation: landscape)">
                                     </video>
