@@ -15,4 +15,21 @@
             <p class="card-text">{{text}}</p>
         </div>
     </div>
+
+    {% if (button is defined) and (button.path is not null) %}
+        <p>{{ button.text }}</p>
+        <a style="
+                    font-size: 1.0rem;
+                    color: #333333;
+                    border-radius: 5px;
+                    background-color: #EF9F9F;
+                    border-color: #EF9F9F;
+                    text-decoration: none;
+                    padding: 0.25rem 0.5rem;
+                "
+           href="{{ app.request.schemeAndHttpHost }}{{ button.path }}">
+            Autoriser la diffusion de cet email
+        </a>
+    {% endif %}
+
 {% endblock %}

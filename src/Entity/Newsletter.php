@@ -42,6 +42,11 @@ class Newsletter
      */
     private $toPersons;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $checked;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +108,18 @@ class Newsletter
     public function setToPersons(bool $toPersons): self
     {
         $this->toPersons = $toPersons;
+
+        return $this;
+    }
+
+    public function getChecked(): ?bool
+    {
+        return $this->checked;
+    }
+
+    public function setChecked(bool $checked): self
+    {
+        $this->checked = $checked;
 
         return $this;
     }

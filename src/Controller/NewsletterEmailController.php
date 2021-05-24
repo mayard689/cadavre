@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/newsletter/email")
+ * @Route("/email")
  */
 class NewsletterEmailController extends AbstractController
 {

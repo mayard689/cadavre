@@ -39,6 +39,10 @@
 
         <a href="{{ path('newsletter_edit', {'id': newsletter.id}) }}">Modifier</a>
 
+        {% if newsletter.checked %}
+            <a href="{{ path('newsletter_send', {'id': newsletter.id}) }}">Envoyer</a>
+        {% endif %}
+
         {{ include('newsletter/_delete_form.html.twig') }}
     </section>
 {% endblock %}

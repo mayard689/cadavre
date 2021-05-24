@@ -38,6 +38,8 @@ class NewsletterController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $newsletter->setChecked(false);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletter);
             $entityManager->flush();
@@ -66,14 +68,58 @@ class NewsletterController extends AbstractController
      */
     public function test(Newsletter $newsletter, MailSender $mailSender): Response
     {
-        $mailSender->testEmail($newsletter->getSubject(), $newsletter->getText());
+        $path = $this->generateUrl('newsletter_unlock', ['id' => $newsletter->getId()]);
+        $mailSender->testEmail($newsletter->getSubject(), $newsletter->getText(), $path);
 
         $this->addFlash(
             'success',
             'Un email de test a bien été envoyé à l\'administrateur concernant la newsletter '.$newsletter->getSubject()
         );
 
-        return $this->redirectToRoute('content_index');
+        return $this->redirectToRoute('newsletter_index');
+    }
+
+    /**
+     * @Route("{id}/send", name="newsletter_send", methods={"GET"})
+     */
+    public function send(Newsletter $newsletter, MailSender $mailSender): Response
+    {
+        if (!$newsletter->getChecked()) {
+            $this->addFlash(
+                'danger',
+                'La newsletter '.$newsletter->getSubject() . 'n\'est pas dévérouillée pour diffusion. Appuyez sur le bouton de test dans l\'index des newsletter pour envoyer la newsletter à l\'administrateur. Puis cliquez sur le bouton de dévérouillage dans le mail si celui ci vous convient.'
+            );
+
+            return $this->redirectToRoute('newsletter_index');
+        }
+
+        $mailSender->sendEmail($newsletter->getSubject(), $newsletter->getText());
+
+        $this->addFlash(
+            'success',
+            'L\'e-mail '.$newsletter->getSubject() . 'a bien été envoyé.'
+        );
+
+        return $this->redirectToRoute('newsletter_index');
+    }
+
+    /**
+     * @Route("{id}/unlock", name="newsletter_unlock", methods={"GET"})
+     */
+    public function allow(Newsletter $newsletter): Response
+    {
+        $newsletter->setChecked(true);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($newsletter);
+        $entityManager->flush();
+
+        $this->addFlash(
+            'success',
+            'La newsletter '.$newsletter->getSubject(). 'a bien été dévérouillée.'
+        );
+
+        return $this->redirectToRoute('newsletter_index');
     }
 
     /**

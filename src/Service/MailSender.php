@@ -75,7 +75,13 @@ class MailSender
         }
     }
 
-    public function testEmail(String $subject, String $text)
+    /**
+     * @param String $subject
+     * @param String $text
+     * @param String $path : if exist, a button will be created with this path
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
+     */
+    public function testEmail(String $subject, String $text, String $path=null)
     {
         $email = (new TemplatedEmail())
             ->from($this->params->get("mailer_from"))
@@ -87,7 +93,11 @@ class MailSender
             ->context([
                 'secret' => "no-secret",
                 'text' => $text,
-                'subject' => $subject
+                'subject' => $subject,
+                'button' => [
+                    'path' => $path,
+                    'text' => 'Appuyez sur ce bouton si vous autoriser la diffusion de cet email. Ceci fera apparaitre le bouton d\'envoi dans l\'interface de gestion des emails du iste web.'
+                ]
             ]);
 
         $this->mailer->send($email);
