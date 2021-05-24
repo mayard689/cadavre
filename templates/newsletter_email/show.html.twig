@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NewsletterEmail{% endblock %}
+
+{% block body %}
+    <h1>NewsletterEmail</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ newsletter_email.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ newsletter_email.email }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ newsletter_email.date ? newsletter_email.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Secret</th>
+                <td>{{ newsletter_email.secret }}</td>
+            </tr>
+            <tr>
+                <th>Professional</th>
+                <td>{{ newsletter_email.professional ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Member</th>
+                <td>{{ newsletter_email.member ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Registered</th>
+                <td>{{ newsletter_email.registered ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('newsletter_email_index') }}">back to list</a>
+
+    <a href="{{ path('newsletter_email_edit', {'id': newsletter_email.id}) }}">edit</a>
+
+    {{ include('newsletter_email/_delete_form.html.twig') }}
+{% endblock %}
