@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier la newsletter{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <h1>Edit Newsletter</h1>
+
+        {{ include('newsletter/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+        <a href="{{ path('newsletter_index') }}">Revenir à la liste des newsletter</a>
+
+        {{ include('newsletter/_delete_form.html.twig') }}
+    </section>
+{% endblock %}

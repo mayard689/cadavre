@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Newsletter{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <h1>Newsletter</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ newsletter.id }}</td>
+                </tr>
+                <tr>
+                    <th>Objet</th>
+                    <td>{{ newsletter.subject }}</td>
+                </tr>
+                <tr>
+                    <th>Texte</th>
+                    <td>{{ newsletter.text }}</td>
+                </tr>
+                <tr>
+                    <th>Aux membres</th>
+                    <td>{{ newsletter.toMembers ? 'Oui' : 'Non' }}</td>
+                </tr>
+                <tr>
+                    <th>Aux professionnels</th>
+                    <td>{{ newsletter.toProfessionals ? 'Oui' : 'Non' }}</td>
+                </tr>
+                <tr>
+                    <th>Aux particuliers</th>
+                    <td>{{ newsletter.toPersons ? 'Oui' : 'Non' }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('newsletter_index') }}">Revenir à la liste des newsletters</a>
+
+        <a href="{{ path('newsletter_edit', {'id': newsletter.id}) }}">Modifier</a>
+
+        {{ include('newsletter/_delete_form.html.twig') }}
+    </section>
+{% endblock %}
