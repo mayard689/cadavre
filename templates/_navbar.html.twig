@@ -20,6 +20,25 @@
             <li class="nav-item active">
                 <a class="nav-link" href="https://www.comitedesfetes.org/">Qui sommes-nous <span class="sr-only">(qui sommes nous)</span></a>
             </li>
+
+            {% if (app.user is not null) and (app.user.roles[0] == 'ROLE_ADMIN') %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('stat_tag_index') }}">Rapport de visites <span class="sr-only">(qui sommes nous)</span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('newsletter_index') }}">Newsletters <span class="sr-only">(qui sommes nous)</span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('newsletter_email_index') }}">Base emails <span class="sr-only">(qui sommes nous)</span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('picture_index') }}">Images et musiques <span class="sr-only">(qui sommes nous)</span></a>
+                </li>
+            {% endif %}
+
         </ul>
     </div>
 </nav>
