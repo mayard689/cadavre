@@ -53,4 +53,24 @@ class MailSender
         }
     }
 
+    public function sendEmail(String $subject, String $text)
+    {
+        $email = (new TemplatedEmail())
+            ->from($this->params->get("mailer_from"))
+            ->subject($subject);
+
+        $members = $this->newsletterEmailRepository->findAll();
+
+        foreach($members as $member) {
+            $email
+                ->to($member->getEmail())
+                ->htmlTemplate('email/notification.html.twig')
+                ->context([
+                    'secret' => $member->getSecret(),
+                    'text' => $text
+                ]);
+
+            $this->mailer->send($email);
+        }
+    }
 }
