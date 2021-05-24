@@ -4,7 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Newsletter;
 use App\Form\NewsletterType;
+use App\Repository\NewsletterEmailRepository;
 use App\Repository\NewsletterRepository;
+use App\Service\MailSender;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -59,6 +62,21 @@ class NewsletterController extends AbstractController
     }
 
     /**
+     * @Route("{id}/test", name="newsletter_test", methods={"GET"})
+     */
+    public function test(Newsletter $newsletter, MailSender $mailSender): Response
+    {
+        $mailSender->testEmail($newsletter->getSubject(), $newsletter->getText());
+
+        $this->addFlash(
+            'success',
+            'Un email de test a bien été envoyé à l\'administrateur concernant la newsletter '.$newsletter->getSubject()
+        );
+
+        return $this->redirectToRoute('content_index');
+    }
+
+    /**
      * @Route("/{id}/edit", name="newsletter_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Newsletter $newsletter): Response
@@ -90,5 +108,25 @@ class NewsletterController extends AbstractController
         }
 
         return $this->redirectToRoute('newsletter_index');
+    }
+
+    /**
+     * @Route("/stop-email/{secret}", name="confirmStopPub")
+     */
+    public function confirmStopPub(
+        String $secret,
+        NewsletterEmailRepository $newsletterEmailRepository,
+        EntityManagerInterface $entityManager
+    ) {
+        $email = $newsletterEmailRepository->findOneBy(['secret'=>$secret]);
+
+        if ($email) {
+            $entityManager->remove($email);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Vous avez été désinscrit de la liste de diffusion.');
+        }
+
+        return $this->redirectToRoute('home');
     }
 }

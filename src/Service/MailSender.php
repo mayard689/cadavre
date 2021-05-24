@@ -67,10 +67,29 @@ class MailSender
                 ->htmlTemplate('email/notification.html.twig')
                 ->context([
                     'secret' => $member->getSecret(),
-                    'text' => $text
+                    'text' => $text,
+                    'subject' => $subject
                 ]);
 
             $this->mailer->send($email);
         }
+    }
+
+    public function testEmail(String $subject, String $text)
+    {
+        $email = (new TemplatedEmail())
+            ->from($this->params->get("mailer_from"))
+            ->subject($subject);
+
+        $email
+            ->to($this->params->get("admin_email"))
+            ->htmlTemplate('email/notification.html.twig')
+            ->context([
+                'secret' => "no-secret",
+                'text' => $text,
+                'subject' => $subject
+            ]);
+
+        $this->mailer->send($email);
     }
 }
