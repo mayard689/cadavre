@@ -27,7 +27,7 @@
                     text-decoration: none;
                     padding: 0.25rem 0.5rem;
                 "
-           href="{{ app.request.schemeAndHttpHost }}{{ path('newsletter_unlock', {'id' : newsletter.id}) }}">
+           href="{{ app.request.schemeAndHttpHost }}{{ path('newsletter_unlock', {'versionning' : newsletter.versionning}) }}">
             Autoriser la diffusion de cet email
         </a>
     {% endif %}

@@ -8,6 +8,7 @@ use App\Repository\NewsletterEmailRepository;
 use App\Repository\NewsletterRepository;
 use App\Service\MailSender;
 use Doctrine\ORM\EntityManagerInterface;
+use PhpParser\Node\Scalar\String_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,11 +39,8 @@ class NewsletterController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            //make $s a random string
-            for ($secret = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 32; $x = rand(0,$z), $secret .= $a{$x}, $i++);
-
             $newsletter->setChecked(false);
-            $newsletter->setVersionning($secret);
+            $newsletter->setVersionning($this->getRandomVersionningNumber());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletter);
@@ -68,11 +66,10 @@ class NewsletterController extends AbstractController
     }
 
     /**
-     * @Route("{id}/test", name="newsletter_test", methods={"GET"})
+     * @Route("/{id}/test", name="newsletter_test", methods={"GET"})
      */
     public function testNewsletter(Newsletter $newsletter, MailSender $mailSender): Response
     {
-        $path = $this->generateUrl('newsletter_unlock', ['id' => $newsletter->getId()]);
         $mailSender->testNewsletter($newsletter);
 
         $this->addFlash(
@@ -84,7 +81,7 @@ class NewsletterController extends AbstractController
     }
 
     /**
-     * @Route("{id}/send", name="newsletter_send", methods={"GET"})
+     * @Route("/{id}/send", name="newsletter_send", methods={"GET"})
      */
     public function sendNewsletter(Newsletter $newsletter, MailSender $mailSender): Response
     {
@@ -108,7 +105,7 @@ class NewsletterController extends AbstractController
     }
 
     /**
-     * @Route("{id}/unlock", name="newsletter_unlock", methods={"GET"})
+     * @Route("/{versionning}/unlock", name="newsletter_unlock", methods={"GET"})
      */
     public function allow(Newsletter $newsletter): Response
     {
@@ -135,11 +132,8 @@ class NewsletterController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            //make $s a random string
-            for ($secret = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 32; $x = rand(0,$z), $secret .= $a{$x}, $i++);
-
             $newsletter->setChecked(false);
-            $newsletter->setVersionning($secret);
+            $newsletter->setVersionning($this->getRandomVersionningNumber());
 
             $this->getDoctrine()->getManager()->flush();
 
@@ -150,6 +144,12 @@ class NewsletterController extends AbstractController
             'newsletter' => $newsletter,
             'form' => $form->createView(),
         ]);
+    }
+
+    private function getRandomVersionningNumber() : String
+    {
+        for ($secret = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 10; $x = rand(0,$z), $secret .= $a{$x}, $i++);
+        return $secret;
     }
 
     /**
