@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\NewsletterEmailRepository;
 use Doctrine\ORM\Mapping as ORM;
+use PhpParser\Node\Scalar\String_;
 use Symfony\Component\Validator\Constraints as Assert;
 use Ambta\DoctrineEncryptBundle\Configuration\Encrypted;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -131,5 +132,10 @@ class NewsletterEmail
         $this->registered = $registered;
 
         return $this;
+    }
+
+    public function toString() : String
+    {
+        return strval($this->getId());
     }
 }

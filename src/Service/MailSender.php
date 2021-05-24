@@ -60,7 +60,31 @@ class MailSender
             ->from($this->params->get("mailer_from"))
             ->subject($newsletter->getSubject());
 
-        $members = $this->newsletterEmailRepository->findAll();
+        $members = [];
+        if ($newsletter->getToMembers()) {
+            $members = $this->newsletterEmailRepository->findBy([
+                'member' => true
+            ]);
+        }
+
+        $professionals = [];
+        if ($newsletter->getToProfessionals()){
+            $professionals = $this->newsletterEmailRepository->findBy([
+                'professional' => true
+            ]);
+        }
+
+        $persons = [];
+        if ($newsletter->getToPersons()) {
+            $persons = $this->newsletterEmailRepository->findBy([
+                'professional' => false
+            ]);
+        }
+
+        $members = array_merge($members,$professionals);
+        $members = array_merge($members, $persons);
+
+        $members = $this->array_unique_full($members);
 
         foreach($members as $member) {
             $email
@@ -73,6 +97,12 @@ class MailSender
 
             $this->mailer->send($email);
         }
+    }
+
+    private function array_unique_full($arr, $strict = false) {
+        return array_filter($arr, function($v, $k) use ($arr, $strict) {
+            return array_search($v, $arr, $strict) === $k;
+        }, ARRAY_FILTER_USE_BOTH);
     }
 
     public function testNewsletter(Newsletter $newsletter)
