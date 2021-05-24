@@ -38,7 +38,11 @@ class NewsletterController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //make $s a random string
+            for ($secret = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 32; $x = rand(0,$z), $secret .= $a{$x}, $i++);
+
             $newsletter->setChecked(false);
+            $newsletter->setVersionning($secret);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletter);
@@ -131,6 +135,12 @@ class NewsletterController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //make $s a random string
+            for ($secret = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 32; $x = rand(0,$z), $secret .= $a{$x}, $i++);
+
+            $newsletter->setChecked(false);
+            $newsletter->setVersionning($secret);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('newsletter_index');

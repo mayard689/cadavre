@@ -47,6 +47,11 @@ class Newsletter
      */
     private $checked;
 
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $versionning;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Newsletter
     public function setChecked(bool $checked): self
     {
         $this->checked = $checked;
+
+        return $this;
+    }
+
+    public function getVersionning(): ?string
+    {
+        return $this->versionning;
+    }
+
+    public function setVersionning(string $versionning): self
+    {
+        $this->versionning = $versionning;
 
         return $this;
     }
