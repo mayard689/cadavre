@@ -1,45 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}NewsletterEmail index{% endblock %}
+{% block title %}Liste des adresses email{% endblock %}
 
 {% block body %}
-    <h1>NewsletterEmail index</h1>
+    <section class="container">
+        <h1>Liste des adresses email</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Date</th>
-                <th>Secret</th>
-                <th>Professional</th>
-                <th>Member</th>
-                <th>Registered</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for newsletter_email in newsletter_emails %}
-            <tr>
-                <td>{{ newsletter_email.id }}</td>
-                <td>{{ newsletter_email.email }}</td>
-                <td>{{ newsletter_email.date ? newsletter_email.date|date('Y-m-d') : '' }}</td>
-                <td>{{ newsletter_email.secret }}</td>
-                <td>{{ newsletter_email.professional ? 'Yes' : 'No' }}</td>
-                <td>{{ newsletter_email.member ? 'Yes' : 'No' }}</td>
-                <td>{{ newsletter_email.registered ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('newsletter_email_show', {'id': newsletter_email.id}) }}">show</a>
-                    <a href="{{ path('newsletter_email_edit', {'id': newsletter_email.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <p>Remarque : auto-enregistré signifie que la personne s'est enregsitrée elle même en s'inscrivant à la newsletter</p>
 
-    <a href="{{ path('newsletter_email_new') }}">Create new</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Secret</th>
+                    <th>Professionnel</th>
+                    <th>Membre</th>
+                    <th>Auto-Enregistré</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for newsletter_email in newsletter_emails %}
+                <tr>
+                    <td>{{ newsletter_email.id }}</td>
+                    <td>{{ newsletter_email.email }}</td>
+                    <td>{{ newsletter_email.date ? newsletter_email.date|date('Y-m-d') : '' }}</td>
+                    <td>{{ newsletter_email.secret }}</td>
+                    <td>{{ newsletter_email.professional ? 'Yes' : 'No' }}</td>
+                    <td>{{ newsletter_email.member ? 'Yes' : 'No' }}</td>
+                    <td>{{ newsletter_email.registered ? 'Yes' : 'No' }}</td>
+                    <td>
+                        <a href="{{ path('newsletter_email_show', {'id': newsletter_email.id}) }}">show</a>
+                        <a href="{{ path('newsletter_email_edit', {'id': newsletter_email.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Aucun email actuellement enregistré</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('newsletter_email_new') }}">Ajouter un email</a>
+    </section>
 {% endblock %}

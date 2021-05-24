@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New NewsletterEmail{% endblock %}
+{% block title %}Ajouter un e-mail{% endblock %}
 
 {% block body %}
-    <h1>Create new NewsletterEmail</h1>
+    <section class="container">
+        <h1>Ajouter un e-mail</h1>
 
-    {{ include('newsletter_email/_form.html.twig') }}
+        {{ include('newsletter_email/_form.html.twig') }}
 
-    <a href="{{ path('newsletter_email_index') }}">back to list</a>
+        <a href="{{ path('newsletter_email_index') }}">Revenir à la liste des e-mails</a>
+    </section>
 {% endblock %}
