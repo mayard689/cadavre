@@ -258,9 +258,10 @@ li{
     max-height : 25vh;
 }
 
-.corn1, .corn2, .corn3 {
-    height : 100px;
-    max-height : 15vh;
+.signature{
+    color : $dark;
+    padding : 0;
+    margin : 0;
 }
 
 .custom-switch .custom-control-label::before {

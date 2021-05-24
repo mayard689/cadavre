@@ -29,7 +29,12 @@
                     <p>{% block regards %}Cordialement{% endblock %}</p>
 
                     <p style="color:#000000;">
-                        {% block conclusion %}{{ company_name }}{% endblock %}
+                        {% block conclusion %}
+                            <p style="margin:0; padding:0" class="signature">{{ company_name }}</p>
+                            <a href="{{ company_site }}">{% if (company_site is defined) %}
+                                {{ company_site }}
+                                {% endif %}</a>
+                        {% endblock %}
                     </p>
                 {% endblock %}
             </div>

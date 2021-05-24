@@ -7,6 +7,7 @@ parameters:
     admin_email: '%env(resolve:ADMIN_EMAIL)%'
     mailer_from: '%env(resolve:MAILER_FROM_ADDRESS)%'
     company_name: '%env(resolve:COMPANY_NAME)%'
+    company_site: '%env(resolve:COMPANY_SITE)%'
 
 services:
     # default configuration for services in *this* file
