@@ -12,12 +12,9 @@ class NewsletterEmailType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email')
-            ->add('date')
-            ->add('secret')
-            ->add('professional')
-            ->add('member')
-            ->add('registered')
+            ->add('email', null,['label' => "E-mail"])
+            ->add('professional', null,['label' => "Le contact est il un professionnel ?"])
+            ->add('member', null,['label' => "Le contact est il membre ?"])
         ;
     }
 

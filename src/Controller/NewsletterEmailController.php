@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\NewsletterEmail;
 use App\Form\NewsletterEmailType;
 use App\Repository\NewsletterEmailRepository;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,6 +36,13 @@ class NewsletterEmailController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //make $s a random string
+            for ($secret = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 32; $x = rand(0,$z), $secret .= $a{$x}, $i++);
+
+            $newsletterEmail->setDate(new DateTime());
+            $newsletterEmail->setSecret($secret);
+            $newsletterEmail->setRegistered(false);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletterEmail);
             $entityManager->flush();
