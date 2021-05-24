@@ -29,6 +29,11 @@ class NewsletterTracker
      */
     private $email;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,6 +59,18 @@ class NewsletterTracker
     public function setEmail(?NewsletterEmail $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

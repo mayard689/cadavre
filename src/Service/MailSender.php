@@ -4,8 +4,10 @@ namespace App\Service;
 
 use App\Entity\Content;
 use App\Entity\Newsletter;
+use App\Entity\NewsletterTracker;
 use App\Repository\NewsletterEmailRepository;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Mailer\MailerInterface;
@@ -18,16 +20,19 @@ class MailSender
     private $userRepository;
     private $twig;
     private $params;
+    private $em;
 
     public function __construct(
         MailerInterface $mailer,
         NewsletterEmailRepository $newsletterEmailRepository,
+        EntityManagerInterface $em,
         Environment $twig,
         UserRepository $userRepository,
         ParameterBagInterface $params
     ) {
         $this->mailer = $mailer;
         $this->newsletterEmailRepository = $newsletterEmailRepository;
+        $this->em = $em;
         $this->twig = $twig;
         $this->userRepository = $userRepository;
         $this->params = $params;
@@ -96,6 +101,14 @@ class MailSender
                 ]);
 
             $this->mailer->send($email);
+
+            //record that this newsletter was sent
+            $nlt = new NewsletterTracker();
+            $nlt->setEmail($member);
+            $nlt->setNewsletter($newsletter);
+            $nlt->setDate(new \DateTime());
+            $this->em->persist($nlt);
+            $this->em->flush();
         }
     }
 
