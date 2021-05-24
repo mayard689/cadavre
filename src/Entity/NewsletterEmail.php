@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\NewsletterEmailRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use PhpParser\Node\Scalar\String_;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -56,6 +58,16 @@ class NewsletterEmail
      * @ORM\Column(type="boolean")
      */
     private $registered;
+
+    /**
+     * @ORM\OneToMany(targetEntity=NewsletterTracker::class, mappedBy="address", orphanRemoval=true)
+     */
+    private $newsletterTrackers;
+
+    public function __construct()
+    {
+        $this->newsletterTrackers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -137,5 +149,35 @@ class NewsletterEmail
     public function toString() : String
     {
         return strval($this->getId());
+    }
+
+    /**
+     * @return Collection|NewsletterTracker[]
+     */
+    public function getNewsletterTrackers(): Collection
+    {
+        return $this->newsletterTrackers;
+    }
+
+    public function addNewsletterTracker(NewsletterTracker $newsletterTracker): self
+    {
+        if (!$this->newsletterTrackers->contains($newsletterTracker)) {
+            $this->newsletterTrackers[] = $newsletterTracker;
+            $newsletterTracker->setAddress($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNewsletterTracker(NewsletterTracker $newsletterTracker): self
+    {
+        if ($this->newsletterTrackers->removeElement($newsletterTracker)) {
+            // set the owning side to null (unless already changed)
+            if ($newsletterTracker->getAddress() === $this) {
+                $newsletterTracker->setAddress(null);
+            }
+        }
+
+        return $this;
     }
 }

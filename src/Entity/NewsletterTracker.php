@@ -24,15 +24,15 @@ class NewsletterTracker
     private $newsletter;
 
     /**
-     * @ORM\ManyToOne(targetEntity=NewsletterEmail::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $email;
-
-    /**
      * @ORM\Column(type="date")
      */
     private $date;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=NewsletterEmail::class, inversedBy="newsletterTrackers")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $address;
 
     public function getId(): ?int
     {
@@ -51,18 +51,6 @@ class NewsletterTracker
         return $this;
     }
 
-    public function getEmail(): ?NewsletterEmail
-    {
-        return $this->email;
-    }
-
-    public function setEmail(?NewsletterEmail $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
     public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
@@ -71,6 +59,18 @@ class NewsletterTracker
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getAddress(): ?NewsletterEmail
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?NewsletterEmail $address): self
+    {
+        $this->address = $address;
 
         return $this;
     }

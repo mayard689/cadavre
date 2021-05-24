@@ -2,8 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Newsletter;
 use App\Entity\NewsletterEmail;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\AbstractQuery;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -17,6 +19,17 @@ class NewsletterEmailRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, NewsletterEmail::class);
+    }
+
+    public function findByNewsletter(Newsletter $newsletter)
+    {
+        return $this->createQueryBuilder('n')
+            ->join('n.newsletterTrackers', 'tracker')
+            ->andWhere('tracker.newsletter = :val')
+            ->setParameter('val', $newsletter->getId())
+            ->getQuery()
+            ->getResult()
+            ;
     }
 
     // /**

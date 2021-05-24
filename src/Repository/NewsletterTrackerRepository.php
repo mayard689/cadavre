@@ -2,8 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Newsletter;
 use App\Entity\NewsletterTracker;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\AbstractQuery;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**

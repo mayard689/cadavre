@@ -81,9 +81,9 @@ class NewsletterController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/send", name="newsletter_send", methods={"GET"})
+     * @Route("/{id}/send/{again}", name="newsletter_send", methods={"GET"}, requirements={"again"="(again)|()"})
      */
-    public function sendNewsletter(Newsletter $newsletter, MailSender $mailSender): Response
+    public function sendNewsletter(Newsletter $newsletter, MailSender $mailSender, String $again): Response
     {
         if (!$newsletter->getChecked()) {
             $this->addFlash(
@@ -94,11 +94,11 @@ class NewsletterController extends AbstractController
             return $this->redirectToRoute('newsletter_index');
         }
 
-        $mailSender->sendNewsletter($newsletter);
+        $numberOfMails = $mailSender->sendNewsletter($newsletter, $again == "again");
 
         $this->addFlash(
             'success',
-            'L\'e-mail '.$newsletter->getSubject() . ' a bien été envoyé.'
+            'L\'e-mail '.$newsletter->getSubject() . ' a été envoyé à ' . strval($numberOfMails) . ' destinataires.'
         );
 
         return $this->redirectToRoute('newsletter_index');
