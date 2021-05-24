@@ -9,15 +9,15 @@
 {% block message %}
 
     <div class="card content-card">
-        <h5 class="card-title">{{subject}}</h5>
+        <h5 class="card-title">{{newsletter.subject}}</h5>
 
         <div class="card-body">
-            <p class="card-text">{{text}}</p>
+            <p class="card-text">{{newsletter.text}}</p>
         </div>
     </div>
 
-    {% if (button is defined) and (button.path is not null) %}
-        <p>{{ button.text }}</p>
+    {% if (test is defined) and test %}
+        <p>Appuyez sur le bouton ci dessous si cet email vous convient et que vous autorisez sa diffusion.</p>
         <a style="
                     font-size: 1.0rem;
                     color: #333333;
@@ -27,7 +27,7 @@
                     text-decoration: none;
                     padding: 0.25rem 0.5rem;
                 "
-           href="{{ app.request.schemeAndHttpHost }}{{ button.path }}">
+           href="{{ app.request.schemeAndHttpHost }}{{ path('newsletter_unlock', {'id' : newsletter.id}) }}">
             Autoriser la diffusion de cet email
         </a>
     {% endif %}

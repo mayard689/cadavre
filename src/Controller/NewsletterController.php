@@ -66,10 +66,10 @@ class NewsletterController extends AbstractController
     /**
      * @Route("{id}/test", name="newsletter_test", methods={"GET"})
      */
-    public function test(Newsletter $newsletter, MailSender $mailSender): Response
+    public function testNewsletter(Newsletter $newsletter, MailSender $mailSender): Response
     {
         $path = $this->generateUrl('newsletter_unlock', ['id' => $newsletter->getId()]);
-        $mailSender->testEmail($newsletter->getSubject(), $newsletter->getText(), $path);
+        $mailSender->testNewsletter($newsletter);
 
         $this->addFlash(
             'success',
@@ -82,22 +82,22 @@ class NewsletterController extends AbstractController
     /**
      * @Route("{id}/send", name="newsletter_send", methods={"GET"})
      */
-    public function send(Newsletter $newsletter, MailSender $mailSender): Response
+    public function sendNewsletter(Newsletter $newsletter, MailSender $mailSender): Response
     {
         if (!$newsletter->getChecked()) {
             $this->addFlash(
                 'danger',
-                'La newsletter '.$newsletter->getSubject() . 'n\'est pas dévérouillée pour diffusion. Appuyez sur le bouton de test dans l\'index des newsletter pour envoyer la newsletter à l\'administrateur. Puis cliquez sur le bouton de dévérouillage dans le mail si celui ci vous convient.'
+                'La newsletter '.$newsletter->getSubject() . ' n\'est pas dévérouillée pour diffusion. Appuyez sur le bouton de test dans l\'index des newsletter pour envoyer la newsletter à l\'administrateur. Puis cliquez sur le bouton de dévérouillage dans le mail si celui ci vous convient.'
             );
 
             return $this->redirectToRoute('newsletter_index');
         }
 
-        $mailSender->sendEmail($newsletter->getSubject(), $newsletter->getText());
+        $mailSender->sendNewsletter($newsletter);
 
         $this->addFlash(
             'success',
-            'L\'e-mail '.$newsletter->getSubject() . 'a bien été envoyé.'
+            'L\'e-mail '.$newsletter->getSubject() . ' a bien été envoyé.'
         );
 
         return $this->redirectToRoute('newsletter_index');
@@ -116,7 +116,7 @@ class NewsletterController extends AbstractController
 
         $this->addFlash(
             'success',
-            'La newsletter '.$newsletter->getSubject(). 'a bien été dévérouillée.'
+            'La newsletter '.$newsletter->getSubject(). ' a bien été dévérouillée.'
         );
 
         return $this->redirectToRoute('newsletter_index');

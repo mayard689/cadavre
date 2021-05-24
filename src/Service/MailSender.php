@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use App\Entity\Content;
+use App\Entity\Newsletter;
 use App\Repository\NewsletterEmailRepository;
 use App\Repository\UserRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -53,11 +54,11 @@ class MailSender
         }
     }
 
-    public function sendEmail(String $subject, String $text)
+    public function sendNewsletter(Newsletter $newsletter)
     {
         $email = (new TemplatedEmail())
             ->from($this->params->get("mailer_from"))
-            ->subject($subject);
+            ->subject($newsletter->getSubject());
 
         $members = $this->newsletterEmailRepository->findAll();
 
@@ -67,37 +68,26 @@ class MailSender
                 ->htmlTemplate('email/notification.html.twig')
                 ->context([
                     'secret' => $member->getSecret(),
-                    'text' => $text,
-                    'subject' => $subject
+                    'newsletter' => $newsletter,
                 ]);
 
             $this->mailer->send($email);
         }
     }
 
-    /**
-     * @param String $subject
-     * @param String $text
-     * @param String $path : if exist, a button will be created with this path
-     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
-     */
-    public function testEmail(String $subject, String $text, String $path=null)
+    public function testNewsletter(Newsletter $newsletter)
     {
         $email = (new TemplatedEmail())
             ->from($this->params->get("mailer_from"))
-            ->subject($subject);
+            ->subject($newsletter->getSubject());
 
         $email
             ->to($this->params->get("admin_email"))
             ->htmlTemplate('email/notification.html.twig')
             ->context([
                 'secret' => "no-secret",
-                'text' => $text,
-                'subject' => $subject,
-                'button' => [
-                    'path' => $path,
-                    'text' => 'Appuyez sur ce bouton si vous autoriser la diffusion de cet email. Ceci fera apparaitre le bouton d\'envoi dans l\'interface de gestion des emails du iste web.'
-                ]
+                'newsletter' => $newsletter,
+                'test' => true
             ]);
 
         $this->mailer->send($email);
