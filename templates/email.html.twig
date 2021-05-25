@@ -2,38 +2,54 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        {% block stylesheets %} {% endblock %}
+        {% block stylesheets %}
+            <style></style>
+        {% endblock %}
     </head>
-    <body>
+    <body style="
+
+                ">
         {% block body %}
             <header>
 
             </header>
+
             <div class="container" style="
                 background-color: #F0EFEA;
-                width:100%;
+                width:90%;
                 height:100%;
                 padding:100px;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                color : #444444;
+                font-size: 15px;
             ">
                 {% block main %}
-                    <p style="color:#EF9F9F;">
-                        {% block intro %}Bonjour,{% endblock %}
-                    </p>
-
-                    <p style="font-family: 'Julius Sans One'; font-family:'Roboto'; color:#EF9F9F;">
+                    <p style="width:80%;">
                         {% block object %}{% endblock %}
                     </p>
 
-                    <p>{% block message %}{% endblock %}</p>
+                    <p style="color:#642247ee; font-weight:bold; width:80%;">
+                        {% block intro %}
+                            Bonjour,
+                        {% endblock %}
+                    </p>
 
-                    <p>{% block regards %}Cordialement{% endblock %}</p>
+                    <div style="max-width:1000px;">
+                        {% block message %}{% endblock %}
+                    </div>
 
-                    <p style="color:#000000;">
+                    <p style="color:#642247ee; font-weight:bold; width:80%;">
+                        {% block regards %}
+                            Cordialement
+                        {% endblock %}
+                    </p>
+
+                    <p style="width:80%;">
                         {% block conclusion %}
-                            <p style="margin:0; padding:0" class="signature">{{ company_name }}</p>
-                            <a href="{{ company_site }}">{% if (company_site is defined) %}
-                                {{ company_site }}
-                                {% endif %}</a>
+                            <p style="margin:0; padding:0;">{{ company_name }}</p>
+                            {% if (company_site is defined) %}
+                                <a href="{{ company_site }}"> {{ company_site }} </a>
+                            {% endif %}
                         {% endblock %}
                     </p>
                 {% endblock %}
@@ -46,10 +62,10 @@
                     <p>Si vous ne souhaitez plus recevoir nos messages, vous pouvez vous désinscrire grâce au bouton ci dessous :</p>
                     <a style="
                     font-size: 1.0rem;
-                    color: #333333;
+                    color: #F0EFEA;
                     border-radius: 5px;
-                    background-color: #EF9F9F;
-                    border-color: #EF9F9F;
+                    background-color: #622247;
+                    border-color: #622247;
                     text-decoration: none;
                     padding: 0.25rem 0.5rem;
                 "

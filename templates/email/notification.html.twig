@@ -2,28 +2,68 @@
 
 {% block title %}Des infos toutes chaudes du Comité des Fêtes de Villereau !{% endblock %}
 
-{% block stylesheets %}
+{% block stylesheets %}{% endblock %}
 
-{% endblock %}
+{% block object %}<h1 style="
+                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                color : #444444;
+                                font-size: 20px;
+                            ">{{newsletter.subject}}</h1>{% endblock %}
 
 {% block message %}
 
-    <div class="card content-card">
-        <h5 class="card-title">{{newsletter.subject}}</h5>
+    {% set texts = newsletter.text|split('\n') %}
+    {%  for text in texts %}
+        {% set text = text|trim %}
+        {% set open = text[0:5] %}
+        {% set close = text[-6:] %}
 
-        <div class="card-body">
-            <p class="card-text">{{newsletter.text}}</p>
-        </div>
-    </div>
+        {% if open == '[img]' and close == '[/img]' %}
+            <p style="
+                        text-align:center;
+                    ">
+                <img style="
+                            max-width: 300px;
+                            text-align:center;
+                        " alt="{{ text[5:-6] }}"
+                 src="{{ text[5:-6] }}">
+            </p>
 
+        {% elseif open == '[but]' and close == '[/but]'%}
+            <p style="
+                        text-align:center;
+                    ">
+                <a style="
+                        font-size: 1.0rem;
+                        color: #F0EFEA;
+                        border-radius: 5px;
+                        background-color: #622247;
+                        border-color: #622247;
+                        text-decoration: none;
+                        padding: 0.25rem 0.5rem;
+                    "
+                   href="{{ text[5:-6] }}">
+                    c'est ici ;-)
+                </a>
+            </p>
+        {% else %}
+            <p>{{ text }}</p>
+
+        {% endif %}
+
+    {%  endfor %}
+
+{% endblock %}
+
+{% block footer %}
     {% if (test is defined) and test %}
         <p>Appuyez sur le bouton ci dessous si cet email vous convient et que vous autorisez sa diffusion.</p>
         <a style="
                     font-size: 1.0rem;
-                    color: #333333;
+                    color: #F0EFEA;
                     border-radius: 5px;
-                    background-color: #EF9F9F;
-                    border-color: #EF9F9F;
+                    background-color: #622247;
+                    border-color: #622247;
                     text-decoration: none;
                     padding: 0.25rem 0.5rem;
                 "
@@ -31,5 +71,4 @@
             Autoriser la diffusion de cet email
         </a>
     {% endif %}
-
 {% endblock %}
