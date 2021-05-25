@@ -4,11 +4,14 @@ namespace App\Controller;
 
 use App\Entity\NewsletterEmail;
 use App\Form\NewsletterEmailType;
+use App\Form\NewsletterSubscriptionType;
 use App\Repository\NewsletterEmailRepository;
 use DateTime;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -53,6 +56,53 @@ class NewsletterEmailController extends AbstractController
         return $this->render('newsletter_email/new.html.twig', [
             'newsletter_email' => $newsletterEmail,
             'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/inscription", name="newsletter_subscription", methods={"GET","POST"})
+     */
+    public function getNewsletterForm(
+        Request $request,
+        MailerInterface $mailer
+    ) {
+        // Manage newsletter email
+        $newsletterEmail = new NewsletterEmail();
+        $newsletterForm = $this->createForm(NewsletterSubscriptionType::class, $newsletterEmail);
+        $newsletterForm->handleRequest($request);
+
+        if ($newsletterForm->isSubmitted() && $newsletterForm->isValid()) {
+            //make $s a random string
+            for ($secret = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 32; $x = rand(0,$z), $secret .= $a{$x}, $i++);
+
+            $newsletterEmail->setDate(new DateTime());
+            $newsletterEmail->setSecret($secret);
+            $newsletterEmail->setRegistered(true);
+            $newsletterEmail->setMember(false);
+            $newsletterEmail->setProfessional(false);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($newsletterEmail);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Votre inscription à la newsletter a été enregistrée');
+
+            $email = (new TemplatedEmail())
+                ->from($this->getParameter("mailer_from"))
+                ->subject('Votre inscription à la newsletter de '.$this->getParameter("company_name").' !')
+                ->to($newsletterEmail->getEmail())
+                ->htmlTemplate('email/newsletterSubscription.html.twig')
+                ->context([
+                    'secret' => $secret,
+                ]);
+
+            $mailer->send($email);
+
+            return $this->redirect($request->server->get('HTTP_REFERER'));
+        }
+
+        return $this->render('footer/_newsletter.html.twig', [
+            'newsletterForm' => $newsletterForm->createView()
         ]);
     }
 

@@ -1,4 +1,18 @@
-<button class="btn btn-sm btn-primary mt-2 mr-2">
+{% if disabled is not defined %}
+    {% set disabled = false %}
+{% endif %}
+
+{# id button is disabled, the text get the disabled text version or keep unchanged #}
+{% if disabled %}
+    {% set text = disabledText??(text??'Appuyez') %}
+{% endif %}
+
+<button class="btn btn-sm btn-primary mt-2 mr-2"
+        type="submit"
+        formmethod="post"
+        formaction="{{ path??'' }}"
+        title="{{ title ?? text }}"
+        {{ disabled?'disabled':'' }}>
     <i class="fas fa-check mr-1"> </i>
     {{ text??"Enregistrer" }}
 </button>

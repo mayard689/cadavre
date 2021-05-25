@@ -3,15 +3,18 @@
 namespace App\Controller;
 
 use App\Entity\Newsletter;
+use App\Entity\NewsletterEmail;
 use App\Form\NewsletterType;
 use App\Repository\NewsletterEmailRepository;
 use App\Repository\NewsletterRepository;
 use App\Service\MailSender;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
-use PhpParser\Node\Scalar\String_;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**

@@ -230,28 +230,6 @@ li{
     justify-content: center;
 }
 
-.corn1 {
-    padding : 10px;
-    animation: 3s ease-in-out infinite wind1;
-    animation-direction: alternate;
-}
-
-.corn2 {
-    position : relative;
-    right : 75px;
-    bottom : 10px;
-    transform: rotate(25deg);
-
-    animation: 2.5s ease-in-out infinite wind2;
-    animation-direction: alternate;
-}
-
-.corn3 {
-    padding : 10px;
-    animation: 3.5s ease-in-out infinite wind3;
-    animation-direction: alternate;
-}
-
 .logo {
     padding : 10px;
     height : 100px;

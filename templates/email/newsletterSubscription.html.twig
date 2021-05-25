@@ -1,0 +1,21 @@
+{% extends 'email.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+        . btn{
+            font-size: 2.2rem;
+            color: #333333;
+            border-radius: 5px;
+            background-color: #EF9F9F;
+            border-color: #EF9F9F;
+        }
+    </style>
+{% endblock %}
+
+{% block object %}
+    Votre inscription à la newsletter de {{ company_name }}.
+{%  endblock %}
+
+{% block message %}
+    <p>Nous sommes heureux de vous compter parmi les membres de notre newsletter. Nous espérons que vous y découvrirez des informations utiles pour vous creer votre intérieur cosy et respectueux de l'environnement.</p>
+{% endblock %}
