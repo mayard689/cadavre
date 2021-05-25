@@ -4,11 +4,7 @@
 
 {% block stylesheets %}{% endblock %}
 
-{% block object %}<h1 style="
-                                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-                                color : #444444;
-                                font-size: 20px;
-                            ">{{newsletter.subject}}</h1>{% endblock %}
+{% block object %}{{newsletter.subject}}{% endblock %}
 
 {% block message %}
 
