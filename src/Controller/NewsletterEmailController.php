@@ -79,7 +79,7 @@ class NewsletterEmailController extends AbstractController
             $newsletterEmail->setSecret($secret);
             $newsletterEmail->setRegistered(true);
             $newsletterEmail->setMember(false);
-            $newsletterEmail->setProfessional(false);
+            //$newsletterEmail->setProfessional(false);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletterEmail);

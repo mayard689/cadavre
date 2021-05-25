@@ -21,6 +21,7 @@ class NewsletterSubscriptionType extends AbstractType
                     ]
                 ]
             )
+            ->add('professional', null,['label' => "Je vous suis pour des raisons professionnelles"])
         ;
     }
 
