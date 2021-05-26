@@ -22,6 +22,18 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class HomeController extends AbstractController
 {
+
+
+    /**
+     * @Route("/xyz/{code}", name="homeMail", methods={"GET"})
+     */
+    public function indexMail(
+        StatTagManager $tagManager
+    ): Response {
+        return $this->redirectToRoute('home');
+    }
+
+
     /**
      * @Route("/", name="home")
      */

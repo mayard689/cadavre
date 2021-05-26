@@ -146,7 +146,7 @@ class MailSender
             ->to($this->params->get("admin_email"))
             ->htmlTemplate('email/notification.html.twig')
             ->context([
-                'secret' => "no-secret",
+                'secret' => "noSecret",
                 'newsletter' => $newsletter,
                 'test' => true
             ]);

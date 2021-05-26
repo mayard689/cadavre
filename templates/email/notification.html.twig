@@ -26,6 +26,16 @@
             </p>
 
         {% elseif open == '[btn]' and close == '[/btn]'%}
+
+            {% set address = text[5:-6] %}
+            {% if address[-5:] == '[tag]' %}
+                {% set address = address[0:-5] %}
+
+                {% if secret is defined %}
+                    {% set address = address ~ secret[0:5] %}
+                {% endif %}
+            {% endif %}
+
             <p style="
                         text-align:center;
                     ">
@@ -38,10 +48,11 @@
                         text-decoration: none;
                         padding: 0.25rem 0.5rem;
                     "
-                   href="{{ text[5:-6] }}">
+                   href="{{ address }}">
                     c'est ici ;-)
                 </a>
             </p>
+
         {% else %}
             <p>{{ text }}</p>
 

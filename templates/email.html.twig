@@ -50,7 +50,12 @@
                         {% block conclusion %}
                             <p style="margin:0; padding:0;">{{ company_name }}</p>
                             {% if (company_site is defined) %}
-                                <a href="{{ company_site }}"> {{ company_site }} </a>
+                                {% set ext_company_site = company_site %}
+                                {% if secret is defined %}
+                                    {% set ext_company_site = ext_company_site ~ '/xyz/' ~ secret[0:5] %}
+                                {% endif %}
+
+                                <a href="{{ ext_company_site }}"> {{ company_site }} </a>
                             {% endif %}
                         {% endblock %}
                     </p>
