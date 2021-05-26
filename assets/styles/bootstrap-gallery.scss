@@ -29,11 +29,11 @@ $bootstrap-xl: 1200px;
 //Crop images in the coursel
 .carousel-item {
   img {
-    height: 60vw;
+    //height: 60vw;
     object-fit: cover;
 
     @media (min-width: $bootstrap-sm) {
-      height: 350px;
+      //height: 350px;
     }
   }
 }
