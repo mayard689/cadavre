@@ -28,6 +28,11 @@
         {% elseif open == '[btn]' and close == '[/btn]'%}
 
             {% set address = text[5:-6] %}
+
+            {% if address[0:8] != 'https://' %}
+                {% set address = 'https://' ~ address %}
+            {% endif %}
+
             {% if address[-5:] == '[tag]' %}
                 {% set address = address[0:-5] %}
 

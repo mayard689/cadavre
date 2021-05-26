@@ -49,13 +49,15 @@
                     <p style="width:80%;">
                         {% block conclusion %}
                             <p style="margin:0; padding:0;">{{ company_name }}</p>
-                            {% if (company_site is defined) %}
-                                {% set ext_company_site = company_site %}
-                                {% if secret is defined %}
-                                    {% set ext_company_site = ext_company_site ~ '/xyz/' ~ secret[0:5] %}
-                                {% endif %}
 
-                                <a href="{{ ext_company_site }}"> {{ company_site }} </a>
+                            {% if secret is defined %}
+                                <a href="{{ app.request.schemeAndHttpHost }}{{ path('homeMail', {'code' : secret[0:5]}) }}">
+                                    {{ app.request.server.get('SERVER_NAME') }}
+                                </a>
+                            {% else %}
+                                <a href="{{ app.request.schemeAndHttpHost }}{{ path('homeMail', {'code' : ''}) }}">
+                                     {{ app.request.server.get('SERVER_NAME') }}
+                                </a>
                             {% endif %}
                         {% endblock %}
                     </p>
