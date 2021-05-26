@@ -1,4 +1,6 @@
 $titleFontSize : calc(2rem + 2vw); //11rem;
+$subTitleFontSize : calc(1rem + 1.5vw);
+
 $navbarLinkFontSize : 20px;
 
 $footer-height : auto;
@@ -11,11 +13,13 @@ $primary: #b9262d;
 $primary-transparent : #b9262dEE;
 $secondary: #642247;//404e69;//#009688;
 $secondary-transparent: #642247ee;
-$thirdary : #f0ce2f;//#ffc107
-$thirdary-transparent : #f0ce2fDD;//#19b099DD;
+$thirdary: #404e69;
+$thirdary-transparent : #404e69EE;
+
 
 $dark: #303030;
 $light: #F8F8F8;
+$grey : #CCCCCC;
 $background: $light ;
 
 $various1 : rgba(255,105,54,.9);
@@ -37,7 +41,7 @@ $shadow: 5px 5px 5px #aaa8;
 $font-size-small : 1.4rem;
 $font-size: 1.6rem;
 $font-size-big : 2.2rem;
-$font-size-verybig : 3.2rem;
+$font-size-verybig : 5.2rem;
 
 $spacing-h-small : 2.5vh;
 $spacing-h-normal : 5vh;

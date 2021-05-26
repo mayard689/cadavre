@@ -16,14 +16,16 @@
   position:relative;
 
   &:before{
+    $width : 50%;
 
     position:absolute;
     top: -$height;
 
     content:" ";
-    width:100%;
+    width: $width;
     height: $height;
     background: bottom/contain no-repeat url("../pictures/cdf-mini.svg");
+    margin-left: (100% - $width ) / 2;
   }
 
 }
