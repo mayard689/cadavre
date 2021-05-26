@@ -53,7 +53,9 @@ security:
         - { path: '^/mentions-legales$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/protection-des-donnees$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: '^/email/inscription', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+        # note that the following path is associated to a route that can accept anything after the / 
         - { path: '^/xyz/', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
+        - { path: '/unlock$', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
 
         # anything not explicitly allowed is rejected
         - { path: '^/', roles: ROLE_ADMIN }
