@@ -14,6 +14,7 @@
         "doctrine/orm": "^2.8",
         "erusev/parsedown": "^1.7",
         "fzaninotto/faker": "^1.9",
+        "liip/imagine-bundle": "^2.6",
         "michaeldegroot/doctrine-encrypt-bundle": "^4.0",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.1",
