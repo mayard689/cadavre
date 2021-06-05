@@ -4,8 +4,13 @@
 .main-picture-wrapper{
   display: flex;
   justify-content: center;
-  margin-top: $spacing-h-large;
+  margin-top: $spacing-h-small;
   margin-bottom: $spacing-h-large;
+  max-height : 60vh;
+
+  .main-picture{
+    object-fit: contain;
+  }
 }
 
 #gallery{
