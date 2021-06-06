@@ -5,7 +5,12 @@
     <div class="blog-card-body">
         <div class="blog-card-details">Publié le {{content.date|format_datetime(locale="fr", pattern = "EEEE dd MMMM Y")}}</div>
         <a  class="blog-card-title" href="{{ path('content_show', {'slug': content.slug}) }}"><h3>{{content.title}}</h3></a>
-        <p class="blog-card-text">{{content.text|u.truncate(125)}}...</p>
+
+        <div class="blog-card-text">
+            {% apply markdown_to_html %}
+                {{ content.text }}
+            {% endapply %}
+        </div>
 
         {% include 'tools/_adminButton.html.twig' with {
             'text': 'Modifier',
