@@ -1,8 +1,8 @@
 @import "_vars";
 
 .blog-row{
-  max-height : 80vh;
-  min-height : 80vh;
+  //max-height : 80vh;
+  //min-height : 80vh;
 }
 
 .blog-main-content a, .blog-card a {
@@ -65,15 +65,21 @@
 }
 
 .blog-card{
-  //background : red;
   display:flex;
   flex-direction:column;
 
-  width : calc(50% - 20px);
-  height : calc(50% - 20px);
-  max-height:50%;
+  //width : calc(50% - 20px);
+  //height : calc(50% - 20px);
+  //max-height:50%;
 
-  margin : 10px;
+  height : 40vh;
+  //max-height : 40vh;
+  //min-height : 40vh;
+
+  margin-right : auto;
+  margin-left : auto;
+  margin-top : 10px;
+  margin-bottom : 10px;
 
   overflow : hidden;
 
@@ -94,7 +100,8 @@
   display:flex;
   flex-direction:column;
   width : 100%;
-  height : 100%;
+  //height : 100%;
+  height : calc(80vh + 40px);
   background-color: $thirdary;
   overflow : hidden;
 
