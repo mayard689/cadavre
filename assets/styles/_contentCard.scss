@@ -68,13 +68,9 @@
   display:flex;
   flex-direction:column;
 
-  //width : calc(50% - 20px);
-  //height : calc(50% - 20px);
-  //max-height:50%;
+  width : calc(100% - 20px);
+  height : 80vh;
 
-  height : 40vh;
-  //max-height : 40vh;
-  //min-height : 40vh;
 
   margin-right : auto;
   margin-left : auto;
@@ -91,8 +87,10 @@
     height : 60%;
     display:flex;
     flex-direction:column;
+  }
 
-
+  a .blog-card-image{
+    //object-fit: contain;
   }
 }
 
@@ -124,7 +122,13 @@
   }
 }
 
-
+// Update width of container 576px=>xl 768px=>sm
+@media only screen and (min-width : 768px) {
+  .blog-card{
+    height : 40vh;
+    width : calc(50% - 20px);
+  }
+}
 
 
 
