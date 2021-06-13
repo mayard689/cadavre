@@ -8,6 +8,14 @@
     {{ encore_entry_link_tags('bootstrap-gallery') }}
 {% endblock %}
 
+{% block facebook %}
+    <meta property="og:url"           content="https://www.cdf-villereau.fr/content/{{content.slug}}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content={{ content.metadescription ?: 'Encore une super publication du Comité des Fêtes de Villereau' }} />
+    <meta property="og:image"         content="/pictures/content/{{ content.picture ?? 'emptyContentPicture.jpg' }}" />
+{% endblock %}
+
 {% block metadescription %}{{ content.metadescription ?: 'Encore une super animation pour tous le monde avec le Comité des Fêtes de Villereau' }}{% endblock %}
 
 {% block stylesheets %}
@@ -28,6 +36,14 @@
             {% apply markdown_to_html %}
                 {{ content.text }}
             {% endapply %}
+        </div>
+        <div class="fb-like"
+             data-href="https://www.cdf-villereau.fr/content/{{content.slug}}"
+             data-width=""
+             data-layout="button_count"
+             data-action="like"
+             data-size="large"
+             data-share="true">
         </div>
 
         {% set galleryPictures = [] %}

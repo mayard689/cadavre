@@ -13,6 +13,12 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
+        {% block facebook %}
+            <meta property="og:type"          content="website" />
+            <meta property="og:title"         content="Comité des fêtes de Villereau" />
+            <meta property="og:description"   content="Une publication en provenance du CDF !" />
+        {% endblock %}
+
         <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -51,6 +57,9 @@
 
             {% block javascripts %}
                 {{ encore_entry_script_tags('app') }}
+
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v11.0" nonce="f0WbKGG5"></script>
             {% endblock %}
         {% endblock %}
     </body>
