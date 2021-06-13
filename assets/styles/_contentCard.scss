@@ -128,6 +128,11 @@
   }
 }
 
+.card-deck .card{
+  min-width: 20%;
+  max-width: 20%;
+  margin-bottom : 15px;
+}
 // Update width of container 576px=>xl 768px=>sm
 @media only screen and (min-width : 768px) {
   .blog-card{
