@@ -6,7 +6,7 @@
 }
 
 .text a{
-    text-decoration: $primary;
+    text-decoration: underline solid $primary;
 }
 
 .blog-main-content a, .blog-card a {
