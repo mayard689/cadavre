@@ -5,6 +5,10 @@
   //min-height : 80vh;
 }
 
+.text a{
+    text-decoration: $primary;
+}
+
 .blog-main-content a, .blog-card a {
   height : 40%;
   .blog-card-image{
