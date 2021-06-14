@@ -14,9 +14,11 @@
         {% endblock %}
 
         {% block facebook %}
-            <meta property="og:type"          content="website" />
+            <meta property="og:type"          content="article" />
             <meta property="og:title"         content="Comité des fêtes de Villereau" />
             <meta property="og:description"   content="Une publication en provenance du CDF !" />
+            <meta property="og:locale"        content="fr_FR" />
+            <meta property="og:fb"            content="155447606628394" />
         {% endblock %}
 
         <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon.png">
@@ -59,11 +61,32 @@
                 {{ encore_entry_script_tags('app') }}
 
                 <div id="fb-root"></div>
-                <script async defer crossorigin="anonymous"
+                {#<script async defer crossorigin="anonymous"
                         src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1
-                        &version=v11.0"
+                        &version=v11.0
+                        &appId=155447606628394"
                         nonce="f0WbKGG5">
-                </script>
+                </script>#}
+
+            <script>
+                window.fbAsyncInit = function() {
+                    FB.init({
+                        appId      : '155447606628394',
+                        xfbml      : true,
+                        version    : 'v11.0'
+                    });
+                    FB.AppEvents.logPageView();
+                };
+
+                (function(d, s, id){
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/fr_FR/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+
             {% endblock %}
         {% endblock %}
     </body>
