@@ -10,7 +10,7 @@
 
 {% block facebook %}
     <meta property="og:url"           content="https://www.cdf-villereau.fr/content/{{content.slug}}" />
-    <meta property="og:type"          content="website" />
+    <meta property="og:type"          content="article" />
     <meta property="og:title"         content="{{ content.title }}" />
     <meta property="og:description"   content="{{ content.metadescription ?: 'Encore une super publication du Comité des Fêtes de Villereau' }}" />
     <meta property="og:image"         content="/pictures/content/{{ content.picture ?? 'emptyContentPicture.jpg' }}" />
