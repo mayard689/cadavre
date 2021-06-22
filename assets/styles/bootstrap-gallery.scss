@@ -50,3 +50,14 @@ $bootstrap-xl: 1200px;
   display: flex;
   align-items: center;
 }
+
+.scrollable-gallery{
+  overflow-x: auto;
+  white-space: nowrap;
+  display: block;
+}
+
+.scrollable-miniature{
+  display: inline-block;
+  float: none;
+}

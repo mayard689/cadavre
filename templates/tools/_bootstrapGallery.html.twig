@@ -5,9 +5,13 @@
 {% set videoTypeList = ['webm', '.mp4'] %}
 {% set audioTypeList = ['.mp3'] %}
 
-<div class="row" id="gallery" data-toggle="modal" data-target="#CarouselModal">
+{% if scroll is not defined %}
+    {%  set scroll = false %}
+{% endif %}
+
+<div class="row {{ scroll ? 'scrollable-gallery' }}" id="gallery" data-toggle="modal" data-target="#CarouselModal">
     {% for picture in pictures %}
-        <div class="col-6 col-sm-4 col-md-3 col-lg-3 m-auto">
+        <div class="{{ scroll ? 'scrollable-miniature' }} col-6 col-sm-4 col-md-3 col-lg-3 m-auto">
             {% set type = picture[-4:] %}
             {%  if type in videoTypeList %}
                 <video class="video w-100 mt-2 mb-2" data-target="#carouselModal" data-slide-to="{{loop.index0}}" disableremoteplayback="" poster="" preload="auto" data-object-fit="" autoplay="" playsinline="" muted="" loop="" data-was-processed="true">
