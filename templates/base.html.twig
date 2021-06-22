@@ -68,24 +68,33 @@
                         nonce="f0WbKGG5">
                 </script>#}
 
-            <script>
-                window.fbAsyncInit = function() {
-                    FB.init({
-                        appId      : '155447606628394',
-                        xfbml      : true,
-                        version    : 'v11.0'
-                    });
-                    FB.AppEvents.logPageView();
-                };
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous"
+                        src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1
+                        &version=v11.0
+                        &appId=155447606628394
+                        &autoLogAppEvents=1"
+                        nonce="W2KeHieI">
+                </script>
 
-                (function(d, s, id){
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) {return;}
-                    js = d.createElement(s); js.id = id;
-                    js.src = "https://connect.facebook.net/fr_FR/sdk.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-            </script>
+                {#<script>
+                    window.fbAsyncInit = function() {
+                        FB.init({
+                            appId      : '155447606628394',
+                            xfbml      : true,
+                            version    : 'v11.0'
+                        });
+                        FB.AppEvents.logPageView();
+                    };
+
+                    (function(d, s, id){
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) {return;}
+                        js = d.createElement(s); js.id = id;
+                        js.src = "https://connect.facebook.net/fr_FR/sdk.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>#}
 
             {% endblock %}
         {% endblock %}
