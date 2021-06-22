@@ -68,16 +68,16 @@
                         nonce="f0WbKGG5">
                 </script>#}
 
-                <div id="fb-root"></div>
+                {#<div id="fb-root"></div>
                 <script async defer crossorigin="anonymous"
                         src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1
                         &version=v11.0
                         &appId=155447606628394
                         &autoLogAppEvents=1"
                         nonce="W2KeHieI">
-                </script>
+                </script>#}
 
-                {#<script>
+                <script>
                     window.fbAsyncInit = function() {
                         FB.init({
                             appId      : '155447606628394',
@@ -94,7 +94,7 @@
                         js.src = "https://connect.facebook.net/fr_FR/sdk.js";
                         fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));
-                </script>#}
+                </script>
 
             {% endblock %}
         {% endblock %}
