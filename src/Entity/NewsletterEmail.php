@@ -64,6 +64,11 @@ class NewsletterEmail
      */
     private $newsletterTrackers;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $special;
+
     public function __construct()
     {
         $this->newsletterTrackers = new ArrayCollection();
@@ -177,6 +182,18 @@ class NewsletterEmail
                 $newsletterTracker->setAddress(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSpecial(): ?bool
+    {
+        return $this->special;
+    }
+
+    public function setSpecial(?bool $special): self
+    {
+        $this->special = $special;
 
         return $this;
     }
