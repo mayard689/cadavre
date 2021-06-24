@@ -88,8 +88,16 @@ class MailSender
             ]);
         }
 
+        $specials = [];
+        if ($newsletter->getToSpecial()) {
+            $persons = $this->newsletterEmailRepository->findBy([
+                'special' => true
+            ]);
+        }
+        
         $members = array_merge($members,$professionals);
         $members = array_merge($members, $persons);
+        $members = array_merge($members, $specials);
         //keep only one of each object
         $members = $this->array_unique_full($members);
         //var_dump($members); exit();
