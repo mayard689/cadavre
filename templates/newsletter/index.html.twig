@@ -15,6 +15,7 @@
                     <th>Aux membres</th>
                     <th>Aux professionnels</th>
                     <th>Aux particuliers</th>
+                    <th>Aux speciaux</th>
                     <th>actions</th>
                 </tr>
             </thead>
@@ -27,6 +28,7 @@
                     <td>{{ newsletter.toMembers ? 'Oui' : 'Non' }}</td>
                     <td>{{ newsletter.toProfessionals ? 'Oui' : 'Non' }}</td>
                     <td>{{ newsletter.toPersons ? 'Oui' : 'Non' }}</td>
+                    <td>{{ newsletter.toSpecial ? 'Oui' : 'Non' }}</td>
                     <td>
                         <a href="{{ path('newsletter_show', {'id': newsletter.id}) }}">Voir</a>
                         <a href="{{ path('newsletter_edit', {'id': newsletter.id}) }}">Modifier</a>
