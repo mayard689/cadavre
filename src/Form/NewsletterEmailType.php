@@ -15,6 +15,7 @@ class NewsletterEmailType extends AbstractType
             ->add('email', null,['label' => "E-mail"])
             ->add('professional', null,['label' => "Le contact est il un professionnel ?"])
             ->add('member', null,['label' => "Le contact est il membre ?"])
+            ->add('special', null,['label' => "Voulez vous marquer cet email comme 'special'"])
         ;
     }
 

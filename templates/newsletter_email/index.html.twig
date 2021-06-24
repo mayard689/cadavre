@@ -17,6 +17,7 @@
                     <th>Secret</th>
                     <th>Professionnel</th>
                     <th>Membre</th>
+                    <th>Special</th>
                     <th>Auto-Enregistré</th>
                     <th>actions</th>
                 </tr>
@@ -30,6 +31,7 @@
                     <td>{{ newsletter_email.secret }}</td>
                     <td>{{ newsletter_email.professional ? 'Yes' : 'No' }}</td>
                     <td>{{ newsletter_email.member ? 'Yes' : 'No' }}</td>
+                    <td>{{ newsletter_email.special ? 'Yes' : 'No' }}</td>
                     <td>{{ newsletter_email.registered ? 'Yes' : 'No' }}</td>
                     <td>
                         <a href="{{ path('newsletter_email_show', {'id': newsletter_email.id}) }}">show</a>
