@@ -52,6 +52,11 @@ class Newsletter
      */
     private $versionning;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $toSpecial;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -137,6 +142,18 @@ class Newsletter
     public function setVersionning(string $versionning): self
     {
         $this->versionning = $versionning;
+
+        return $this;
+    }
+
+    public function getToSpecial(): ?bool
+    {
+        return $this->toSpecial;
+    }
+
+    public function setToSpecial(?bool $toSpecial): self
+    {
+        $this->toSpecial = $toSpecial;
 
         return $this;
     }
