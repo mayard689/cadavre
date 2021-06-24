@@ -17,6 +17,7 @@ class NewsletterType extends AbstractType
             ->add('toMembers', null,['label' => "A destination des membres"])
             ->add('toProfessionals', null,['label' => "A destination des professionnels"])
             ->add('toPersons', null,['label' => "A destination des particuliers"])
+            ->add('toSpecial', null,['label' => "A destination des spéciaux"])
         ;
     }
 
