@@ -94,7 +94,7 @@ class MailSender
                 'special' => true
             ]);
         }
-        
+
         $members = array_merge($members,$professionals);
         $members = array_merge($members, $persons);
         $members = array_merge($members, $specials);
