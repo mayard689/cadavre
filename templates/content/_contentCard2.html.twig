@@ -1,6 +1,6 @@
 <div class="blog-card">
     <a href="{{ path('content_show', {'slug': content.slug}) }}">
-        <img class="blog-card-image" src="/pictures/content/{{ content.picture ?? 'emptyContentPicture.jpg' }}" alt="{{content.title}} illustration">
+        <img class="blog-card-image" src="{{asset('/pictures/content/'~(content.picture ?? 'emptyContentPicture.jpg')|imagine_filter('blog_miniature2')) }}" alt="{{content.title}} illustration">
     </a>
     <div class="blog-card-body">
         <div class="blog-card-details">Publié le {{content.date|format_datetime(locale="fr", pattern = "EEEE dd MMMM Y")}}</div>
