@@ -44,6 +44,8 @@ security:
         - { path: '^/', roles: ROLE_ADMIN, methods: [DELETE] }
         - { path: 'new$', roles: ROLE_ADMIN }
         - { path: 'edit$', roles: ROLE_ADMIN }
+        # give access to liipimagine processed images
+        - { path: '^/media', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
 
         # allow for everybody
         - { path: '^/picture/get/', roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: '%env(SECURE_SCHEME)%' }
