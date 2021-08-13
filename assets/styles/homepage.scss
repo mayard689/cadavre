@@ -2,11 +2,14 @@
 @import "_eventCard";
 @import "_contentCard";
 
+$height : 85vh;
+
 .video-fond{
   position:relative;
   overflow: hidden;
 
-  height : 85vh;
+
+  height : $height;
 
   display: flex;
   flex-direction: column;
@@ -14,6 +17,9 @@
 
   align-items: center;
   background: black;
+
+
+
 }
 
 .video{
@@ -22,6 +28,16 @@
   max-width : 100%;
   min-height: 100%;
   object-fit: cover;
+
+  &:after{
+    content : " ";
+    position : absolute;
+    top : 0;
+    left : 0;
+    height : $height;
+    width: 100%;
+    background : #00000088;
+  }
 }
 
 .text-wrapper{
